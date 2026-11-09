@@ -1,0 +1,95 @@
+/*
+ * Global styles — Sahem Studio
+ * Order matters:
+ *   1. Tailwind + shadcn base
+ *   2. Brand tokens from the approved handoff v1.1 (src/styles/tokens.css) — unlayered on purpose:
+ *      Tailwind emits @theme variables inside `@layer theme`, so these unlayered values win.
+ *   3. Site-wide dark mode (src/styles/dark-mode.css) — added at the manager's request, not in the handoff.
+ *   4. shadcn/ui variables mapped onto the brand's semantic tokens.
+ * Rule: components use semantic utilities (bg-bg-page, text-text-secondary, border-border-control …), never primitives.
+ */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../styles/tokens.css";
+@import "../styles/tailwind.theme.css";
+@import "../styles/dark-mode.css";
+
+/* `dark:` utilities follow the site mode switch (html[data-mode="dark"]), not the OS. */
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+/* Fonts are self-hosted with next/font/local (src/app/fonts.ts); its CSS variables feed the brand stacks. */
+:root {
+  --font-arabic: var(--font-readex-arabic), var(--font-readex-latin), system-ui, sans-serif;
+  --font-latin: var(--font-sora), var(--font-readex-latin), system-ui, sans-serif;
+}
+:lang(fr) {
+  font-family: var(--font-latin);
+}
+
+/* shadcn/ui ↔ brand. Square corners everywhere (radius 0); only pills/dots use radius-pill / radius-dot. */
+:root {
+  --radius: 0px;
+  --background: var(--bg-page);
+  --foreground: var(--text-primary);
+  --card: var(--card-bg);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-raised);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--button-primary-bg);
+  --primary-foreground: var(--button-primary-text);
+  --secondary: var(--bg-sunken);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--bg-sunken);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--bg-sunken);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--feedback-error);
+  --border: var(--border-subtle);
+  --input: var(--border-control);
+  --ring: var(--focus-ring);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--bg-page);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "site": {
+    "name": "Sahem Studio",
+    "tagline": "We design the route to your goal.",
+    "description": "A creative and tech studio for small and medium brands that want to show up professionally: websites, identities, content, and automation that gives you time back."
+  },
+  "a11y": {
+    "skipToContent": "Skip to content"
+  },
+  "theme": {
+    "toggle": "Dark mode"
+  },
+  "language": {
+    "label": "Language"
+  }
+}

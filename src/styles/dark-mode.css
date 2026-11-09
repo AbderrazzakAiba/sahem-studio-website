@@ -1,0 +1,62 @@
+/*
+ * Site-wide dark mode — html[data-mode="dark"].
+ * Added at the manager's request; NOT part of the approved handoff v1.1. Pending review by the Design lead.
+ *
+ * Principle: the palette is inverted (Ink ⇄ Paper). Signal orange never changes.
+ * The handoff already has one dark section (data-theme="ink", the Work section — the page's peak).
+ * In dark mode that section inverts too and becomes the only Paper section, so the peak keeps its contrast.
+ */
+:root[data-mode="dark"] {
+  color-scheme: dark;
+  --bg-page: var(--ink-900);
+  --bg-raised: var(--ink-800);
+  --bg-sunken: #141416;
+  --text-primary: var(--paper-100);
+  --text-secondary: var(--stone-400);
+  --text-inverse: var(--ink-900);
+  --border-subtle: var(--graphite-700);
+  --border-strong: var(--paper-100);
+  --border-control: var(--stone-400);
+  --accent-signal: var(--signal-500);
+  --focus-ring: var(--paper-100);
+  --feedback-error: var(--error-300);
+  --route-line: var(--paper-100);
+  --route-node: var(--ink-900);
+  --route-node-active: var(--signal-500);
+  --button-primary-bg: var(--paper-100);
+  --button-primary-bg-hover: var(--mist-300);
+  --button-primary-text: var(--ink-900);
+  --button-primary-dot: var(--signal-500);
+  --button-secondary-border: var(--paper-100);
+  --input-bg: var(--ink-800);
+  --input-border: var(--border-control);
+  --input-border-hover: var(--paper-100);
+  --input-border-error: var(--feedback-error);
+  --card-bg: var(--bg-raised);
+  --card-border: var(--border-subtle);
+  --shadow-hairline: 0 1px 0 var(--graphite-700);
+  --shadow-overlay: 0 24px 48px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* The Ink section flips to Paper in dark mode (same values as the default Paper theme). */
+:root[data-mode="dark"] [data-theme="ink"] {
+  --bg-page: var(--paper-100);
+  --bg-raised: var(--white);
+  --bg-sunken: var(--paper-200);
+  --text-primary: var(--ink-900);
+  --text-secondary: var(--graphite-700);
+  --text-inverse: var(--paper-100);
+  --border-subtle: var(--mist-300);
+  --border-strong: var(--ink-900);
+  --border-control: var(--graphite-700);
+  --focus-ring: var(--ink-900);
+  --feedback-error: var(--error-600);
+  --route-line: var(--ink-900);
+  --route-node: var(--paper-100);
+  --button-primary-bg: var(--ink-900);
+  --button-primary-bg-hover: var(--ink-800);
+  --button-primary-text: var(--paper-100);
+  --button-secondary-border: var(--ink-900);
+  --input-bg: var(--white);
+  --input-border-hover: var(--ink-900);
+}
