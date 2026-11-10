@@ -103,6 +103,10 @@ The approved developer handoff **v1.1** from the Design lead: screens, component
 - The start form (later task) validates on the server, uses a honeypot + rate limit, and stores nothing beyond what the privacy page states.
 - `npm audit --omit=dev` must stay at 0 before merging.
 
+## Architecture
+
+Component-based and built to grow: pages only compose sections, and Header, Footer and every UI piece are reusable components. Rules and layers: [ARCHITECTURE.md](ARCHITECTURE.md).
+
 ## Working together
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).

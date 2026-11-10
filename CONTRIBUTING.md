@@ -38,6 +38,8 @@ npm run lint && npm run typecheck && npm run format:check && npm run build
 
 ## Code rules
 
+Follow [ARCHITECTURE.md](ARCHITECTURE.md): everything is a component, pages only compose sections, reuse before adding.
+
 - Semantic tokens only (`bg-bg-page`, not `bg-ink-900`); logical properties only (`ms-4`, not `ml-4`).
 - Server Components by default; add `"use client"` only where interaction needs it.
 - Text never hard-coded in components — it comes from the dictionaries or the content files.
