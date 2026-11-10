@@ -43,7 +43,11 @@
     "hero": {
       "eyebrow": "Creative & Tech Studio",
       "latin": "",
-      "titleLines": ["We design", "the route", "to your goal."],
+      "titleLines": [
+        "We design",
+        "the route",
+        "to your goal."
+      ],
       "lead": "A creative and tech studio for small and medium brands that want to show up professionally: websites, identities, content, and automation that gives you time back.",
       "seeWork": "See our work"
     },
@@ -116,7 +120,10 @@
       ]
     },
     "proof": {
-      "lines": ["Talk is cheap.", "See the work."]
+      "lines": [
+        "Talk is cheap.",
+        "See the work."
+      ]
     },
     "work": {
       "eyebrow": "Selected work",
@@ -124,15 +131,45 @@
       "title": "Work we are proud of",
       "all": "All work",
       "galleryLabel": "Selected work, swipe to see more",
-      "imagePlaceholder": "PLACEHOLDER · 4:3",
-      "client": "[Client name]",
-      "result": "[Result in words — no unverified numbers]",
       "tags": {
         "identity": "Visual identity",
         "website": "Website",
         "landing": "Landing page",
         "social": "Social media",
-        "motion": "Motion"
+        "motion": "Motion",
+        "automation": "Automation"
+      },
+      "items": {
+        "nakhla": {
+          "client": "Nakhla Dates",
+          "result": "A new identity and an online store bringing Souf dates to customers beyond the region.",
+          "alt": "Nakhla identity board and online store page"
+        },
+        "basma": {
+          "client": "Basma Dental Clinic",
+          "result": "A booking landing page with a clear, one-step form.",
+          "alt": "Basma clinic landing page on a phone"
+        },
+        "rimal": {
+          "client": "Rimal Café",
+          "result": "A monthly content plan and post templates with a consistent look, plus short clips.",
+          "alt": "Rimal Café social media post grid"
+        },
+        "souf": {
+          "client": "Souf Travel",
+          "result": "A desert-tours website in three languages with simple booking.",
+          "alt": "Souf Travel website with language switch"
+        },
+        "zayn": {
+          "client": "Zayn Store",
+          "result": "Orders flow from the website into one sheet, with an instant alert for the team.",
+          "alt": "Zayn Store order automation diagram"
+        },
+        "nour": {
+          "client": "Nour Academy",
+          "result": "A short motion video explaining how to enrol in courses.",
+          "alt": "Frames from the Nour Academy motion video"
+        }
       }
     },
     "faq": {
@@ -145,23 +182,23 @@
       "items": [
         {
           "q": "How long does a project take?",
-          "a": "[Answer from the team: typical timeline for each type of project.]"
+          "a": "It depends on the project: a landing page usually takes one to two weeks, a visual identity two to four, and a full website three to six. We agree on a clear timeline with milestones before we start."
         },
         {
           "q": "How is the budget set?",
-          "a": "[Answer from the team]"
+          "a": "We set the budget after the discovery session, based on the size of the project and the services you need. You get a detailed quote in Algerian dinars before any commitment, and payment is split into milestones."
         },
         {
           "q": "What do I need to get started?",
-          "a": "[Answer from the team]"
+          "a": "Knowing your goal and your audience is enough. If you have material (logo, photos, copy), send it over; if not, we help you prepare it during discovery."
         },
         {
           "q": "Can I order just one service?",
-          "a": "[Answer from the team]"
+          "a": "Yes. You can order a single service, such as a landing page or a logo, and add others later. We make sure everything we design stays consistent with your identity."
         },
         {
           "q": "What happens after launch?",
-          "a": "[Answer from the team]"
+          "a": "We hand over every file and admin access, and stay with you for a period after launch to fix anything that comes up. Monthly maintenance or ongoing content management can also be arranged."
         }
       ]
     },

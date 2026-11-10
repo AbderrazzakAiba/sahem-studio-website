@@ -34,7 +34,7 @@ const usePinned = () =>
 /**
  * The Work gallery (handoff M-13 — the page's peak).
  *  - Desktop ≥1024 with motion: the section pins (sticky inside a taller wrapper) and the vertical scroll moves
- *    the projects along the reading direction; the progress line grows 34% → 100% and the Signal dot follows.
+ *    the projects along the reading direction; the progress line grows from the visible share of the projects to 100% and the Signal dot follows.
  *    Keyboard focus on a project scrolls the page so that project comes into view.
  *  - Tablet: native horizontal swipe with scroll-snap (the next project peeks); the line follows that scroll.
  *  - Mobile: stacked projects, no line. Reduced motion: never pinned, native scrolling.
@@ -46,6 +46,8 @@ export function WorkGallery({ label, rtl, heading, footer, children }: Props) {
   const reduce = usePrefersReducedMotion();
   const [overflowPx, setOverflowPx] = useState(0);
   const overflow = useMotionValue(0);
+  // Share of the projects visible at rest (the line's starting length; the handoff shows 34% for 3 projects).
+  const [visible, setVisible] = useState(0.34);
   const pinnedMv = useMotionValue(0);
 
   useEffect(() => {
@@ -59,6 +61,7 @@ export function WorkGallery({ label, rtl, heading, footer, children }: Props) {
     const measure = () => {
       const o = Math.max(0, el.scrollWidth - el.clientWidth);
       overflow.set(o);
+      if (el.scrollWidth > 0) setVisible(Math.min(1, el.clientWidth / el.scrollWidth));
       setOverflowPx(o);
     };
     measure();
@@ -115,7 +118,8 @@ export function WorkGallery({ label, rtl, heading, footer, children }: Props) {
             </m.ul>
           </div>
 
-          <ProgressLine progress={progress} rtl={rtl} animate={!reduce || !pinned} />
+          {/* keyed by its start: a new start (resize) remounts the line so it is drawn right away, before any scroll */}
+          <ProgressLine key={visible.toFixed(3)} progress={progress} start={visible} rtl={rtl} />
           {footer}
         </Container>
       </div>
@@ -123,19 +127,19 @@ export function WorkGallery({ label, rtl, heading, footer, children }: Props) {
   );
 }
 
-/** Route progress line: grey track, white route 34% → 100%, Signal dot at its tip. Decorative. */
-function ProgressLine({ progress, rtl, animate }: { progress: MotionValue<number>; rtl: boolean; animate: boolean }) {
-  const fill = useTransform(progress, (p) => 0.34 + 0.66 * p);
+/** Route progress line: grey track, white route from `start` to 100%, Signal dot at its tip. Decorative. */
+function ProgressLine({ progress, start, rtl }: { progress: MotionValue<number>; start: number; rtl: boolean }) {
+  const fill = useTransform(progress, (p) => start + (1 - start) * p);
   const dotX = useTransform(fill, (f) => `${(rtl ? -1 : 1) * f * 100}%`);
 
   return (
     <div aria-hidden="true" className="relative h-5 max-md:hidden lg:h-[22px]">
       <span className="absolute inset-x-0 top-2 h-(--route-stroke) bg-border-subtle" />
       <m.span
-        style={animate ? { scaleX: fill } : { scaleX: 0.34 }}
+        style={{ scaleX: fill }}
         className="absolute inset-x-0 top-2 h-(--route-stroke) bg-route-line ltr:origin-left rtl:origin-right"
       />
-      <m.span style={animate ? { x: dotX } : { x: `${rtl ? -34 : 34}%` }} className="absolute inset-x-0 top-0">
+      <m.span style={{ x: dotX }} className="absolute inset-x-0 top-0">
         <span className="absolute -start-[9px] top-px size-[18px] rounded-dot bg-accent-signal lg:-start-[11px] lg:top-0 lg:size-[21px]" />
       </m.span>
     </div>

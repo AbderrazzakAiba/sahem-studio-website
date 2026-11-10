@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <!-- Demo cover (fictional brand) — website -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B2D5C"/><stop offset="0.6" stop-color="#E0603B"/><stop offset="1" stop-color="#F6A54A"/></linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#sky)"/>
+  <circle cx="900" cy="520" r="120" fill="#FCD38A"/>
+  <path d="M0 640Q250 520 520 620T1200 600V900H0Z" fill="#C9632F"/>
+  <path d="M0 740Q320 640 640 720T1200 700V900H0Z" fill="#8E3B1F"/>
+  <!-- browser -->
+  <rect x="150" y="120" width="620" height="440" fill="#FFF8EF"/>
+  <rect x="150" y="120" width="620" height="38" fill="#F1E2CF"/>
+  <g fill="#D8BFA2"><circle cx="174" cy="139" r="7"/><circle cx="196" cy="139" r="7"/><circle cx="218" cy="139" r="7"/></g>
+  <text x="180" y="200" font-family="Arial, sans-serif" font-weight="bold" font-size="22" letter-spacing="4" fill="#6B2D5C">SOUF TRAVEL</text>
+  <g fill="#C9A98A"><rect x="560" y="186" width="44" height="10"/><rect x="616" y="186" width="44" height="10"/><rect x="672" y="186" width="70" height="10"/></g>
+  <rect x="180" y="225" width="560" height="190" fill="#E0603B"/>
+  <path d="M180 360Q330 300 470 350T740 330V415H180Z" fill="#8E3B1F"/>
+  <rect x="210" y="255" width="240" height="22" fill="#FFF8EF"/><rect x="210" y="290" width="170" height="14" fill="#FCD38A"/>
+  <g>
+    <rect x="180" y="435" width="176" height="100" fill="#F1E2CF"/><rect x="372" y="435" width="176" height="100" fill="#F1E2CF"/><rect x="564" y="435" width="176" height="100" fill="#F1E2CF"/>
+    <rect x="196" y="505" width="90" height="12" fill="#6B2D5C"/><rect x="388" y="505" width="90" height="12" fill="#6B2D5C"/><rect x="580" y="505" width="90" height="12" fill="#6B2D5C"/>
+  </g>
+  <!-- language pills -->
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">
+    <rect x="820" y="160" width="80" height="44" rx="22" fill="#FFF8EF"/><text x="860" y="189" fill="#6B2D5C">ع</text>
+    <rect x="910" y="160" width="80" height="44" rx="22" fill="#6B2D5C"/><text x="950" y="189" fill="#FFF8EF">EN</text>
+    <rect x="1000" y="160" width="80" height="44" rx="22" fill="#FFF8EF"/><text x="1040" y="189" fill="#6B2D5C">FR</text>
+  </g>
+  <!-- camel caravan silhouette -->
+  <g fill="#5A2414" transform="translate(860 610)">
+    <path d="M0 40q10-40 40-30q10-30 30-10q20 0 30 30h10v40h-8v-30h-6v30h-8v-30h-50v30h-8v-30h-6v30h-8z"/>
+  </g>
+</svg>
