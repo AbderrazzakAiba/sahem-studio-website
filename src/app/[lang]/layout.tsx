@@ -9,7 +9,7 @@ import { site, startHref, whatsappHref } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
 import { jsFlagScript } from "@/lib/motion";
-import { modeScript } from "@/lib/theme";
+import { modeScript, themeColors } from "@/lib/theme";
 import "../globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -39,10 +39,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f4f0" },
-    { media: "(prefers-color-scheme: dark)", color: "#0e0e10" },
-  ],
+  // Light by default; the theme toggle updates it (lib/theme.ts › setMode).
+  themeColor: themeColors.light,
 };
 
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
