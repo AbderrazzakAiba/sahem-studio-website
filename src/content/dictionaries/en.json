@@ -5,12 +5,38 @@
     "description": "A creative and tech studio for small and medium brands that want to show up professionally: websites, identities, content, and automation that gives you time back."
   },
   "a11y": {
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "homeLink": "Sahem Studio — Home"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "process": "Process",
+    "start": "Start your project"
+  },
+  "menu": {
+    "open": "Open menu",
+    "close": "Close menu",
+    "title": "Menu"
   },
   "theme": {
-    "toggle": "Dark mode"
+    "toDark": "Switch to dark mode",
+    "toLight": "Switch to light mode"
   },
   "language": {
     "label": "Language"
+  },
+  "contact": {
+    "whatsapp": "WhatsApp",
+    "whatsappLabel": "Message us on WhatsApp"
+  },
+  "footer": {
+    "site": "Site",
+    "contact": "Contact",
+    "follow": "Follow",
+    "privacy": "Privacy policy",
+    "copyright": "© {year} Sahem Studio"
   }
 }

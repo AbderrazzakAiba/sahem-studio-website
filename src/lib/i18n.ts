@@ -14,6 +14,13 @@ export const localeInfo: Record<Locale, { dir: "rtl" | "ltr"; name: string; shor
 
 export const isLocale = (value: string): value is Locale => (locales as readonly string[]).includes(value);
 
+/** Path without its locale prefix, from a browser pathname: "/fr/services" → "/services", "/services" → "/services". */
+export function pathWithoutLocale(pathname: string): string {
+  const first = pathname.split("/")[1] ?? "";
+  if (isLocale(first)) return pathname.slice(first.length + 1) || "/";
+  return pathname || "/";
+}
+
 /** Public URL for a path in a locale: ("/services", "ar") → "/services", ("/services", "fr") → "/fr/services". */
 export function localizedPath(path: string, locale: Locale): string {
   const clean = path.startsWith("/") ? path : `/${path}`;

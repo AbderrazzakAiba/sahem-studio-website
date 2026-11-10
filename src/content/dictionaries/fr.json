@@ -5,12 +5,38 @@
     "description": "Un studio créatif et technologique pour les petites et moyennes marques qui veulent se présenter de façon professionnelle : sites web, identités, contenus et automatisations qui vous font gagner du temps."
   },
   "a11y": {
-    "skipToContent": "Aller au contenu"
+    "skipToContent": "Aller au contenu",
+    "homeLink": "Sahem Studio — Accueil"
+  },
+  "nav": {
+    "label": "Menu principal",
+    "home": "Accueil",
+    "services": "Services",
+    "work": "Réalisations",
+    "process": "Méthode",
+    "start": "Lancer votre projet"
+  },
+  "menu": {
+    "open": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "title": "Menu"
   },
   "theme": {
-    "toggle": "Mode sombre"
+    "toDark": "Activer le mode sombre",
+    "toLight": "Activer le mode clair"
   },
   "language": {
     "label": "Langue"
+  },
+  "contact": {
+    "whatsapp": "WhatsApp",
+    "whatsappLabel": "Écrivez-nous sur WhatsApp"
+  },
+  "footer": {
+    "site": "Site",
+    "contact": "Contact",
+    "follow": "Suivez-nous",
+    "privacy": "Politique de confidentialité",
+    "copyright": "© {year} Sahem Studio"
   }
 }
