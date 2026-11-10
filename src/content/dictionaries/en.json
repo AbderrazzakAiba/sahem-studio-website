@@ -43,11 +43,7 @@
     "hero": {
       "eyebrow": "Creative & Tech Studio",
       "latin": "",
-      "titleLines": [
-        "We design",
-        "the route",
-        "to your goal."
-      ],
+      "titleLines": ["We design", "the route", "to your goal."],
       "lead": "A creative and tech studio for small and medium brands that want to show up professionally: websites, identities, content, and automation that gives you time back.",
       "seeWork": "See our work"
     },
@@ -120,10 +116,7 @@
       ]
     },
     "proof": {
-      "lines": [
-        "Talk is cheap.",
-        "See the work."
-      ]
+      "lines": ["Talk is cheap.", "See the work."]
     },
     "work": {
       "eyebrow": "Selected work",

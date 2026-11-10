@@ -43,11 +43,7 @@
     "hero": {
       "eyebrow": "Studio créatif & tech",
       "latin": "",
-      "titleLines": [
-        "Nous traçons",
-        "la route",
-        "vers votre objectif."
-      ],
+      "titleLines": ["Nous traçons", "la route", "vers votre objectif."],
       "lead": "Un studio créatif et technologique pour les petites et moyennes marques qui veulent se présenter de façon professionnelle : sites web, identités, contenus et automatisations qui vous font gagner du temps.",
       "seeWork": "Voir nos réalisations"
     },
@@ -120,10 +116,7 @@
       ]
     },
     "proof": {
-      "lines": [
-        "Les mots ne suffisent pas.",
-        "Voyez le travail."
-      ]
+      "lines": ["Les mots ne suffisent pas.", "Voyez le travail."]
     },
     "work": {
       "eyebrow": "Réalisations choisies",
