@@ -1,0 +1,64 @@
+/*
+ * Type scale used by the page sections — values taken from the handoff screens (home-desktop / tablet / mobile).
+ * One fluid clamp() per role covers mobile → desktop. Arabic (Readex Pro) needs taller lines; English and French
+ * (Sora) are set tighter with slight negative tracking, as on the EN screens.
+ */
+
+/* Hero headline (h1): AR 52 → 136px, EN/FR 48 → 128px. */
+@utility text-hero {
+  font-size: clamp(52px, 20.8px + 8vw, 136px);
+  font-weight: 600;
+  line-height: 1.2;
+  &:where(:lang(en), :lang(fr)) {
+    font-size: clamp(48px, 18.3px + 7.62vw, 128px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Display statement (Why, "See the work", final CTA): 40 → 96px. */
+@utility text-display {
+  font-size: clamp(40px, 19.2px + 5.33vw, 96px);
+  font-weight: 600;
+  line-height: 1.2;
+  &:where(:lang(en), :lang(fr)) {
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Section title (h2): 28 → 36px. */
+@utility text-title {
+  font-size: clamp(28px, 25px + 0.76vw, 36px);
+  font-weight: 500;
+  line-height: 1.33;
+  &:where(:lang(en), :lang(fr)) {
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Lead paragraph: AR 17 → 20px, EN/FR 17 → 19px. */
+@utility text-lead {
+  font-size: clamp(17px, 16.5px + 0.19vw, 20px);
+  line-height: 1.7;
+  &:where(:lang(en), :lang(fr)) {
+    font-size: clamp(17px, 16.26px + 0.19vw, 19px);
+    line-height: 1.6;
+  }
+}
+
+/* Card / step title (h3): 20 → 24px. */
+@utility text-card-title {
+  font-size: clamp(20px, 18.5px + 0.38vw, 24px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Station numbers (01–06): Sora, tracked. `!important` because tokens.css resets letter-spacing on :lang(ar) (unlayered). */
+@utility text-index {
+  font-family: var(--font-latin);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em !important;
+}

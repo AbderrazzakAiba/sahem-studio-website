@@ -82,7 +82,7 @@ export function MobileMenu({ links, start, whatsapp, labels, className }: Props)
                       aria-hidden="true"
                       className={cn(
                         // centred on the rail: rail centre sits 10px + stroke/2 from the nav's end edge, the li ends 48px earlier
-                        "absolute end-[calc(10px_+_var(--route-stroke)/2_-_var(--route-node)/2_-_48px)] top-1/2 size-[var(--route-node)] -translate-y-1/2 rounded-dot border-[3px] border-route-line",
+                        "absolute end-[calc(10px_+_var(--route-stroke)/2_-_var(--route-node-size)/2_-_48px)] top-1/2 size-[var(--route-node-size)] -translate-y-1/2 rounded-dot border-[3px] border-route-line",
                         active ? "bg-route-node-active" : "bg-route-node",
                       )}
                     />

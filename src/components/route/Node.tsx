@@ -16,8 +16,8 @@ export function Node({ state = "upcoming", className }: Props) {
     <span
       aria-hidden="true"
       className={cn(
-        "absolute end-[calc(var(--rail-x)_+_var(--route-stroke)/2_-_var(--route-node)/2)] top-[calc(var(--section-padding)_+_2px)]",
-        "size-(--route-node) rounded-dot border-[3px] border-route-line",
+        "absolute end-[calc(var(--rail-x)_+_var(--route-stroke)/2_-_var(--route-node-size)/2)] top-[calc(var(--section-padding)_+_2px)]",
+        "size-(--route-node-size) rounded-dot border-[3px] border-route-line",
         state === "upcoming" && "bg-route-node",
         state === "current" && "bg-route-node-active",
         state === "passed" && "bg-route-line",
