@@ -44,5 +44,11 @@ export const defaultTransition = { ease: easeRoute, duration: durations.slow } a
 /** Reveal-on-scroll: play once, when ~20% of the element is visible. */
 export const viewport = { once: true, amount: 0.2 } as const;
 
+/**
+ * Inline script (runs before paint): marks that JS is running, so the hidden start states of scroll effects
+ * (styles/motion.css, `html[data-js]`) only ever apply when the script that reveals them can run.
+ */
+export const jsFlagScript = `document.documentElement.setAttribute("data-js","");`;
+
 /** Media query for scroll-pinned effects (desktop only, motion allowed). */
 export const pinMedia = "(min-width: 1024px) and (prefers-reduced-motion: no-preference)";

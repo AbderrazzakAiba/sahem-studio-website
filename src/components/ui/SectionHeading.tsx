@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Reveal } from "@/components/motion/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { cn } from "@/lib/utils";
 
@@ -16,16 +17,16 @@ type Props = {
   className?: string;
 };
 
-/** Eyebrow + h2 + optional lead, the opening of most sections (handoff home screens). */
+/** Eyebrow + h2 + optional lead, the opening of most sections (handoff home screens). Reveals on scroll (M-09). */
 export function SectionHeading({ id, eyebrow, latin, title, lead, size = "title", action, className }: Props) {
   const heading = (
-    <div className="flex flex-col gap-3 md:gap-4">
+    <Reveal stagger className="flex flex-col gap-3 md:gap-4">
       <Eyebrow label={eyebrow} latin={latin} />
       <h2 id={id} className={size === "display" ? "max-w-[1100px] text-display" : "text-title"}>
         {title}
       </h2>
       {lead ? <p className="max-w-[620px] text-lead text-text-secondary">{lead}</p> : null}
-    </div>
+    </Reveal>
   );
 
   if (!action) return <div className={className}>{heading}</div>;

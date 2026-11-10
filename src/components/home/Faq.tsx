@@ -1,4 +1,5 @@
 import { Section } from "@/components/layout/Section";
+import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { Dictionary } from "@/lib/dictionaries";
@@ -27,7 +28,7 @@ export function Faq({ t, whatsapp, email }: Props) {
           className="lg:col-start-1 lg:row-start-1"
         />
 
-        <div className="border-t border-border-subtle lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <Reveal stagger className="border-t border-border-subtle lg:col-start-2 lg:row-span-2 lg:row-start-1">
           {t.items.map((item, i) => (
             <details key={item.q} open={i === 0} className="group/faq border-b border-border-subtle">
               <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-3 text-[17px] font-medium md:min-h-[72px] md:gap-4 md:text-[19px] lg:min-h-[76px] lg:text-[20px] [&::-webkit-details-marker]:hidden">
@@ -37,12 +38,15 @@ export function Faq({ t, whatsapp, email }: Props) {
                   <span className="absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 bg-current transition-transform duration-[var(--duration-fast)] ease-[var(--ease-route)] group-open/faq:scale-y-0 motion-reduce:transition-none" />
                 </span>
               </summary>
-              <p className="mb-5 max-w-[640px] text-[15px] leading-[1.75] text-text-secondary md:mb-6 md:text-[16px]">
+              <p
+                data-faq-answer=""
+                className="mb-5 max-w-[640px] text-[15px] leading-[1.75] text-text-secondary md:mb-6 md:text-[16px]"
+              >
                 {item.a}
               </p>
             </details>
           ))}
-        </div>
+        </Reveal>
 
         <p className="text-[15px] text-text-secondary lg:col-start-1 lg:row-start-2 lg:text-lead">
           {t.notFound}{" "}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Section } from "@/components/layout/Section";
+import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
@@ -31,7 +32,7 @@ export function Services({ t, locale }: Props) {
           action={<LinkArrow href={allHref}>{t.all}</LinkArrow>}
         />
 
-        <ul className="grid gap-3 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-6">
+        <Reveal as="ul" stagger className="grid gap-3 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-6">
           {serviceSlugs.map((slug, i) => (
             <li key={slug} className="flex">
               <Link
@@ -55,7 +56,7 @@ export function Services({ t, locale }: Props) {
               </Link>
             </li>
           ))}
-        </ul>
+        </Reveal>
 
         <Button asChild variant="secondary" className="md:hidden">
           <Link href={allHref}>{t.all}</Link>

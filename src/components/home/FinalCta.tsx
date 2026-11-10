@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RouteHit } from "@/components/home/RouteHit";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
@@ -55,35 +56,5 @@ export function FinalCta({ t, startHref, startLabel, whatsapp }: Props) {
         </div>
       </Container>
     </Section>
-  );
-}
-
-/** Arrowhead + line + corner up into the rail, and the Signal burst. Decorative. */
-function RouteHit() {
-  return (
-    <span
-      aria-hidden="true"
-      className="relative -me-[calc(var(--page-margin)/2)] flex w-13 shrink-0 items-center md:w-auto md:min-w-30 md:flex-[1_1_120px]"
-    >
-      <svg
-        viewBox="0 0 26 26"
-        preserveAspectRatio="none"
-        focusable="false"
-        className="h-[18px] w-4 shrink-0 md:size-[26px] ltr:-scale-x-100"
-      >
-        <path d="M26 13L0 1V25Z" className="fill-route-line" />
-      </svg>
-      <span className="h-(--route-stroke) flex-1 bg-route-line" />
-      <span className="relative size-5 shrink-0 -translate-y-[calc((20px_-_var(--route-stroke))/2)] rounded-ee-[20px] border-e-(length:--route-stroke) border-b-(length:--route-stroke) border-route-line md:size-10 md:-translate-y-[calc((40px_-_var(--route-stroke))/2)] md:rounded-ee-[40px]">
-        <span className="absolute -end-(--route-stroke) bottom-full h-[4000px] w-(--route-stroke) bg-route-line" />
-      </span>
-      <svg
-        viewBox="0 0 24 56"
-        focusable="false"
-        className="absolute -start-4 top-1/2 z-[2] h-11 w-4 -translate-y-1/2 md:-start-6 md:h-14 md:w-6 ltr:-scale-x-100"
-      >
-        <path d="M4 14L12 6M6 28H18M4 42L12 50" fill="none" strokeWidth={3} className="stroke-accent-signal" />
-      </svg>
-    </span>
   );
 }

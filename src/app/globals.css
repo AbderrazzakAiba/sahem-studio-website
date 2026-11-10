@@ -15,6 +15,7 @@
 @import "../styles/tailwind.theme.css";
 @import "../styles/dark-mode.css";
 @import "../styles/typography.css";
+@import "../styles/motion.css";
 
 /* `dark:` utilities follow the site mode switch (html[data-mode="dark"]), not the OS. */
 @custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));

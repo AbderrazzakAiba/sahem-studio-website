@@ -1,4 +1,6 @@
+import { Arrowhead, ProcessTimeline } from "@/components/home/ProcessTimeline";
 import { Section } from "@/components/layout/Section";
+import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
@@ -21,19 +23,8 @@ export function Process({ t }: { t: Dictionary["home"]["process"] }) {
       <Container className="relative flex flex-col gap-8 md:gap-12 lg:gap-16">
         <SectionHeading id="process-title" eyebrow={t.eyebrow} latin={t.latin} title={t.title} lead={t.lead} />
 
-        <div className="relative">
-          {/* Desktop track */}
-          <span
-            aria-hidden="true"
-            className="absolute start-2.5 end-5 top-2 h-(--route-stroke) bg-route-line max-lg:hidden"
-          />
-          <span
-            aria-hidden="true"
-            className="absolute -start-2 -top-px size-[22px] rounded-dot bg-accent-signal max-lg:hidden"
-          />
-          <Arrowhead className="absolute end-0 top-0 size-[22px] max-lg:hidden" />
-
-          <ol className="grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:grid-cols-4 lg:gap-6">
+        <ProcessTimeline steps={t.steps.length}>
+          <Reveal as="ol" stagger className="grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:grid-cols-4 lg:gap-6">
             {t.steps.map((step, i) => (
               <li
                 key={step.title}
@@ -41,6 +32,7 @@ export function Process({ t }: { t: Dictionary["home"]["process"] }) {
               >
                 <span
                   aria-hidden="true"
+                  data-step-node=""
                   className={cn(
                     nodeClass,
                     // mobile: centred on the page rail, out in the margin
@@ -72,19 +64,10 @@ export function Process({ t }: { t: Dictionary["home"]["process"] }) {
                 <Tag className="mt-1">{step.deliverable}</Tag>
               </li>
             ))}
-          </ol>
-        </div>
+          </Reveal>
+        </ProcessTimeline>
       </Container>
     </Section>
-  );
-}
-
-/** Points forward along the route: left in Arabic, right in English/French. */
-function Arrowhead({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 22 22" aria-hidden="true" focusable="false" className={cn("ltr:-scale-x-100", className)}>
-      <path d="M22 1L0 11L22 21Z" className="fill-route-line" />
-    </svg>
   );
 }
 
