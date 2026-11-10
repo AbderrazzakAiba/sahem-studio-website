@@ -1,0 +1,190 @@
+/*
+ * Motion — CSS side (handoff 05-motion/motion-spec.md). Values come from the tokens (--duration-*, --ease-route,
+ * --stagger-*, --move-*), which drop to 0ms under prefers-reduced-motion (tokens.css).
+ *
+ * 1. The hero plays in pure CSS from the first paint, exactly like the handoff screens: no JS, no wait for
+ *    hydration, and it always ends complete (M-03 … M-06).
+ * 2. Scroll effects are driven by Motion (components). Their hidden start states below apply only when
+ *    JS runs (html[data-js], set by an inline script before paint) and motion is allowed — so without JS,
+ *    or with "reduce motion", everything is simply shown complete.
+ */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* ── Hero ───────────────────────────────────────────────────────────── */
+
+  /* M-03 headline: each line rises out of its mask, stagger-md */
+  .hero-line > span {
+    animation: route-rise var(--duration-slower) var(--ease-route) both;
+  }
+  .hero-line:nth-child(2) > span {
+    animation-delay: var(--stagger-md);
+  }
+  .hero-line:nth-child(3) > span {
+    animation-delay: calc(2 * var(--stagger-md));
+  }
+
+  /* M-04 eyebrow, lead, actions: +500ms, stagger-sm (index in --i) */
+  .hero-fade {
+    animation: route-fade-up var(--duration-slower) var(--ease-route) both;
+    animation-delay: calc(500ms + var(--i, 0) * var(--stagger-sm));
+  }
+
+  /* M-05 route band: start dot pops, the path draws, stations appear (+900ms, stagger-md) */
+  .hero-route-dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: route-pop var(--duration-slow) var(--ease-route) both;
+  }
+  .hero-route-path {
+    stroke-dasharray: 1;
+    animation: route-draw var(--duration-route) var(--ease-route) 300ms both;
+  }
+  .hero-route-station {
+    animation: route-fade var(--duration-slow) var(--ease-route) both;
+    animation-delay: calc(900ms + var(--i, 0) * var(--stagger-md));
+  }
+  /* tablet / mobile: the straight line grows from the reading start */
+  .hero-route-line {
+    animation: route-grow-x 1.1s var(--ease-route) 300ms both;
+  }
+  :dir(rtl) .hero-route-line {
+    transform-origin: right;
+  }
+  :dir(ltr) .hero-route-line {
+    transform-origin: left;
+  }
+
+  /* M-06 the route turns down into the rail */
+  .hero-route-turn {
+    animation: route-fade var(--duration-fast) var(--ease-route) 1.4s both;
+  }
+  .hero-route-ext {
+    transform-origin: top;
+    animation: route-grow-y var(--duration-slower) var(--ease-route) 1.6s both;
+  }
+
+  /* ── Scroll effects: hidden start states (JS only) ──────────────────── */
+
+  /* M-09 / M-10 reveals (<Reveal>): the element, or each child of a group */
+  html[data-js] [data-reveal="self"]:not([data-revealed]),
+  html[data-js] [data-reveal="group"]:not([data-revealed]) > * {
+    opacity: 0;
+    transform: translateY(var(--move-md));
+  }
+
+  /* M-08 stations not reached yet are smaller */
+  html[data-js] [data-station][data-state="upcoming"] {
+    scale: 0.6;
+  }
+
+  /* M-11 process timeline (desktop): stations appear as the line passes them */
+  @media (min-width: 1024px) {
+    html[data-js] [data-timeline] [data-step-node] {
+      scale: 0;
+      transition: scale var(--duration-fast) var(--ease-route);
+    }
+    html[data-js] [data-timeline][data-reached="1"] li:nth-child(-n + 1) [data-step-node],
+    html[data-js] [data-timeline][data-reached="2"] li:nth-child(-n + 2) [data-step-node],
+    html[data-js] [data-timeline][data-reached="3"] li:nth-child(-n + 3) [data-step-node],
+    html[data-js] [data-timeline][data-reached="4"] li:nth-child(-n + 4) [data-step-node] {
+      scale: 1;
+    }
+  }
+
+  /* M-18 final hit: pieces wait until the CTA reaches 55% of the viewport */
+  html[data-js] [data-hit-root]:not([data-done]) [data-hit="ext"] {
+    transform: scaleY(0);
+  }
+  html[data-js] [data-hit-root]:not([data-done]) [data-hit="corner"],
+  html[data-js] [data-hit-root]:not([data-done]) [data-hit="arrow"] {
+    opacity: 0;
+  }
+  html[data-js] [data-hit-root]:not([data-done]) [data-hit="line"] {
+    transform: scaleX(0);
+  }
+  html[data-js] [data-hit-root]:not([data-done]) [data-hit="dashes"] {
+    transform: scale(0);
+  }
+
+  /* ── M-17 FAQ answer ─────────────────────────────────────────────────── */
+  details[open] > [data-faq-answer] {
+    animation: route-fade-down var(--duration-base) var(--ease-route) both;
+  }
+}
+
+/* Station colour change (M-08) — kept with reduced motion ("colour change only"). */
+[data-station] {
+  transition:
+    background-color var(--duration-fast) var(--ease-route),
+    border-color var(--duration-fast) var(--ease-route),
+    scale var(--duration-fast) var(--ease-route);
+}
+
+@keyframes route-rise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes route-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--move-md));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes route-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--move-sm)));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes route-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes route-pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes route-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes route-grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes route-grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}

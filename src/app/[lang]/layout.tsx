@@ -8,6 +8,7 @@ import { MotionProvider } from "@/components/motion-provider";
 import { site, startHref, whatsappHref } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
+import { jsFlagScript } from "@/lib/motion";
 import { modeScript } from "@/lib/theme";
 import "../globals.css";
 
@@ -55,7 +56,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     <html lang={lang} dir={localeInfo[lang].dir} className={fontVariables} suppressHydrationWarning>
       <head>
         {/* Sets data-mode before first paint (no light/dark flash). */}
-        <script dangerouslySetInnerHTML={{ __html: modeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: modeScript + jsFlagScript }} />
       </head>
       <body>
         <a
