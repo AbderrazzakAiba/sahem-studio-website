@@ -6,7 +6,8 @@
   },
   "a11y": {
     "skipToContent": "Skip to content",
-    "homeLink": "Sahem Studio — Home"
+    "homeLink": "Sahem Studio — Home",
+    "breadcrumb": "Breadcrumb"
   },
   "nav": {
     "label": "Main",
@@ -201,6 +202,35 @@
       "title": "From brief to bullseye.",
       "lead": "Tell us about your idea in four short steps, and we’ll come back with a clear plan.",
       "whatsapp": "Or message us on WhatsApp"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Services",
+      "description": "Six services that work as one: websites, landing pages, visual identities, social media content, automation and motion graphics."
+    },
+    "eyebrow": "Services",
+    "latin": "",
+    "title": "What we do",
+    "lead": "Six services that work as one: from identity to website to content. Pick what you need, or let us map the right mix for you.",
+    "listLabel": "Services list",
+    "details": "View service",
+    "tags": {
+      "websites": ["Sitemap", "Interface design", "Development"],
+      "landing-pages": ["One message", "Design", "Measurement"],
+      "identity": ["Logo", "Colours & type", "Usage guide"],
+      "social": ["Content plan", "Templates", "Posts"],
+      "automation": ["Task audit", "Tool integration", "Training"],
+      "motion": ["Concept", "Animation", "Delivery"]
+    },
+    "help": {
+      "eyebrow": "Not sure yet?",
+      "latin": "",
+      "title": "Tell us your goal, and we’ll suggest the route.",
+      "lead": "In the form, choose “Not sure yet”, or message us directly. Most projects combine two services or more.",
+      "whatsapp": "Message us on WhatsApp",
+      "email": "Email us",
+      "process": "Or read how we work"
     }
   }
 }

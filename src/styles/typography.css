@@ -62,3 +62,14 @@
   font-weight: 600;
   letter-spacing: 0.14em !important;
 }
+
+/* Page / section heading between title and display (handoff .h1): 36 → 56px. */
+@utility text-heading {
+  font-size: clamp(32px, 28.6px + 1.9vw, 56px);
+  font-weight: 600;
+  line-height: 1.21;
+  &:where(:lang(en), :lang(fr)) {
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+  }
+}

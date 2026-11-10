@@ -26,7 +26,7 @@ export function Logo({ name, size = "md", className }: Props) {
         <path d="M93.5 2L118.7 15L93.5 28Z" fill="currentColor" />
         <circle cx="7.4" cy="139" r="13" fill="var(--accent-signal)" />
       </svg>
-      <span className={cn("font-semibold", md ? "text-[20px]" : "text-[17px]")}>{name}</span>
+      <span className={cn("font-semibold whitespace-nowrap", md ? "text-[20px]" : "text-[17px]")}>{name}</span>
     </span>
   );
 }
