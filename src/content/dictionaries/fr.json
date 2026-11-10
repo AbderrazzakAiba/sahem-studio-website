@@ -232,5 +232,520 @@
       "email": "Écrivez-nous par e-mail",
       "process": "Ou découvrez notre méthode"
     }
+  },
+  "service": {
+    "labels": {
+      "eyebrow": "Service",
+      "latinPrefix": "",
+      "forYouEyebrow": "Pour qui",
+      "forYouLatin": "",
+      "forYouTitle": "C’est pour vous si…",
+      "deliverablesEyebrow": "Livrables",
+      "deliverablesLatin": "",
+      "routeEyebrow": "La route",
+      "routeLatin": "",
+      "routeTitle": "Quatre étapes, de l’idée au lancement.",
+      "readProcess": "Découvrir toute notre méthode",
+      "duration": "Durée :",
+      "workEyebrow": "Réalisations liées",
+      "workLatin": "",
+      "allWork": "Toutes les réalisations",
+      "faqEyebrow": "FAQ",
+      "faqLatin": "",
+      "moreEyebrow": "Autres services",
+      "moreLatin": "",
+      "moreDetails": "Détails",
+      "ctaEyebrow": "Lancer un projet",
+      "ctaLatin": "",
+      "preselected": "présélectionné dans le formulaire"
+    },
+    "items": {
+      "websites": {
+        "lead": "Des sites rapides et clairs, conçus pour convertir : le visiteur comprend ce que vous proposez, puis il demande.",
+        "seeWork": "Réalisations web",
+        "forYou": [
+          "Vous lancez un projet et avez besoin d’un site qui explique clairement ce que vous faites.",
+          "Votre site actuel n’apporte aucune demande et ne reflète plus votre niveau.",
+          "Vous voulez que le visiteur devienne client, pas qu’il parcoure puis reparte."
+        ],
+        "deliverables": {
+          "title": "Tout ce qu’il faut pour lancer votre site.",
+          "lead": "Six livrables clairs. Rien de caché, aucune surprise en fin de route.",
+          "items": [
+            {
+              "title": "Arborescence et contenu des pages",
+              "text": "Nous définissons les pages et ce que dit chaque section avant tout design."
+            },
+            {
+              "title": "Design des interfaces",
+              "text": "Ordinateur et mobile, à l’identité de votre marque."
+            },
+            {
+              "title": "Développement",
+              "text": "Un site rapide, facile à parcourir, prêt à publier."
+            },
+            {
+              "title": "Moyens de contact",
+              "text": "Un formulaire de demande et des liens WhatsApp au bon endroit."
+            },
+            {
+              "title": "Bases du référencement",
+              "text": "Titres, descriptions et structure compris par les moteurs de recherche."
+            },
+            {
+              "title": "Livraison",
+              "text": "Tous les fichiers, et un court guide pour gérer le site."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "Nous comprenons votre activité, votre public et ce que le site doit accomplir.",
+            "duration": "3–5 jours"
+          },
+          {
+            "text": "L’arborescence et le contenu de chaque page.",
+            "duration": "1 semaine"
+          },
+          {
+            "text": "Les interfaces, puis le développement, validés avec vous à chaque étape.",
+            "duration": "2–4 semaines"
+          },
+          {
+            "text": "Mise en ligne, tests et remise des fichiers.",
+            "duration": "2–3 jours"
+          }
+        ],
+        "workTitle": "Sites que nous avons conçus",
+        "faqTitle": "Questions sur les sites web",
+        "faq": [
+          {
+            "q": "Combien coûte un site ?",
+            "a": "Cela dépend du nombre de pages et des fonctionnalités (boutique, réservation, plusieurs langues). Après la séance de découverte, vous recevez un devis détaillé en dinars algériens, sans engagement."
+          },
+          {
+            "q": "Combien de temps faut-il ?",
+            "a": "Un site vitrine prend en général trois à six semaines, selon le volume de contenu et la rapidité des validations. Nous fixons ensemble un calendrier par étapes."
+          },
+          {
+            "q": "Puis-je modifier le contenu moi-même après le lancement ?",
+            "a": "Oui. Nous prévoyons un moyen simple de changer textes et images, et vous remettons un court guide de gestion."
+          },
+          {
+            "q": "Vous occupez-vous du domaine et de l’hébergement ?",
+            "a": "Nous vous aidons à choisir le domaine et l’hébergement adaptés et à les connecter ; ils restent à votre nom."
+          }
+        ],
+        "cta": {
+          "title": "Lançons votre site.",
+          "lead": "Quatre courtes étapes, avec « Sites web & développement » déjà sélectionné."
+        }
+      },
+      "landing-pages": {
+        "lead": "Une page, un objectif : un message clair et un design qui mène le visiteur à une seule action : commander, réserver ou s’inscrire.",
+        "seeWork": "Réalisations landing pages",
+        "forYou": [
+          "Vous lancez un produit ou une offre et avez besoin d’une page rapide pour l’expliquer.",
+          "Vous payez des publicités et voulez que les clics deviennent des demandes.",
+          "Il vous faut une page d’inscription pour un événement, une formation ou une liste d’attente."
+        ],
+        "deliverables": {
+          "title": "Une page prête pour votre campagne.",
+          "lead": "Tout ce qu’il faut pour lancer votre campagne en confiance, du message à la mesure.",
+          "items": [
+            {
+              "title": "Message et titre",
+              "text": "Nous formulons votre offre en une phrase comprise immédiatement."
+            },
+            {
+              "title": "Structure de la page",
+              "text": "Des sections ordonnées du problème à la solution, puis à l’action."
+            },
+            {
+              "title": "Design",
+              "text": "Mobile d’abord, à l’identité de votre marque."
+            },
+            {
+              "title": "Formulaire ou bouton d’action",
+              "text": "Une seule étape claire, avec un message de confirmation."
+            },
+            {
+              "title": "Mesure",
+              "text": "Outils statistiques connectés pour savoir ce qui fonctionne."
+            },
+            {
+              "title": "Mise en ligne et livraison",
+              "text": "Une page publiée sur votre domaine, avec tous les fichiers."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "Nous définissons l’offre, le public et l’action attendue.",
+            "duration": "2 jours"
+          },
+          {
+            "text": "Le message et l’ordre des sections.",
+            "duration": "2–3 jours"
+          },
+          {
+            "text": "Le design, puis la réalisation, validés avec vous.",
+            "duration": "1 semaine"
+          },
+          {
+            "text": "Mise en ligne, mesure et livraison.",
+            "duration": "1 jour"
+          }
+        ],
+        "workTitle": "Landing pages que nous avons conçues",
+        "faqTitle": "Questions sur les landing pages",
+        "faq": [
+          {
+            "q": "Quelle différence entre une landing page et un site ?",
+            "a": "Un site vous présente en entier ; une landing page se concentre sur une offre et un objectif, d’où son intérêt pour les campagnes et les publicités."
+          },
+          {
+            "q": "Rédigez-vous aussi les textes ?",
+            "a": "Oui, nous construisons le message et les textes avec vous : c’est la moitié de la réussite de la page."
+          },
+          {
+            "q": "Peut-elle fonctionner avec mes publicités ?",
+            "a": "Oui, nous la préparons pour le trafic publicitaire et connectons les outils de mesure pour suivre les résultats."
+          },
+          {
+            "q": "Combien de temps faut-il ?",
+            "a": "En général une à deux semaines, selon l’état d’avancement du contenu."
+          }
+        ],
+        "cta": {
+          "title": "Lançons votre page.",
+          "lead": "Quatre courtes étapes, avec « Landing pages » déjà sélectionné."
+        }
+      },
+      "identity": {
+        "lead": "Un système d’identité complet, pas seulement un logo : logo, couleurs, typographies et règles d’usage qui rendent votre marque distincte et cohérente partout.",
+        "seeWork": "Réalisations identité",
+        "forYou": [
+          "Vous créez une marque et voulez qu’elle paraisse professionnelle dès le premier jour.",
+          "Vous avez un logo, mais chaque publication et chaque imprimé semble différent.",
+          "Votre marque a grandi et son ancienne image ne la représente plus."
+        ],
+        "deliverables": {
+          "title": "Une identité qui fonctionne partout.",
+          "lead": "Six livrables pour une marque cohérente, du concept au guide d’usage.",
+          "items": [
+            {
+              "title": "Recherche et direction visuelle",
+              "text": "Nous étudions votre marque et vos concurrents, puis proposons une direction claire."
+            },
+            {
+              "title": "Logo et déclinaisons",
+              "text": "Le logo principal et ses versions horizontale et compacte pour chaque usage."
+            },
+            {
+              "title": "Couleurs et typographies",
+              "text": "Une palette et des polices choisies avec soin, avec leur mode d’emploi."
+            },
+            {
+              "title": "Éléments graphiques",
+              "text": "Motifs, icônes et formes qui donnent du caractère à votre identité."
+            },
+            {
+              "title": "Applications",
+              "text": "Cartes, publications, interfaces : l’identité en situation réelle."
+            },
+            {
+              "title": "Guide d’usage",
+              "text": "Un document qui explique les règles, avec tous les fichiers prêts à l’emploi."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "Nous comprenons votre marque, votre public et vos concurrents.",
+            "duration": "3–5 jours"
+          },
+          {
+            "text": "Direction visuelle et planches d’inspiration.",
+            "duration": "1 semaine"
+          },
+          {
+            "text": "Création du logo et du système, avec des tours de validation.",
+            "duration": "2–3 semaines"
+          },
+          {
+            "text": "Guide d’usage et remise des fichiers.",
+            "duration": "2–3 jours"
+          }
+        ],
+        "workTitle": "Identités que nous avons créées",
+        "faqTitle": "Questions sur l’identité visuelle",
+        "faq": [
+          {
+            "q": "Combien de propositions de logo verrai-je ?",
+            "a": "Nous présentons des directions réfléchies plutôt que des dizaines d’options au hasard, puis développons celle que vous choisissez au fil des validations."
+          },
+          {
+            "q": "Suis-je propriétaire du logo ?",
+            "a": "Oui, à la livraison tous les droits d’usage vous sont cédés, avec les fichiers sources."
+          },
+          {
+            "q": "Pouvez-vous moderniser mon logo actuel plutôt que le changer ?",
+            "a": "Oui. Parfois, moderniser le logo et harmoniser son usage suffit."
+          },
+          {
+            "q": "Dans quels formats je reçois les fichiers ?",
+            "a": "Des fichiers pour l’impression et l’écran (SVG, PDF, PNG), en couleur et en monochrome."
+          }
+        ],
+        "cta": {
+          "title": "Lançons votre identité.",
+          "lead": "Quatre courtes étapes, avec « Identité visuelle & logos » déjà sélectionné."
+        }
+      },
+      "social": {
+        "lead": "Des contenus à l’identité cohérente et un plan clair : nous savons quoi publier, quand et pourquoi, pour des comptes professionnels qui parlent à votre public.",
+        "seeWork": "Réalisations réseaux sociaux",
+        "forYou": [
+          "Vos comptes existent, mais les publications sont irrégulières et sans plan.",
+          "Chaque publication ressemble peu à la précédente.",
+          "Vous voulez vous concentrer sur votre activité et confier le contenu à une équipe qui comprend votre marque."
+        ],
+        "deliverables": {
+          "title": "Des contenus organisés, chaque mois.",
+          "lead": "Du plan au rapport, vous savez toujours ce qui est publié et pourquoi.",
+          "items": [
+            {
+              "title": "Plan de contenu mensuel",
+              "text": "Sujets et dates de publication liés à vos objectifs."
+            },
+            {
+              "title": "Modèles à votre image",
+              "text": "Modèles de publications et de stories pour un rendu cohérent."
+            },
+            {
+              "title": "Design des publications",
+              "text": "Publications et stories prêtes chaque semaine."
+            },
+            {
+              "title": "Rédaction",
+              "text": "Légendes et textes dans la langue de votre public."
+            },
+            {
+              "title": "Vidéos courtes",
+              "text": "Reels et courtes vidéos, selon le plan."
+            },
+            {
+              "title": "Rapport mensuel",
+              "text": "Ce qui a marché, et ce que nous améliorons le mois suivant."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "Nous comprenons votre public, vos objectifs et vos comptes actuels.",
+            "duration": "3 jours"
+          },
+          {
+            "text": "Le plan du mois et les modèles.",
+            "duration": "1 semaine"
+          },
+          {
+            "text": "Design et rédaction, validés par vous avant publication.",
+            "duration": "Chaque semaine"
+          },
+          {
+            "text": "Publication, suivi et rapport.",
+            "duration": "Chaque mois"
+          }
+        ],
+        "workTitle": "Contenus que nous avons créés",
+        "faqTitle": "Questions sur les réseaux sociaux",
+        "faq": [
+          {
+            "q": "Publiez-vous à ma place ?",
+            "a": "Oui si vous le souhaitez, ou nous vous livrons des contenus prêts à publier."
+          },
+          {
+            "q": "Sur quelles plateformes travaillez-vous ?",
+            "a": "Surtout Instagram, Facebook et TikTok ; nous choisissons avec vous ce qui convient à votre public."
+          },
+          {
+            "q": "La publicité payante est-elle incluse ?",
+            "a": "La gestion des publicités est un service à part, mais nous préparons les visuels adaptés."
+          },
+          {
+            "q": "Est-ce un abonnement mensuel ?",
+            "a": "Oui, ce service fonctionne sous forme de forfait mensuel ajustable ou suspendable."
+          }
+        ],
+        "cta": {
+          "title": "Lançons vos contenus.",
+          "lead": "Quatre courtes étapes, avec « Contenu réseaux sociaux » déjà sélectionné."
+        }
+      },
+      "automation": {
+        "lead": "Nous connectons vos outils et automatisons les tâches répétitives : commandes, messages et rapports avancent seuls, et vous vous concentrez sur l’essentiel.",
+        "seeWork": "Réalisations automatisation",
+        "forYou": [
+          "Vous recopiez des données à la main entre tableaux, messages et applications.",
+          "Des commandes ou des messages se perdent parce que tout passe par une seule personne.",
+          "Vous voulez des rapports prêts sans les compiler chaque semaine."
+        ],
+        "deliverables": {
+          "title": "Moins de tâches, plus de temps.",
+          "lead": "Nous commençons par comprendre votre travail et finissons avec un système qui tourne et une équipe qui sait l’utiliser.",
+          "items": [
+            {
+              "title": "Analyse des tâches",
+              "text": "Nous cartographions avec vous les tâches répétitives et choisissons ce qui mérite d’être automatisé."
+            },
+            {
+              "title": "Schéma des workflows",
+              "text": "Une vue claire de ce qui se passe automatiquement, et quand."
+            },
+            {
+              "title": "Connexion des outils",
+              "text": "Site, tableaux, e-mail et messagerie reliés entre eux."
+            },
+            {
+              "title": "Alertes et rapports",
+              "text": "Notifications instantanées et rapports générés automatiquement."
+            },
+            {
+              "title": "Tests",
+              "text": "Chaque parcours essayé avant la mise en service."
+            },
+            {
+              "title": "Formation et documentation",
+              "text": "Une prise en main pour votre équipe et un guide écrit par workflow."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "Nous observons votre façon de travailler et repérons où le temps se perd.",
+            "duration": "2–3 jours"
+          },
+          {
+            "text": "Le schéma des workflows et les bons outils.",
+            "duration": "3–5 jours"
+          },
+          {
+            "text": "Construction et connexions, chaque parcours testé.",
+            "duration": "1–3 semaines"
+          },
+          {
+            "text": "Mise en service, formation et suivi.",
+            "duration": "2–3 jours"
+          }
+        ],
+        "workTitle": "Automatisations réalisées",
+        "faqTitle": "Questions sur l’automatisation",
+        "faq": [
+          {
+            "q": "Faut-il des connaissances techniques ?",
+            "a": "Non. Nous construisons le système et l’expliquons à votre équipe simplement."
+          },
+          {
+            "q": "Quels outils utilisez-vous ?",
+            "a": "Selon vos besoins et votre budget : Google Sheets, formulaires, outils d’intégration comme Make ou n8n, et des solutions sur mesure si nécessaire."
+          },
+          {
+            "q": "Mes données sont-elles en sécurité ?",
+            "a": "Nous travaillons avec le minimum d’accès, comptes et données restent à votre nom, et chaque connexion est documentée."
+          },
+          {
+            "q": "Et si mon activité change plus tard ?",
+            "a": "Les workflows peuvent être ajustés ou étendus, et nous assurons un suivi après la mise en service."
+          }
+        ],
+        "cta": {
+          "title": "Automatisons votre travail.",
+          "lead": "Quatre courtes étapes, avec « Automatisation & workflows » déjà sélectionné."
+        }
+      },
+      "motion": {
+        "lead": "Une animation qui explique votre idée en quelques secondes : de courtes vidéos pour votre produit, votre service ou votre publicité, à l’identité de votre marque.",
+        "seeWork": "Réalisations motion",
+        "forYou": [
+          "Votre idée ou votre produit demande plus d’explications qu’une image.",
+          "Vous voulez une publicité courte qui capte l’attention dès la première seconde.",
+          "Il vous faut un logo animé ou une intro pour vos vidéos."
+        ],
+        "deliverables": {
+          "title": "De l’idée à la vidéo finale.",
+          "lead": "Six livrables, du premier script aux fichiers finaux dans tous les formats.",
+          "items": [
+            {
+              "title": "Idée et script",
+              "text": "Nous écrivons le message et le script, en quelques secondes d’écran."
+            },
+            {
+              "title": "Storyboard",
+              "text": "Des croquis de chaque scène avant l’animation."
+            },
+            {
+              "title": "Illustrations et éléments",
+              "text": "Personnages et éléments dessinés à l’identité de votre marque."
+            },
+            {
+              "title": "Animation",
+              "text": "Un mouvement précis, en rythme."
+            },
+            {
+              "title": "Son et musique",
+              "text": "Voix off et musique sous licence si besoin."
+            },
+            {
+              "title": "Livraison tous formats",
+              "text": "Versions horizontale, verticale et carrée, prêtes à publier."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "Nous comprenons le message, le public et le lieu de diffusion.",
+            "duration": "2 jours"
+          },
+          {
+            "text": "Script et storyboard.",
+            "duration": "3–5 jours"
+          },
+          {
+            "text": "Illustration, puis animation, validées avec vous.",
+            "duration": "1–3 semaines"
+          },
+          {
+            "text": "Son et livraison dans tous les formats.",
+            "duration": "2–3 jours"
+          }
+        ],
+        "workTitle": "Vidéos que nous avons réalisées",
+        "faqTitle": "Questions sur le motion design",
+        "faq": [
+          {
+            "q": "Quelle durée pour la vidéo ?",
+            "a": "Pour la publicité et les réseaux sociaux, souvent 15 à 30 secondes ; pour une vidéo explicative, une à deux minutes."
+          },
+          {
+            "q": "La voix off est-elle incluse ?",
+            "a": "Elle peut être ajoutée en arabe, en français ou en anglais selon votre public."
+          },
+          {
+            "q": "Combien de tours de modifications ?",
+            "a": "Nous validons avec vous au script, au storyboard et à l’animation : les changements arrivent tôt et coûtent moins."
+          },
+          {
+            "q": "Est-ce que je reçois les fichiers sources ?",
+            "a": "Oui si c’est convenu, en plus de la vidéo finale dans tous les formats."
+          }
+        ],
+        "cta": {
+          "title": "Lançons votre vidéo.",
+          "lead": "Quatre courtes étapes, avec « Motion design » déjà sélectionné."
+        }
+      }
+    }
   }
 }

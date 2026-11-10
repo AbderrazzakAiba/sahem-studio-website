@@ -2,10 +2,20 @@ import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import type { Dictionary } from "@/lib/dictionaries";
+
+/** The words of an FAQ block — the home page and each service page pass their own. */
+export type FaqCopy = {
+  eyebrow: string;
+  latin: string;
+  title: string;
+  notFound: string;
+  whatsapp: string;
+  email: string;
+  items: { q: string; a: string }[];
+};
 
 type Props = {
-  t: Dictionary["home"]["faq"];
+  t: FaqCopy;
   /** WhatsApp link when the number is set; otherwise the note offers email. */
   whatsapp: string | null;
   email: string;
