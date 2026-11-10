@@ -18,7 +18,7 @@ Each Trello card in the **Ready to Start** column is built on its own branch and
 ```
 feat(home): add hero route band
 fix(i18n): keep the same page when switching language
-chore(deps): bump gsap to 3.15.1
+chore(deps): bump motion to 14.6.1
 docs: explain dark mode tokens
 ```
 
