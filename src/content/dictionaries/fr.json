@@ -38,5 +38,139 @@
     "follow": "Suivez-nous",
     "privacy": "Politique de confidentialité",
     "copyright": "© {year} Sahem Studio"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Studio créatif & tech",
+      "latin": "",
+      "titleLines": ["Nous traçons", "la route", "vers votre objectif."],
+      "lead": "Un studio créatif et technologique pour les petites et moyennes marques qui veulent se présenter de façon professionnelle : sites web, identités, contenus et automatisations qui vous font gagner du temps.",
+      "seeWork": "Voir nos réalisations"
+    },
+    "why": {
+      "eyebrow": "Pourquoi Sahem",
+      "latin": "",
+      "title": "Votre projet mérite une route claire.",
+      "lead": "Beaucoup de projets commencent par le design avant de savoir où ils vont. Nous partons de l’objectif, puis traçons la route pour l’atteindre, étape par étape."
+    },
+    "services": {
+      "eyebrow": "Services",
+      "latin": "",
+      "title": "Ce que nous proposons",
+      "lead": "Six services qui fonctionnent ensemble : de l’identité au site jusqu’au contenu.",
+      "all": "Tous les services",
+      "details": "Voir le service",
+      "items": {
+        "websites": {
+          "title": "Sites web & développement",
+          "text": "Des sites rapides et clairs, conçus pour convertir."
+        },
+        "landing-pages": {
+          "title": "Landing pages",
+          "text": "Une page, un objectif : transformer le visiteur en client."
+        },
+        "identity": {
+          "title": "Identité visuelle & logos",
+          "text": "Un système complet, pas seulement un logo."
+        },
+        "social": {
+          "title": "Contenu réseaux sociaux",
+          "text": "Des publications et stories cohérentes, avec un plan clair."
+        },
+        "automation": {
+          "title": "Automatisation & workflows",
+          "text": "Moins de tâches répétitives, plus de temps pour l’essentiel."
+        },
+        "motion": {
+          "title": "Motion design",
+          "text": "Une animation qui explique votre idée en quelques secondes."
+        }
+      }
+    },
+    "process": {
+      "eyebrow": "Notre méthode",
+      "latin": "",
+      "title": "Nous planifions avant de concevoir.",
+      "lead": "Quatre étapes claires. Vous savez toujours où vous en êtes et ce que vous recevez à chacune.",
+      "steps": [
+        {
+          "title": "Découvrir",
+          "text": "Nous comprenons votre projet, votre public et le véritable objectif.",
+          "deliverable": "Vous recevez : le brief du projet"
+        },
+        {
+          "title": "Planifier",
+          "text": "Nous traçons la route : structure, contenu et jalons.",
+          "deliverable": "Vous recevez : plan & arborescence"
+        },
+        {
+          "title": "Concevoir",
+          "text": "Nous concevons et réalisons avec précision, en validant avec vous à chaque étape.",
+          "deliverable": "Vous recevez : maquettes & version fonctionnelle"
+        },
+        {
+          "title": "Lancer",
+          "text": "Nous publions, testons et vous remettons tous les fichiers.",
+          "deliverable": "Vous recevez : lancement & tous les fichiers"
+        }
+      ]
+    },
+    "proof": {
+      "lines": ["Les mots ne suffisent pas.", "Voyez le travail."]
+    },
+    "work": {
+      "eyebrow": "Réalisations choisies",
+      "latin": "",
+      "title": "Des projets dont nous sommes fiers",
+      "all": "Toutes les réalisations",
+      "galleryLabel": "Réalisations choisies, faites défiler pour voir plus",
+      "imagePlaceholder": "PLACEHOLDER · 4:3",
+      "client": "[Nom du client]",
+      "result": "[Résultat en mots — sans chiffres non vérifiés]",
+      "tags": {
+        "identity": "Identité visuelle",
+        "website": "Site web",
+        "landing": "Landing page",
+        "social": "Réseaux sociaux",
+        "motion": "Motion"
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "latin": "",
+      "title": "Avant de commencer",
+      "notFound": "Pas trouvé votre réponse ?",
+      "whatsapp": "Écrivez-nous sur WhatsApp",
+      "email": "Écrivez-nous par e-mail",
+      "items": [
+        {
+          "q": "Combien de temps dure un projet ?",
+          "a": "[Réponse de l’équipe : délai habituel pour chaque type de projet.]"
+        },
+        {
+          "q": "Comment le budget est-il fixé ?",
+          "a": "[Réponse de l’équipe]"
+        },
+        {
+          "q": "De quoi ai-je besoin pour commencer ?",
+          "a": "[Réponse de l’équipe]"
+        },
+        {
+          "q": "Puis-je commander un seul service ?",
+          "a": "[Réponse de l’équipe]"
+        },
+        {
+          "q": "Que se passe-t-il après le lancement ?",
+          "a": "[Réponse de l’équipe]"
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Lancer un projet",
+      "latin": "",
+      "title": "De l’idée à l’objectif.",
+      "lead": "Parlez-nous de votre idée en quatre courtes étapes, nous revenons vers vous avec un plan clair.",
+      "whatsapp": "Ou écrivez-nous sur WhatsApp"
+    }
   }
 }

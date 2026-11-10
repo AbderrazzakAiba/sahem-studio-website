@@ -38,5 +38,139 @@
     "follow": "Follow",
     "privacy": "Privacy policy",
     "copyright": "© {year} Sahem Studio"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Creative & Tech Studio",
+      "latin": "",
+      "titleLines": ["We design", "the route", "to your goal."],
+      "lead": "A creative and tech studio for small and medium brands that want to show up professionally: websites, identities, content, and automation that gives you time back.",
+      "seeWork": "See our work"
+    },
+    "why": {
+      "eyebrow": "Why Sahem",
+      "latin": "",
+      "title": "Your project deserves a clear route.",
+      "lead": "Many projects start with design before they know where they are going. We start with the goal, then map the route to it, one step at a time."
+    },
+    "services": {
+      "eyebrow": "Services",
+      "latin": "",
+      "title": "What we do",
+      "lead": "Six services that work as one: from identity to website to content.",
+      "all": "All services",
+      "details": "View service",
+      "items": {
+        "websites": {
+          "title": "Websites & development",
+          "text": "Fast, clear websites, designed and built to convert."
+        },
+        "landing-pages": {
+          "title": "Landing pages",
+          "text": "One page, one goal: turning visitors into clients."
+        },
+        "identity": {
+          "title": "Visual identity & logos",
+          "text": "A complete system, not just a logo."
+        },
+        "social": {
+          "title": "Social media content",
+          "text": "Posts and stories with a consistent look and a clear plan."
+        },
+        "automation": {
+          "title": "Automation & workflows",
+          "text": "Fewer repetitive tasks, more time for the work that matters."
+        },
+        "motion": {
+          "title": "Motion graphics",
+          "text": "Motion that explains your idea in seconds."
+        }
+      }
+    },
+    "process": {
+      "eyebrow": "Our process",
+      "latin": "",
+      "title": "We plan before we design.",
+      "lead": "Four clear stops. You always know where you are, and what you get at each one.",
+      "steps": [
+        {
+          "title": "Discover",
+          "text": "We get to know your project, your audience, and the real goal.",
+          "deliverable": "You get: project brief"
+        },
+        {
+          "title": "Plan",
+          "text": "We map the route: structure, content, and milestones.",
+          "deliverable": "You get: plan & sitemap"
+        },
+        {
+          "title": "Design & build",
+          "text": "We design and build with precision, reviewing with you at every step.",
+          "deliverable": "You get: designs & a working build"
+        },
+        {
+          "title": "Launch",
+          "text": "We publish, test, and hand over every file.",
+          "deliverable": "You get: launch & all files"
+        }
+      ]
+    },
+    "proof": {
+      "lines": ["Talk is cheap.", "See the work."]
+    },
+    "work": {
+      "eyebrow": "Selected work",
+      "latin": "",
+      "title": "Work we are proud of",
+      "all": "All work",
+      "galleryLabel": "Selected work, swipe to see more",
+      "imagePlaceholder": "PLACEHOLDER · 4:3",
+      "client": "[Client name]",
+      "result": "[Result in words — no unverified numbers]",
+      "tags": {
+        "identity": "Visual identity",
+        "website": "Website",
+        "landing": "Landing page",
+        "social": "Social media",
+        "motion": "Motion"
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "latin": "",
+      "title": "Before you start",
+      "notFound": "Didn’t find your answer?",
+      "whatsapp": "Message us on WhatsApp",
+      "email": "Email us",
+      "items": [
+        {
+          "q": "How long does a project take?",
+          "a": "[Answer from the team: typical timeline for each type of project.]"
+        },
+        {
+          "q": "How is the budget set?",
+          "a": "[Answer from the team]"
+        },
+        {
+          "q": "What do I need to get started?",
+          "a": "[Answer from the team]"
+        },
+        {
+          "q": "Can I order just one service?",
+          "a": "[Answer from the team]"
+        },
+        {
+          "q": "What happens after launch?",
+          "a": "[Answer from the team]"
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Start a project",
+      "latin": "",
+      "title": "From brief to bullseye.",
+      "lead": "Tell us about your idea in four short steps, and we’ll come back with a clear plan.",
+      "whatsapp": "Or message us on WhatsApp"
+    }
   }
 }

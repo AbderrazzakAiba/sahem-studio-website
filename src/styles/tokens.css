@@ -121,10 +121,12 @@
   --section-padding: clamp(64px, 40.2px + 6.1vw, 128px);
   --content-max: 1280px;
   --rail-x: max(calc(var(--page-margin) / 2), calc((100% - 1440px) / 2 + 40px));
-  --route-stroke: 5px; --route-node: 21px; --route-corner: 40px;
+  /* Sahem fix: the handoff named the station size --route-node, which collided with the station colour token of
+     the same name (the size overwrote the colour, and dark/Ink overwrote the size). Size renamed to --route-node-size. */
+  --route-stroke: 5px; --route-node-size: 21px; --route-corner: 40px;
 }
-@media (max-width: 1023px) { :root { --route-stroke: 4px; --route-node: 19px; --route-corner: 32px; } }
-@media (max-width: 767px) { :root { --route-stroke: 3px; --route-node: 17px; --route-corner: 24px; } }
+@media (max-width: 1023px) { :root { --route-stroke: 4px; --route-node-size: 19px; --route-corner: 32px; } }
+@media (max-width: 767px) { :root { --route-stroke: 3px; --route-node-size: 17px; --route-corner: 24px; } }
 [data-theme="ink"] {
   --bg-page: var(--ink-900);
   --bg-raised: var(--ink-800);
