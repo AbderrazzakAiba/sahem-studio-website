@@ -232,5 +232,520 @@
       "email": "Email us",
       "process": "Or read how we work"
     }
+  },
+  "service": {
+    "labels": {
+      "eyebrow": "Service",
+      "latinPrefix": "",
+      "forYouEyebrow": "Is it for you",
+      "forYouLatin": "",
+      "forYouTitle": "A good fit if…",
+      "deliverablesEyebrow": "Deliverables",
+      "deliverablesLatin": "",
+      "routeEyebrow": "The route",
+      "routeLatin": "",
+      "routeTitle": "Four stops from idea to launch.",
+      "readProcess": "Read our full process",
+      "duration": "Duration:",
+      "workEyebrow": "Related work",
+      "workLatin": "",
+      "allWork": "All work",
+      "faqEyebrow": "FAQ",
+      "faqLatin": "",
+      "moreEyebrow": "More services",
+      "moreLatin": "",
+      "moreDetails": "Details",
+      "ctaEyebrow": "Start a project",
+      "ctaLatin": "",
+      "preselected": "pre-selected in the form"
+    },
+    "items": {
+      "websites": {
+        "lead": "Fast, clear websites, designed and built to convert: visitors understand what you offer, then they ask.",
+        "seeWork": "Website work",
+        "forYou": [
+          "You’re starting something new and need a site that explains what you do, clearly.",
+          "Your current site brings no requests and no longer reflects your level.",
+          "You want visitors to become clients, not browse and leave."
+        ],
+        "deliverables": {
+          "title": "Everything your site needs to launch.",
+          "lead": "Six clear deliverables. Nothing hidden, no surprises at the end of the road.",
+          "items": [
+            {
+              "title": "Sitemap and page content",
+              "text": "We decide the pages and what each section says before any design."
+            },
+            {
+              "title": "Interface design",
+              "text": "Desktop and mobile, in your brand’s identity."
+            },
+            {
+              "title": "Development",
+              "text": "A fast, easy-to-browse site, ready to publish."
+            },
+            {
+              "title": "Ways to reach you",
+              "text": "A request form and WhatsApp links in the right places."
+            },
+            {
+              "title": "Search basics",
+              "text": "Titles, descriptions and structure search engines understand."
+            },
+            {
+              "title": "Handover",
+              "text": "Every file, plus a short guide to running the site."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "We learn your business, your audience and what the site must achieve.",
+            "duration": "3–5 days"
+          },
+          {
+            "text": "Sitemap and the content of each page.",
+            "duration": "1 week"
+          },
+          {
+            "text": "Interfaces, then development, reviewed with you at every step.",
+            "duration": "2–4 weeks"
+          },
+          {
+            "text": "Publishing, testing and handing over the files.",
+            "duration": "2–3 days"
+          }
+        ],
+        "workTitle": "Websites we’ve designed",
+        "faqTitle": "Questions about websites",
+        "faq": [
+          {
+            "q": "How much does a website cost?",
+            "a": "It depends on the number of pages and features (shop, booking, several languages). After the discovery session you get a detailed quote in Algerian dinars, with no commitment."
+          },
+          {
+            "q": "How long does it take?",
+            "a": "A business website usually takes three to six weeks, depending on the amount of content and how quickly reviews come back. We agree on a timeline with milestones first."
+          },
+          {
+            "q": "Can I edit the content myself after launch?",
+            "a": "Yes. We set up an easy way to change text and images, and hand you a short guide to running the site."
+          },
+          {
+            "q": "Do you handle the domain and hosting?",
+            "a": "We help you choose the right domain and hosting and connect them; both stay in your name."
+          }
+        ],
+        "cta": {
+          "title": "Let’s start your website.",
+          "lead": "Four short steps, with “Websites & development” already selected for you."
+        }
+      },
+      "landing-pages": {
+        "lead": "One page, one goal: a clear message and a design that leads visitors to a single step: order, book or sign up.",
+        "seeWork": "Landing page work",
+        "forYou": [
+          "You’re launching a product or an offer and need a fast page that explains it.",
+          "You pay for ads and want clicks to turn into requests.",
+          "You need a sign-up page for an event, a course or a waiting list."
+        ],
+        "deliverables": {
+          "title": "A page ready for your campaign.",
+          "lead": "Everything you need to launch your campaign with confidence, from message to measurement.",
+          "items": [
+            {
+              "title": "Message and headline",
+              "text": "We put your offer into one sentence visitors get instantly."
+            },
+            {
+              "title": "Page structure",
+              "text": "Sections ordered from problem to solution to action."
+            },
+            {
+              "title": "Design",
+              "text": "Mobile first, in your brand’s identity."
+            },
+            {
+              "title": "Form or call to action",
+              "text": "One clear step, with a confirmation message."
+            },
+            {
+              "title": "Measurement",
+              "text": "Analytics connected so you know what works."
+            },
+            {
+              "title": "Publishing and handover",
+              "text": "A page live on your domain, with every file."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "We define the offer, the audience and the action we want.",
+            "duration": "2 days"
+          },
+          {
+            "text": "The message and the order of sections.",
+            "duration": "2–3 days"
+          },
+          {
+            "text": "Design, then build, reviewed with you.",
+            "duration": "1 week"
+          },
+          {
+            "text": "Publishing, measurement and handover.",
+            "duration": "1 day"
+          }
+        ],
+        "workTitle": "Landing pages we’ve designed",
+        "faqTitle": "Questions about landing pages",
+        "faq": [
+          {
+            "q": "What’s the difference between a landing page and a website?",
+            "a": "A website presents you in full; a landing page focuses on one offer and one goal, which is why it suits campaigns and ads."
+          },
+          {
+            "q": "Do you write the copy too?",
+            "a": "Yes, we shape the message and the copy with you; it’s half of what makes the page work."
+          },
+          {
+            "q": "Can it work with my ads?",
+            "a": "Yes, we prepare it for ad traffic and connect analytics so you can follow the results."
+          },
+          {
+            "q": "How long does it take?",
+            "a": "Usually one to two weeks, depending on how ready the content is."
+          }
+        ],
+        "cta": {
+          "title": "Let’s start your page.",
+          "lead": "Four short steps, with “Landing pages” already selected for you."
+        }
+      },
+      "identity": {
+        "lead": "A complete identity system, not just a logo: logo, colours, typefaces and usage rules that make your brand distinctive and consistent everywhere.",
+        "seeWork": "Identity work",
+        "forYou": [
+          "You’re starting a new brand and want it to look professional from day one.",
+          "You have a logo, but every post and every print looks different.",
+          "Your brand has grown and its old look no longer represents it."
+        ],
+        "deliverables": {
+          "title": "An identity that works everywhere.",
+          "lead": "Six deliverables that build a coherent brand, from concept to usage guide.",
+          "items": [
+            {
+              "title": "Research and visual direction",
+              "text": "We study your brand and competitors, then propose a clear direction."
+            },
+            {
+              "title": "Logo and variations",
+              "text": "The primary logo plus horizontal and compact versions for every use."
+            },
+            {
+              "title": "Colours and typefaces",
+              "text": "A carefully chosen palette and type, with how to use them."
+            },
+            {
+              "title": "Supporting elements",
+              "text": "Patterns, icons and shapes that give your identity character."
+            },
+            {
+              "title": "Applications",
+              "text": "Cards, posts, interfaces: the identity in real situations."
+            },
+            {
+              "title": "Usage guide",
+              "text": "A document explaining the rules, with every file in ready formats."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "We learn your brand, your audience and your competitors.",
+            "duration": "3–5 days"
+          },
+          {
+            "text": "Visual direction and mood boards.",
+            "duration": "1 week"
+          },
+          {
+            "text": "Logo and system design, with review rounds.",
+            "duration": "2–3 weeks"
+          },
+          {
+            "text": "Usage guide and file handover.",
+            "duration": "2–3 days"
+          }
+        ],
+        "workTitle": "Identities we’ve designed",
+        "faqTitle": "Questions about visual identity",
+        "faq": [
+          {
+            "q": "How many logo proposals will I see?",
+            "a": "We present considered directions rather than dozens of random options, then develop the one you choose through review rounds."
+          },
+          {
+            "q": "Do I own the logo?",
+            "a": "Yes, after handover all usage rights pass to you, along with the source files."
+          },
+          {
+            "q": "Can you refresh my current logo instead of replacing it?",
+            "a": "Yes. Sometimes refreshing the logo and unifying how it’s used is enough."
+          },
+          {
+            "q": "In which formats do I get the files?",
+            "a": "Files for print and screens (SVG, PDF, PNG) in colour and single-colour versions."
+          }
+        ],
+        "cta": {
+          "title": "Let’s start your identity.",
+          "lead": "Four short steps, with “Visual identity & logos” already selected for you."
+        }
+      },
+      "social": {
+        "lead": "Content with a consistent identity and a clear plan: we know what to post, when and why, so your accounts look professional and speak to your audience.",
+        "seeWork": "Social media work",
+        "forYou": [
+          "Your accounts exist, but posting is irregular and unplanned.",
+          "Every post looks different from the one before.",
+          "You want to focus on your business and leave content to a team that gets your brand."
+        ],
+        "deliverables": {
+          "title": "Organised content, every month.",
+          "lead": "From plan to report, you always know what goes out and why.",
+          "items": [
+            {
+              "title": "Monthly content plan",
+              "text": "Topics and posting dates tied to your goals."
+            },
+            {
+              "title": "Branded templates",
+              "text": "Post and story templates that keep a consistent look."
+            },
+            {
+              "title": "Post design",
+              "text": "Posts and stories ready to publish every week."
+            },
+            {
+              "title": "Copywriting",
+              "text": "Captions and text in your audience’s language."
+            },
+            {
+              "title": "Short videos",
+              "text": "Reels and short clips, as planned."
+            },
+            {
+              "title": "Monthly report",
+              "text": "What worked, and what we improve next month."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "We learn your audience, your goals and your current accounts.",
+            "duration": "3 days"
+          },
+          {
+            "text": "The month’s plan and the templates.",
+            "duration": "1 week"
+          },
+          {
+            "text": "Design and writing, approved by you before posting.",
+            "duration": "Every week"
+          },
+          {
+            "text": "Publishing, follow-up and report.",
+            "duration": "Every month"
+          }
+        ],
+        "workTitle": "Content we’ve created",
+        "faqTitle": "Questions about social media content",
+        "faq": [
+          {
+            "q": "Do you post for me?",
+            "a": "Yes if you like, or we hand you ready content to post yourself."
+          },
+          {
+            "q": "Which platforms do you cover?",
+            "a": "Mainly Instagram, Facebook and TikTok; we choose with you what suits your audience."
+          },
+          {
+            "q": "Does it include paid ads?",
+            "a": "Ad management is a separate service, but we prepare the designs for it."
+          },
+          {
+            "q": "Is it a monthly subscription?",
+            "a": "Yes, this service runs as a monthly package you can adjust or pause."
+          }
+        ],
+        "cta": {
+          "title": "Let’s start your content.",
+          "lead": "Four short steps, with “Social media content” already selected for you."
+        }
+      },
+      "automation": {
+        "lead": "We connect your tools and automate repetitive tasks: orders, messages and reports move on their own, and you focus on the work that matters.",
+        "seeWork": "Automation work",
+        "forYou": [
+          "You copy data by hand between sheets, messages and apps.",
+          "Orders or messages get lost because everything goes through one person.",
+          "You want ready-made reports without compiling them every week."
+        ],
+        "deliverables": {
+          "title": "Fewer tasks, more time.",
+          "lead": "We start by understanding your work and finish with a system that runs and a team that knows how to use it.",
+          "items": [
+            {
+              "title": "Task audit",
+              "text": "We map the repetitive tasks with you and pick what’s worth automating."
+            },
+            {
+              "title": "Workflow map",
+              "text": "A clear picture of what happens automatically, and when."
+            },
+            {
+              "title": "Tool integration",
+              "text": "Website, sheets, email and messaging connected together."
+            },
+            {
+              "title": "Alerts and reports",
+              "text": "Instant notifications and reports that build themselves."
+            },
+            {
+              "title": "Testing",
+              "text": "Every path tried before going live."
+            },
+            {
+              "title": "Training and documentation",
+              "text": "A walkthrough for your team and a written guide for each workflow."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "We watch how you work today and find where time is lost.",
+            "duration": "2–3 days"
+          },
+          {
+            "text": "The workflow map and the right tools.",
+            "duration": "3–5 days"
+          },
+          {
+            "text": "Building and connecting, with every path tested.",
+            "duration": "1–3 weeks"
+          },
+          {
+            "text": "Go-live, training and follow-up.",
+            "duration": "2–3 days"
+          }
+        ],
+        "workTitle": "Automation we’ve delivered",
+        "faqTitle": "Questions about automation",
+        "faq": [
+          {
+            "q": "Do I need technical knowledge?",
+            "a": "No. We build the system and explain it to your team in plain language."
+          },
+          {
+            "q": "Which tools do you use?",
+            "a": "We choose based on your needs and budget: Google Sheets, forms, integration tools such as Make or n8n, and custom solutions when needed."
+          },
+          {
+            "q": "Is my data safe?",
+            "a": "We work with the least access possible, accounts and data stay in your name, and every connection is documented."
+          },
+          {
+            "q": "What if my business changes later?",
+            "a": "Workflows can be adjusted or extended, and we offer follow-up after go-live."
+          }
+        ],
+        "cta": {
+          "title": "Let’s automate your work.",
+          "lead": "Four short steps, with “Automation & workflows” already selected for you."
+        }
+      },
+      "motion": {
+        "lead": "Motion that explains your idea in seconds: short videos for your product, service or ad, in your brand’s identity.",
+        "seeWork": "Motion work",
+        "forYou": [
+          "Your idea or product needs more explaining than a picture can do.",
+          "You want a short ad that grabs attention from the first second.",
+          "You need an animated logo or an intro for your videos."
+        ],
+        "deliverables": {
+          "title": "From idea to a finished video.",
+          "lead": "Six deliverables, from the first script to final files in every format.",
+          "items": [
+            {
+              "title": "Concept and script",
+              "text": "We write the message and the script, in a few seconds of screen time."
+            },
+            {
+              "title": "Storyboard",
+              "text": "Rough sketches of every scene before animation."
+            },
+            {
+              "title": "Illustrations and assets",
+              "text": "Characters and elements designed in your brand’s identity."
+            },
+            {
+              "title": "Animation",
+              "text": "Precise movement in step with the rhythm."
+            },
+            {
+              "title": "Sound and music",
+              "text": "Voice-over and licensed music when needed."
+            },
+            {
+              "title": "Delivery in every format",
+              "text": "Horizontal, vertical and square versions, ready to post."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "text": "We learn the message, the audience and where it will run.",
+            "duration": "2 days"
+          },
+          {
+            "text": "Script and storyboard.",
+            "duration": "3–5 days"
+          },
+          {
+            "text": "Illustration, then animation, reviewed with you.",
+            "duration": "1–3 weeks"
+          },
+          {
+            "text": "Sound and delivery in every format.",
+            "duration": "2–3 days"
+          }
+        ],
+        "workTitle": "Videos we’ve made",
+        "faqTitle": "Questions about motion graphics",
+        "faq": [
+          {
+            "q": "How long should the video be?",
+            "a": "For ads and social media usually 15 to 30 seconds; for explainers one to two minutes."
+          },
+          {
+            "q": "Is voice-over included?",
+            "a": "It can be added in Arabic, French or English, depending on your audience."
+          },
+          {
+            "q": "How many revision rounds do I get?",
+            "a": "We review with you at the script, the storyboard and the animation, so changes come early and cost less."
+          },
+          {
+            "q": "Do I get the source files?",
+            "a": "Yes when agreed, in addition to the final video in every format."
+          }
+        ],
+        "cta": {
+          "title": "Let’s start your video.",
+          "lead": "Four short steps, with “Motion graphics” already selected for you."
+        }
+      }
+    }
   }
 }

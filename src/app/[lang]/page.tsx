@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Faq } from "@/components/home/Faq";
+import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Hero } from "@/components/home/Hero";
 import { Process } from "@/components/home/Process";
