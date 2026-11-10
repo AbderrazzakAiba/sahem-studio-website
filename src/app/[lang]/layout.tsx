@@ -12,7 +12,18 @@ import { jsFlagScript } from "@/lib/motion";
 import { modeScript, themeColors } from "@/lib/theme";
 import "../globals.css";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+/**
+ * Public address of the site (canonical, hreflang and social-card links). Order:
+ *  1. NEXT_PUBLIC_SITE_URL — set it once the real domain exists;
+ *  2. VERCEL_PROJECT_PRODUCTION_URL — provided by Vercel at build time (also on preview builds, so previews
+ *     point search engines to the production address, never to themselves);
+ *  3. localhost for local development.
+ */
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
