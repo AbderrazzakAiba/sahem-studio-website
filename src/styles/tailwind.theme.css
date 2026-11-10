@@ -1,6 +1,8 @@
 /* Tailwind CSS v4 theme — import after tokens.css:  @import "tailwindcss"; @import "./tokens.css"; @import "./tailwind.theme.css";
-   Verify your Tailwind version first (v4 uses CSS-first @theme). */
-@theme {
+   Verify your Tailwind version first (v4 uses CSS-first @theme).
+   Sahem: "inline" (our only change to the handoff file) so utilities read the semantic vars at the element —
+   otherwise data-theme="ink" sections would keep the page colours resolved at :root. */
+@theme inline {
   --color-*: initial;
   --color-ink-900: var(--ink-900);
   --color-ink-800: var(--ink-800);
