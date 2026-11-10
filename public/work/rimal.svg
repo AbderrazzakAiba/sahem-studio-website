@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <!-- Demo cover (fictional brand) — social media + motion -->
+  <rect width="1200" height="900" fill="#E9D3B0"/>
+  <path d="M0 760Q300 660 600 740T1200 720V900H0Z" fill="#DDBF92"/>
+  <g transform="translate(150 120)">
+    <!-- row 1 -->
+    <rect width="280" height="280" fill="#C8643B"/>
+    <circle cx="140" cy="150" r="70" fill="#F6EBDD"/><circle cx="140" cy="150" r="48" fill="#3B2A20"/>
+    <path d="M110 70q10-20 0-40M140 70q10-20 0-40M170 70q10-20 0-40" fill="none" stroke="#F6EBDD" stroke-width="6" stroke-linecap="round"/>
+    <rect x="320" width="280" height="280" fill="#3B2A20"/>
+    <text x="460" y="130" text-anchor="middle" font-family="Georgia, serif" font-size="46" fill="#E9D3B0">RIMAL</text>
+    <text x="460" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" letter-spacing="6" fill="#C8643B">CAFÉ · EL OUED</text>
+    <path d="M380 225Q420 200 460 225T540 225" fill="none" stroke="#C8643B" stroke-width="6"/>
+    <rect x="640" width="280" height="280" fill="#F6EBDD"/>
+    <path d="M680 230Q740 150 800 230T920 230V280H640V230Z" fill="#DDBF92"/>
+    <circle cx="840" cy="90" r="40" fill="#C8643B"/>
+    <!-- row 2 -->
+    <rect y="320" width="280" height="280" fill="#F6EBDD"/>
+    <rect x="40" y="370" width="200" height="22" fill="#3B2A20"/><rect x="40" y="405" width="140" height="14" fill="#C8643B"/>
+    <rect x="40" y="470" width="90" height="90" fill="#DDBF92"/><rect x="150" y="470" width="90" height="90" fill="#C8643B"/>
+    <rect x="320" y="320" width="280" height="280" fill="#C8643B"/>
+    <circle cx="460" cy="460" r="62" fill="#3B2A20"/><path d="M445 430L490 460L445 490Z" fill="#F6EBDD"/>
+    <rect x="640" y="320" width="280" height="280" fill="#3B2A20"/>
+    <path d="M700 520h40v-60h40v100h40v-150h40" fill="none" stroke="#E9D3B0" stroke-width="10"/>
+    <circle cx="880" cy="410" r="12" fill="#C8643B"/>
+  </g>
+</svg>

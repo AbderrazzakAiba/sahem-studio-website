@@ -124,15 +124,45 @@
       "title": "Des projets dont nous sommes fiers",
       "all": "Toutes les réalisations",
       "galleryLabel": "Réalisations choisies, faites défiler pour voir plus",
-      "imagePlaceholder": "PLACEHOLDER · 4:3",
-      "client": "[Nom du client]",
-      "result": "[Résultat en mots — sans chiffres non vérifiés]",
       "tags": {
         "identity": "Identité visuelle",
         "website": "Site web",
         "landing": "Landing page",
         "social": "Réseaux sociaux",
-        "motion": "Motion"
+        "motion": "Motion",
+        "automation": "Automatisation"
+      },
+      "items": {
+        "nakhla": {
+          "client": "Nakhla Dattes",
+          "result": "Une nouvelle identité et une boutique en ligne qui livre les dattes du Souf au-delà de la région.",
+          "alt": "Planche d’identité Nakhla et page de sa boutique en ligne"
+        },
+        "basma": {
+          "client": "Clinique dentaire Basma",
+          "result": "Une landing page de prise de rendez-vous avec un formulaire clair en une étape.",
+          "alt": "Landing page de la clinique Basma sur un téléphone"
+        },
+        "rimal": {
+          "client": "Café Rimal",
+          "result": "Un plan de contenu mensuel et des modèles de publications cohérents, avec de courtes vidéos.",
+          "alt": "Grille de publications du Café Rimal"
+        },
+        "souf": {
+          "client": "Souf Travel",
+          "result": "Un site d’excursions dans le désert en trois langues, avec réservation simplifiée.",
+          "alt": "Site Souf Travel avec choix de la langue"
+        },
+        "zayn": {
+          "client": "Boutique Zayn",
+          "result": "Les commandes passent du site à un seul tableau, avec une alerte instantanée pour l’équipe.",
+          "alt": "Schéma d’automatisation des commandes de la Boutique Zayn"
+        },
+        "nour": {
+          "client": "Académie Nour",
+          "result": "Une courte vidéo en motion design qui explique comment s’inscrire aux cours.",
+          "alt": "Images de la vidéo motion de l’Académie Nour"
+        }
       }
     },
     "faq": {
@@ -145,23 +175,23 @@
       "items": [
         {
           "q": "Combien de temps dure un projet ?",
-          "a": "[Réponse de l’équipe : délai habituel pour chaque type de projet.]"
+          "a": "Cela dépend du projet : une landing page prend en général une à deux semaines, une identité visuelle deux à quatre, et un site complet trois à six. Nous fixons ensemble un calendrier clair avec des étapes avant de commencer."
         },
         {
           "q": "Comment le budget est-il fixé ?",
-          "a": "[Réponse de l’équipe]"
+          "a": "Nous fixons le budget après la séance de découverte, selon la taille du projet et les services dont vous avez besoin. Vous recevez un devis détaillé en dinars algériens avant tout engagement, et le paiement se fait par étapes."
         },
         {
           "q": "De quoi ai-je besoin pour commencer ?",
-          "a": "[Réponse de l’équipe]"
+          "a": "Connaître votre objectif et votre public suffit. Si vous avez des éléments (logo, photos, textes), envoyez-les ; sinon, nous vous aidons à les préparer pendant la découverte."
         },
         {
           "q": "Puis-je commander un seul service ?",
-          "a": "[Réponse de l’équipe]"
+          "a": "Oui. Vous pouvez commander un seul service, comme une landing page ou un logo, et en ajouter d’autres plus tard. Nous veillons à ce que tout reste cohérent avec votre identité."
         },
         {
           "q": "Que se passe-t-il après le lancement ?",
-          "a": "[Réponse de l’équipe]"
+          "a": "Nous vous remettons tous les fichiers et les accès d’administration, et restons à vos côtés un temps après le lancement pour corriger tout problème. Une maintenance mensuelle ou une gestion de contenu continue peut aussi être prévue."
         }
       ]
     },

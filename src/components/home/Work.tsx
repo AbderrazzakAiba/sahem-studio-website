@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { WorkGallery } from "@/components/home/WorkGallery";
 import { Section } from "@/components/layout/Section";
@@ -14,10 +15,11 @@ type Props = { t: Dictionary["home"]["work"]; locale: Locale };
 
 /**
  * Selected work — the only Ink section (the page's peak). Colours flip through data-theme="ink".
- *  - Mobile: projects stacked (the first two), then an "All work" button.
+ *  - Mobile: projects stacked (the first three), then an "All work" button.
  *  - Tablet / desktop: a horizontal gallery that scrolls with snap, plus the route progress bar.
  * Desktop pins the gallery and moves it with the scroll (WorkGallery, M-13).
- * Projects are placeholders until the team supplies real work (handoff D-025).
+ * Projects are demo content (content/home.ts) until the team supplies real work. Hover: the image scales 1.03
+ * inside its frame (M-14).
  */
 export function Work({ t, locale }: Props) {
   const allHref = localizedPath("/work", locale);
@@ -44,27 +46,28 @@ export function Work({ t, locale }: Props) {
       >
         {featuredWork.map((work, i) => (
           <li
-            key={i}
+            key={work.id}
             className={cn(
               "md:shrink-0 md:basis-[300px] md:snap-start lg:basis-[min(520px,82%,calc((100svh-420px)*4/3))]",
-              i >= 2 && "max-md:hidden",
+              i >= 3 && "max-md:hidden",
             )}
           >
             <Link
               href={localizedPath(work.slug ? `/work/${work.slug}` : "/work", locale)}
               className="group/work flex flex-col gap-3 lg:gap-4"
             >
-              <div className="flex aspect-[4/3] items-center justify-center border border-border-subtle bg-bg-raised transition-colors duration-[var(--duration-instant)] group-hover/work:border-border-control">
-                <span
-                  lang="en"
-                  dir="ltr"
-                  className="font-latin text-[11px] tracking-[0.14em]! text-text-secondary lg:text-[12px]"
-                >
-                  {t.imagePlaceholder}
-                </span>
+              <div className="aspect-[4/3] overflow-hidden border border-border-subtle bg-bg-raised transition-colors duration-[var(--duration-instant)] group-hover/work:border-border-control">
+                <Image
+                  src={work.image}
+                  alt={t.items[work.id].alt}
+                  width={1200}
+                  height={900}
+                  unoptimized
+                  className="size-full object-cover transition-transform duration-[var(--duration-slow)] ease-[var(--ease-route)] group-hover/work:scale-[1.03] motion-reduce:transition-none"
+                />
               </div>
               <div className="flex items-baseline justify-between gap-4">
-                <h3 className="text-card-title">{t.client}</h3>
+                <h3 className="text-card-title">{t.items[work.id].client}</h3>
                 <span className="text-index text-text-secondary">{String(i + 1).padStart(2, "0")}</span>
               </div>
               <div className="flex flex-wrap gap-1.5 lg:gap-2">
@@ -74,7 +77,7 @@ export function Work({ t, locale }: Props) {
                   </Tag>
                 ))}
               </div>
-              <p className="text-[15px] leading-[1.6] text-text-secondary">{t.result}</p>
+              <p className="text-[15px] leading-[1.6] text-text-secondary">{t.items[work.id].result}</p>
             </Link>
           </li>
         ))}

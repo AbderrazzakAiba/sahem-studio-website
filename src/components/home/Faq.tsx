@@ -14,7 +14,7 @@ type Props = {
 /**
  * FAQ — native <details>/<summary> (keyboard and screen-reader support built in), first item open.
  * Desktop: heading + "didn't find your answer?" on one side, questions on the other. Mobile: stacked,
- * the note after the questions. Answers are placeholders until the team writes them.
+ * the note after the questions. Answers are draft copy for review with the manager.
  */
 export function Faq({ t, whatsapp, email }: Props) {
   return (
