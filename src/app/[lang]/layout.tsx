@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { fontVariables } from "@/app/fonts";
+import { MotionProvider } from "@/components/motion-provider";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
 import { modeScript } from "@/lib/theme";
@@ -57,7 +58,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         >
           {t.a11y.skipToContent}
         </a>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

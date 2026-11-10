@@ -1,19 +1,28 @@
-"use client";
-
 /**
- * Motion setup — GSAP + ScrollTrigger (handoff decisions D-007, D-029; spec in 05-motion/motion-spec.md).
+ * Motion tokens — shared by every animation (library: Motion for React, https://motion.dev).
+ * Values come from the handoff motion spec (05-motion/motion-spec.md); the library replaces GSAP (D-007)
+ * at the manager's request.
  *
  * Rules from the handoff:
- *  - Animate transform / opacity only (one SVG stroke-dashoffset at a time is the documented exception).
- *  - One easing for all movement: "route" = cubic-bezier(0.7, 0, 0.2, 1). No bounce, no overshoot.
- *  - GSAP loads after first paint (dynamic import) — it never blocks LCP.
- *  - prefers-reduced-motion → content appears in its final state, nothing pins, nothing moves.
- *  - Pinning only from 1024px up.
+ *  - Animate transform / opacity only (one SVG pathLength / stroke-dashoffset at a time is the documented exception).
+ *  - One easing for all movement: route = cubic-bezier(0.7, 0, 0.2, 1). No bounce, no spring overshoot.
+ *  - prefers-reduced-motion → content appears in its final state, nothing pins, nothing moves
+ *    (handled globally by <MotionProvider reducedMotion="user">; check useReducedMotion() for scroll effects).
+ *  - Pinned / scroll-scrubbed effects only from 1024px up (CSS position: sticky + useScroll).
  *
- * Licence: GSAP "Standard no-charge licence" (https://gsap.com/standard-license), plugins included.
- * Use inside components with useGSAP() from "@gsap/react" so animations are cleaned up on unmount/route change.
+ * How the GSAP spec maps to Motion:
+ *  - gsap.to / from        → <m.div initial animate transition>
+ *  - ScrollTrigger reveal  → whileInView + viewport={viewport}
+ *  - ScrollTrigger scrub   → useScroll({ target }) + useTransform(scrollYProgress, …)
+ *  - ScrollTrigger pin     → a tall wrapper + position: sticky child, driven by useScroll
+ *  - stagger               → variants with transition.staggerChildren
  */
 
+/** The brand curve, as Motion's cubic-bezier array. */
+export const easeRoute = [0.7, 0, 0.2, 1] as const;
+export const easeLinear = "linear" as const;
+
+/** Durations in seconds (tokens --duration-* in tokens.css are the same values in ms). */
 export const durations = {
   instant: 0.1,
   fast: 0.16,
@@ -26,28 +35,14 @@ export const durations = {
 
 export const stagger = { sm: 0.06, md: 0.09 } as const;
 
-export const media = {
-  motion: "(prefers-reduced-motion: no-preference)",
-  reduced: "(prefers-reduced-motion: reduce)",
-  pin: "(min-width: 1024px) and (prefers-reduced-motion: no-preference)",
-} as const;
+/** Distances in px (tokens --move-*). */
+export const move = { sm: 8, md: 16, lg: 32 } as const;
 
-type GsapBundle = {
-  gsap: typeof import("gsap").gsap;
-  ScrollTrigger: typeof import("gsap/ScrollTrigger").ScrollTrigger;
-};
+/** Default transition for every animated element (set once in MotionProvider). */
+export const defaultTransition = { ease: easeRoute, duration: durations.slow } as const;
 
-let loading: Promise<GsapBundle> | null = null;
+/** Reveal-on-scroll: play once, when ~20% of the element is visible. */
+export const viewport = { once: true, amount: 0.2 } as const;
 
-/** Loads GSAP + ScrollTrigger + the "route" ease once, on demand (after first paint). */
-export function loadGsap(): Promise<GsapBundle> {
-  loading ??= Promise.all([import("gsap"), import("gsap/ScrollTrigger"), import("gsap/CustomEase")]).then(
-    ([g, st, ce]) => {
-      g.gsap.registerPlugin(st.ScrollTrigger, ce.CustomEase);
-      ce.CustomEase.create("route", "0.7,0,0.2,1");
-      g.gsap.defaults({ ease: "route", duration: durations.slow });
-      return { gsap: g.gsap, ScrollTrigger: st.ScrollTrigger };
-    },
-  );
-  return loading;
-}
+/** Media query for scroll-pinned effects (desktop only, motion allowed). */
+export const pinMedia = "(min-width: 1024px) and (prefers-reduced-motion: no-preference)";

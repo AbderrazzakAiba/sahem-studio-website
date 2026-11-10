@@ -5,13 +5,13 @@
 
 ## Stack
 
-|                                                              | Version        | Why                                                                                                                                                            |
-| ------------------------------------------------------------ | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Next.js](https://nextjs.org) (App Router, Cache Components) | 16.4.3         | Chosen by the team; static pages + fast routing. Read `node_modules/next/dist/docs/` — v16 differs from older docs (e.g. `proxy.ts` replaces `middleware.ts`). |
-| TypeScript (strict)                                          | 5.9.3          | Typed content and props.                                                                                                                                       |
-| Tailwind CSS v4                                              | 4.3.3          | Mapped 1:1 to the handoff tokens.                                                                                                                              |
-| shadcn/ui (Radix, RTL)                                       | CLI 4.22.1     | Accessible primitives, restyled to the brand (square corners). Add components only when a page needs them: `npx shadcn@4.22.1 add <name>`.                     |
-| GSAP + ScrollTrigger + @gsap/react                           | 3.15.0 / 2.1.2 | Motion spec of the handoff (D-007, D-029). Free “Standard no-charge” licence.                                                                                  |
+|                                                              | Version    | Why                                                                                                                                                            |
+| ------------------------------------------------------------ | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Next.js](https://nextjs.org) (App Router, Cache Components) | 16.4.3     | Chosen by the team; static pages + fast routing. Read `node_modules/next/dist/docs/` — v16 differs from older docs (e.g. `proxy.ts` replaces `middleware.ts`). |
+| TypeScript (strict)                                          | 5.9.3      | Typed content and props.                                                                                                                                       |
+| Tailwind CSS v4                                              | 4.3.3      | Mapped 1:1 to the handoff tokens.                                                                                                                              |
+| shadcn/ui (Radix, RTL)                                       | CLI 4.22.1 | Accessible primitives, restyled to the brand (square corners). Add components only when a page needs them: `npx shadcn@4.22.1 add <name>`.                     |
+| [Motion](https://motion.dev) for React (`motion/react`)      | 14.6.0     | Animations and scroll effects of the handoff motion spec. Chosen by the manager instead of GSAP (D-007). MIT licence.                                          |
 
 Versions are pinned exactly and were at least two weeks old when chosen (stability + supply-chain safety). Upgrade deliberately, one package per PR.
 
@@ -57,7 +57,13 @@ npm run dev            # http://localhost:3000
 
 ## Motion
 
-`src/lib/motion.ts` loads GSAP after first paint, registers ScrollTrigger and the brand ease `route` = `cubic-bezier(0.7, 0, 0.2, 1)`. In components use `useGSAP()` from `@gsap/react` (auto cleanup). Every animation needs a `prefers-reduced-motion` fallback; pin only from 1024px. Spec: `05-motion/motion-spec.md` in the handoff.
+Library: **Motion** (manager's choice, replacing the GSAP named in handoff decision D-007). The handoff motion spec (`05-motion/motion-spec.md`) still defines _what_ moves; only the library changes.
+
+- `src/components/motion-provider.tsx` wraps the app once: `LazyMotion` loads the animation features after first paint (small initial JS), `MotionConfig reducedMotion="user"` respects the OS setting, and every animation defaults to the brand ease.
+- `src/lib/motion.ts` holds the tokens: `easeRoute` = `cubic-bezier(0.7, 0, 0.2, 1)`, `durations`, `stagger`, `move`, `viewport`.
+- In components use the lightweight elements: `import * as m from "motion/react-m"` → `<m.div>` (not `motion.div`; the provider runs in `strict` mode).
+- Spec → Motion: reveal = `whileInView` + `viewport`; scroll scrub = `useScroll` + `useTransform`; pin = tall wrapper + `position: sticky`, desktop ≥ 1024px only; stagger = variants with `staggerChildren`.
+- Animate transform/opacity only; no bounce or spring overshoot; every effect must look right with reduced motion.
 
 ## Project structure
 
@@ -68,6 +74,7 @@ src/
     fonts/             brand WOFF2 + OFL licences
     fonts.ts  globals.css  icon.svg
   components/
+    motion-provider.tsx  LazyMotion + MotionConfig (brand ease, reduced motion)
     ui/                shadcn/ui primitives (restyled)
     layout/            Header, MobileMenu, ActionBar, Footer, LanguageSwitch, ThemeToggle
     sections/          Hero, Services, Process, Work, Faq, FinalCta
@@ -86,7 +93,7 @@ Empty folders hold a `.gitkeep` until their task fills them.
 
 ## Source of truth
 
-The approved developer handoff **v1.1** from the Design lead: screens, components, motion spec, content, accessibility and performance budgets, and decisions D-001…D-029. Additions approved by the manager on top of it: **French** and **site dark mode**. When code and handoff disagree, the handoff wins — raise it with the Design lead.
+The approved developer handoff **v1.1** from the Design lead: screens, components, motion spec, content, accessibility and performance budgets, and decisions D-001…D-029. Changes approved by the manager on top of it: **French**, **site dark mode**, and **Motion** instead of GSAP. When code and handoff disagree, the handoff wins — raise it with the Design lead.
 
 ## Security
 
