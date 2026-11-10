@@ -1,24 +1,27 @@
 import Link from "next/link";
-import { RouteHit } from "@/components/home/RouteHit";
+import { RouteHit } from "@/components/sections/RouteHit";
 import { Section } from "@/components/layout/Section";
-import { Button } from "@/components/ui/button";
+import { Button, SignalDot } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import type { Dictionary } from "@/lib/dictionaries";
+/** The words of a final call to action — each page passes its own (home, services, a service…). */
+export type CtaCopy = { eyebrow: string; latin: string; title: string; lead: string; whatsapp: string };
 
 type Props = {
-  t: Dictionary["home"]["cta"];
+  t: CtaCopy;
   startHref: string;
   startLabel: string;
   whatsapp: string | null;
+  /** Optional line under the button (e.g. the service already selected in the form). */
+  note?: string;
 };
 
 /**
- * The goal — the route's final hit: the rail comes down from the FAQ, turns, and its arrowhead strikes the
- * "Start your project" button, with a Signal burst at the point of impact. The WhatsApp link shows only once
- * the number is set.
+ * The goal — the route's final hit, shared by every page: the rail comes down from the section above, turns,
+ * and its arrowhead strikes the "Start your project" button with a Signal burst (RouteHit, M-18). The WhatsApp
+ * link shows only once the number is set.
  */
-export function FinalCta({ t, startHref, startLabel, whatsapp }: Props) {
+export function FinalCta({ t, startHref, startLabel, whatsapp, note }: Props) {
   return (
     <Section rail={false} aria-labelledby="cta-title" className="py-22 md:py-[clamp(96px,70px+6.1vw,160px)]">
       <Container className="flex flex-col gap-7 md:gap-10">
@@ -43,6 +46,12 @@ export function FinalCta({ t, startHref, startLabel, whatsapp }: Props) {
             </Button>
             <RouteHit />
           </div>
+          {note ? (
+            <p className="flex items-center gap-2 text-[14px] text-text-secondary">
+              <SignalDot />
+              {note}
+            </p>
+          ) : null}
           {whatsapp ? (
             <a
               href={whatsapp}

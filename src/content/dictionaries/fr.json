@@ -6,7 +6,8 @@
   },
   "a11y": {
     "skipToContent": "Aller au contenu",
-    "homeLink": "Sahem Studio — Accueil"
+    "homeLink": "Sahem Studio — Accueil",
+    "breadcrumb": "Fil d’Ariane"
   },
   "nav": {
     "label": "Menu principal",
@@ -201,6 +202,35 @@
       "title": "De l’idée à l’objectif.",
       "lead": "Parlez-nous de votre idée en quatre courtes étapes, nous revenons vers vous avec un plan clair.",
       "whatsapp": "Ou écrivez-nous sur WhatsApp"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Services",
+      "description": "Six services qui fonctionnent ensemble : sites web, landing pages, identités visuelles, contenus pour les réseaux sociaux, automatisations et motion design."
+    },
+    "eyebrow": "Services",
+    "latin": "",
+    "title": "Ce que nous proposons",
+    "lead": "Six services qui fonctionnent ensemble : de l’identité au site jusqu’au contenu. Choisissez ce dont vous avez besoin, ou laissez-nous tracer le bon mélange.",
+    "listLabel": "Liste des services",
+    "details": "Voir le service",
+    "tags": {
+      "websites": ["Arborescence", "Design d’interfaces", "Développement"],
+      "landing-pages": ["Un seul message", "Design", "Mesure"],
+      "identity": ["Logo", "Couleurs & typographies", "Guide d’usage"],
+      "social": ["Plan de contenu", "Modèles", "Publications"],
+      "automation": ["Analyse des tâches", "Connexion des outils", "Formation"],
+      "motion": ["Idée", "Animation", "Livraison"]
+    },
+    "help": {
+      "eyebrow": "Pas encore sûr ?",
+      "latin": "",
+      "title": "Dites-nous votre objectif, nous proposons la route.",
+      "lead": "Dans le formulaire, choisissez « Je ne sais pas encore », ou écrivez-nous directement. La plupart des projets combinent deux services ou plus.",
+      "whatsapp": "Écrivez-nous sur WhatsApp",
+      "email": "Écrivez-nous par e-mail",
+      "process": "Ou découvrez notre méthode"
     }
   }
 }
