@@ -748,5 +748,41 @@
         }
       }
     }
+  },
+  "workPage": {
+    "meta": {
+      "title": "Work",
+      "description": "Selected work by Sahem Studio: websites, landing pages, visual identities, content, automation and motion graphics."
+    },
+    "eyebrow": "Selected work",
+    "latin": "",
+    "title": "Work we are proud of",
+    "lead": "Projects we designed for small and medium brands that wanted to show up professionally and reach their clients clearly.",
+    "listLabel": "Projects",
+    "filterLabel": "Filter by service",
+    "all": "All",
+    "filters": {
+      "website": "Websites",
+      "landing": "Landing pages",
+      "identity": "Visual identity",
+      "social": "Social media",
+      "automation": "Automation",
+      "motion": "Motion"
+    },
+    "count": {
+      "zero": "No projects",
+      "one": "{n} project",
+      "two": "{n} projects",
+      "few": "{n} projects",
+      "many": "{n} projects",
+      "other": "{n} projects"
+    },
+    "empty": "No projects of this type yet.",
+    "cta": {
+      "eyebrow": "Start a project",
+      "latin": "",
+      "title": "Is your project next?",
+      "lead": "Tell us about your idea in four short steps, and we’ll come back with a clear plan."
+    }
   }
 }

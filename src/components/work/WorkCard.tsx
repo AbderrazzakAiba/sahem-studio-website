@@ -12,6 +12,8 @@ type Props = {
   /** Project names, results, alt text and tag labels. */
   t: Pick<Dictionary["home"]["work"], "items" | "tags">;
   locale: Locale;
+  /** Heading level of the project name: h3 under a section title (default), h2 directly under the page h1. */
+  headingLevel?: "h2" | "h3";
 };
 
 /**
@@ -20,8 +22,9 @@ type Props = {
  * inside its frame (M-14). Used on the home gallery and the service pages; inside the Ink section the colours
  * flip through the tokens.
  */
-export function WorkCard({ work, index, t, locale }: Props) {
+export function WorkCard({ work, index, t, locale, headingLevel = "h3" }: Props) {
   const copy = t.items[work.id];
+  const Heading = headingLevel;
   return (
     <Link
       href={localizedPath(work.slug ? `/work/${work.slug}` : "/work", locale)}
@@ -40,7 +43,7 @@ export function WorkCard({ work, index, t, locale }: Props) {
         />
       </div>
       <div className="flex items-baseline justify-between gap-4">
-        <h3 className="text-card-title">{copy.client}</h3>
+        <Heading className="text-card-title">{copy.client}</Heading>
         <span className="text-index text-text-secondary">{String(index + 1).padStart(2, "0")}</span>
       </div>
       <div className="flex flex-wrap gap-1.5 lg:gap-2">
