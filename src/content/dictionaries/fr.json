@@ -784,5 +784,153 @@
       "title": "Votre projet est le prochain ?",
       "lead": "Parlez-nous de votre idée en quatre courtes étapes, nous revenons vers vous avec un plan clair."
     }
+  },
+  "case": {
+    "labels": {
+      "eyebrow": "Étude de cas",
+      "latinPrefix": "",
+      "facts": {
+        "client": "Client",
+        "sector": "Secteur",
+        "services": "Services",
+        "year": "Année"
+      },
+      "challenge": {
+        "eyebrow": "01 · Le point de départ",
+        "latin": ""
+      },
+      "approach": {
+        "eyebrow": "02 · La route",
+        "latin": ""
+      },
+      "result": {
+        "eyebrow": "03 · L’objectif",
+        "latin": ""
+      },
+      "quote": {
+        "eyebrow": "Paroles du client",
+        "latin": ""
+      },
+      "next": {
+        "eyebrow": "Projet suivant",
+        "latin": "",
+        "cta": "Voir le projet"
+      },
+      "images": {
+        "key": "écran principal",
+        "mobile": "sur mobile",
+        "detail": "détail"
+      },
+      "cta": {
+        "eyebrow": "Lancer un projet",
+        "latin": "",
+        "title": "De l’idée à l’objectif.",
+        "lead": "Votre projet pourrait être la prochaine étude de cas. Parlez-nous de votre idée en quatre courtes étapes."
+      }
+    },
+    "items": {
+      "nakhla": {
+        "title": "Nakhla Dattes : une identité et une boutique qui portent les dattes du Souf plus loin",
+        "lead": "Une marque familiale de dattes Deglet Nour qui voulait vendre au-delà de la région sans perdre son caractère local.",
+        "sector": "Alimentation & dattes",
+        "year": "2025",
+        "challenge": {
+          "title": "Un excellent produit, et une image qui ne le disait pas.",
+          "situation": "Les dattes se vendaient localement dans des boîtes sans identité claire, et les commandes d’autres régions arrivaient par message et se perdaient dans les conversations.",
+          "goal": "Le propriétaire voulait qu’un client qui ne le connaît pas lui fasse confiance, et puisse commander facilement de partout."
+        },
+        "approach": {
+          "title": "Nous avons bâti l’identité autour du palmier, et fait de la commande une seule étape.",
+          "text": "Le symbole du palmier et les couleurs inspirées de l’oasis sont devenus la base des boîtes, des publications et du site. La boutique a été pensée d’abord pour le mobile, avec une page par produit et des commandes qui arrivent directement dans un seul tableau.",
+          "caption": "La planche d’identité avec ses couleurs et typographies, et la boutique sur ordinateur et mobile."
+        },
+        "result": "Une marque reconnue au premier coup d’œil, et une boutique qui reçoit les commandes d’autres régions sans messages perdus."
+      },
+      "basma": {
+        "title": "Clinique dentaire Basma : une page qui prend les rendez-vous toute seule",
+        "lead": "Une clinique dentaire qui voulait moins d’appels, et des patients capables de réserver depuis leur téléphone à toute heure.",
+        "sector": "Santé",
+        "year": "2026",
+        "challenge": {
+          "title": "Le téléphone sonnait toute la journée.",
+          "situation": "Tous les rendez-vous se prenaient par téléphone, l’accueil était débordé, et les appels hors horaires étaient perdus.",
+          "goal": "La clinique voulait une page claire où le patient réserve en une minute."
+        },
+        "approach": {
+          "title": "Un formulaire en une étape, et tout le reste à son service.",
+          "text": "Nous avons ordonné la page de la réassurance à la réservation : les soins, l’équipe, puis un court formulaire avec nom, téléphone et horaire souhaité, suivi d’une confirmation immédiate.",
+          "caption": "La page sur mobile, et le formulaire en une étape."
+        },
+        "result": "Une réservation plus simple pour les patients, plus de temps pour l’accueil, et des rendez-vous même hors horaires."
+      },
+      "rimal": {
+        "title": "Café Rimal : des contenus cohérents, chaque semaine",
+        "lead": "Un café d’El Oued qui voulait un compte à son image, capable d’attirer les clients sur place.",
+        "sector": "Cafés & restaurants",
+        "year": "2025",
+        "challenge": {
+          "title": "Un compte actif, sans personnalité.",
+          "situation": "Les publications étaient des photos au hasard, avec des couleurs et des polices différentes, et tout s’arrêtait dès que l’équipe était occupée.",
+          "goal": "Le propriétaire voulait qu’on reconnaisse le café à ses publications avant même de le visiter."
+        },
+        "approach": {
+          "title": "Des modèles aux couleurs du sable, et un plan mensuel qui ne s’arrête pas.",
+          "text": "Nous avons conçu des modèles de publications et de stories aux couleurs du café, et un plan mensuel mêlant offres, produits et moments du lieu, avec de courtes vidéos animées.",
+          "caption": "La grille de publications avec les nouveaux modèles, et des images du plan mensuel."
+        },
+        "result": "Un compte à l’image cohérente et aux publications régulières, qui présente le café avant la visite."
+      },
+      "souf": {
+        "title": "Souf Travel : les excursions du désert en trois langues",
+        "lead": "Une agence d’excursions dans le désert accueillant des visiteurs d’Algérie et de l’étranger, qui voulait un site compréhensible par tous.",
+        "sector": "Tourisme",
+        "year": "2026",
+        "challenge": {
+          "title": "Des visiteurs de plusieurs pays, et un site en une seule langue.",
+          "situation": "L’agence comptait sur une page Facebook uniquement en arabe, et l’équipe expliquait chaque excursion par message, dans différentes langues.",
+          "goal": "Elle voulait un site qui présente clairement les excursions en arabe, en français et en anglais, et qui reçoive les demandes de réservation."
+        },
+        "approach": {
+          "title": "L’image d’abord, puis les informations dans la langue du visiteur.",
+          "text": "Nous avons créé une page par excursion avec la durée, le programme et ce que comprend le prix, un changement de langue simple et un formulaire de réservation allégé.",
+          "caption": "Une page d’excursion sur ordinateur, et le choix de la langue."
+        },
+        "result": "Des visiteurs qui comprennent chaque excursion dans leur langue et réservent directement, et une équipe qui passe moins de temps à expliquer."
+      },
+      "zayn": {
+        "title": "Boutique Zayn : des commandes qui avancent toutes seules",
+        "lead": "Une petite boutique en ligne qui gérait ses commandes à la main entre le site, un tableau et des messages.",
+        "sector": "E-commerce",
+        "year": "2026",
+        "challenge": {
+          "title": "Chaque commande passait par un copier-coller.",
+          "situation": "Chaque commande était recopiée du site vers un tableau, puis envoyée au livreur par message : des retards, et parfois des pertes.",
+          "goal": "Le propriétaire voulait voir toutes les commandes au même endroit, et que l’équipe soit alertée immédiatement."
+        },
+        "approach": {
+          "title": "Nous avons connecté les outils existants au lieu de les remplacer.",
+          "text": "Nous avons cartographié le parcours de commande, puis relié le site à un seul tableau, une alerte instantanée pour l’équipe et un rapport hebdomadaire automatique, avec une courte formation et un guide écrit.",
+          "caption": "Le schéma du parcours de commande, et l’alerte reçue par l’équipe."
+        },
+        "result": "Plus de commandes perdues, et une équipe qui sait chaque matin ce qui l’attend sans tout compiler à la main."
+      },
+      "nour": {
+        "title": "Académie Nour : une vidéo d’une minute pour expliquer l’inscription",
+        "lead": "Un centre de formation qui voulait moins de questions répétées sur la façon de s’inscrire aux cours.",
+        "sector": "Éducation & formation",
+        "year": "2025",
+        "challenge": {
+          "title": "Les mêmes questions, tous les jours.",
+          "situation": "L’équipe répondait chaque jour aux mêmes questions sur l’inscription et le paiement, et les longues explications écrites n’étaient pas lues.",
+          "goal": "L’académie voulait une explication courte, comprise par tous dès la première fois."
+        },
+        "approach": {
+          "title": "Une histoire en trois scènes, un personnage et un rythme simple.",
+          "text": "Nous avons écrit un court script et dessiné le storyboard, puis animé le personnage et les éléments à l’identité de l’académie, et livré une version par plateforme.",
+          "caption": "Des images de la vidéo, et la bande de rythme."
+        },
+        "result": "Une explication claire, facile à partager, et moins de questions sur l’inscription pour l’équipe."
+      }
+    }
   }
 }

@@ -784,5 +784,153 @@
       "title": "Is your project next?",
       "lead": "Tell us about your idea in four short steps, and we’ll come back with a clear plan."
     }
+  },
+  "case": {
+    "labels": {
+      "eyebrow": "Case study",
+      "latinPrefix": "",
+      "facts": {
+        "client": "Client",
+        "sector": "Sector",
+        "services": "Services",
+        "year": "Year"
+      },
+      "challenge": {
+        "eyebrow": "01 · The challenge",
+        "latin": ""
+      },
+      "approach": {
+        "eyebrow": "02 · The approach",
+        "latin": ""
+      },
+      "result": {
+        "eyebrow": "03 · The result",
+        "latin": ""
+      },
+      "quote": {
+        "eyebrow": "In their words",
+        "latin": ""
+      },
+      "next": {
+        "eyebrow": "Next project",
+        "latin": "",
+        "cta": "View project"
+      },
+      "images": {
+        "key": "key screen",
+        "mobile": "on mobile",
+        "detail": "detail"
+      },
+      "cta": {
+        "eyebrow": "Start a project",
+        "latin": "",
+        "title": "From brief to bullseye.",
+        "lead": "Your project could be the next case study. Tell us about your idea in four short steps."
+      }
+    },
+    "items": {
+      "nakhla": {
+        "title": "Nakhla Dates: an identity and a shop that take Souf dates further",
+        "lead": "A family brand of Deglet Nour dates that wanted to sell beyond the region without losing its local character.",
+        "sector": "Food & dates",
+        "year": "2025",
+        "challenge": {
+          "title": "A great product, and an image that didn’t say so.",
+          "situation": "The dates sold locally in boxes with no clear identity, and orders from other regions arrived by message and got lost in conversations.",
+          "goal": "The owner wanted a customer who had never met him to trust the brand, and to order easily from anywhere."
+        },
+        "approach": {
+          "title": "We built the identity around the palm, and made ordering a single step.",
+          "text": "The palm symbol and oasis-inspired colours became the base for boxes, posts and the website. The shop was designed for mobile first, with a page per product and orders going straight into one sheet.",
+          "caption": "The identity board with its colours and type, and the shop on desktop and mobile."
+        },
+        "result": "A brand customers recognise at first glance, and a shop that takes orders from other regions without lost messages."
+      },
+      "basma": {
+        "title": "Basma Dental Clinic: a page that books appointments on its own",
+        "lead": "A dental clinic that wanted fewer calls, and patients able to book from their phone at any time.",
+        "sector": "Health",
+        "year": "2026",
+        "challenge": {
+          "title": "The phone rang all day.",
+          "situation": "Every appointment was booked by phone, the front desk was always busy, and anyone calling after hours was lost.",
+          "goal": "The clinic wanted one clear page where a patient books in a minute."
+        },
+        "approach": {
+          "title": "A one-step form, and everything else in its service.",
+          "text": "We ordered the page from reassurance to booking: services, the team, then a short form with name, phone and preferred time, followed by an instant confirmation.",
+          "caption": "The page on mobile, and the one-step form."
+        },
+        "result": "Easier booking for patients, more time for the front desk, and appointments coming in even after hours."
+      },
+      "rimal": {
+        "title": "Rimal Café: content with a consistent look, every week",
+        "lead": "A café in El Oued that wanted an account that felt like the place and brought people in.",
+        "sector": "Cafés & restaurants",
+        "year": "2025",
+        "challenge": {
+          "title": "An active account with no personality.",
+          "situation": "Posts were random photos in different colours and fonts, and posting stopped whenever the team got busy.",
+          "goal": "The owner wanted people to recognise the café from its posts before they ever visited."
+        },
+        "approach": {
+          "title": "Sand-coloured templates, and a monthly plan that keeps going.",
+          "text": "We designed post and story templates in the café’s colours, and a monthly plan mixing offers, products and moments in the place, plus short animated clips.",
+          "caption": "The post grid with the new templates, and frames from the monthly plan."
+        },
+        "result": "An account with a consistent look and regular posting that introduces the café before the visit."
+      },
+      "souf": {
+        "title": "Souf Travel: desert tours in three languages",
+        "lead": "A desert-tour agency welcoming visitors from Algeria and abroad, that wanted a site everyone could understand.",
+        "sector": "Tourism",
+        "year": "2026",
+        "challenge": {
+          "title": "Visitors from many countries, and a site in one language.",
+          "situation": "The agency relied on an Arabic-only Facebook page, and the team explained every tour by message in different languages.",
+          "goal": "It wanted a site presenting tours clearly in Arabic, French and English, and taking booking requests."
+        },
+        "approach": {
+          "title": "Pictures first, then tour details in the visitor’s language.",
+          "text": "We built a page per tour with duration, programme and what the price includes, an easy language switch and a simple booking form.",
+          "caption": "A tour page on desktop, and the language switch."
+        },
+        "result": "Visitors understand each tour in their own language and book directly, and the team spends less time explaining."
+      },
+      "zayn": {
+        "title": "Zayn Store: orders that move on their own",
+        "lead": "A small online shop that handled orders by hand between the website, a sheet and messages.",
+        "sector": "E-commerce",
+        "year": "2026",
+        "challenge": {
+          "title": "Every order went through copy and paste.",
+          "situation": "Each order was copied from the site into a sheet, then sent to delivery by message, so orders were delayed and sometimes lost.",
+          "goal": "The owner wanted to see every order in one place, and the team alerted straight away."
+        },
+        "approach": {
+          "title": "We connected the existing tools instead of replacing them.",
+          "text": "We mapped the order flow, then connected the site to a single sheet, an instant team alert and a weekly report that builds itself, with a short training and a written guide.",
+          "caption": "The order workflow map, and the alert the team receives."
+        },
+        "result": "No more lost orders, and a team that knows what is waiting each morning without compiling it by hand."
+      },
+      "nour": {
+        "title": "Nour Academy: a one-minute video that explains enrolment",
+        "lead": "A training centre that wanted fewer repeated questions about how to enrol in its courses.",
+        "sector": "Education & training",
+        "year": "2025",
+        "challenge": {
+          "title": "The same questions, every day.",
+          "situation": "The team answered the same questions about enrolment and payment daily, and long written explanations went unread.",
+          "goal": "The academy wanted a short explanation anyone could follow the first time."
+        },
+        "approach": {
+          "title": "A three-scene story, one character and a simple rhythm.",
+          "text": "We wrote a short script and drew the storyboard, then animated the character and elements in the academy’s identity and delivered a version for each platform.",
+          "caption": "Frames from the video, and the timing strip."
+        },
+        "result": "A clear explainer that is easy to share, and fewer enrolment questions for the team."
+      }
+    }
   }
 }
