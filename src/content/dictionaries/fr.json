@@ -748,5 +748,41 @@
         }
       }
     }
+  },
+  "workPage": {
+    "meta": {
+      "title": "Réalisations",
+      "description": "Réalisations choisies de Sahem Studio : sites web, landing pages, identités visuelles, contenus, automatisations et motion design."
+    },
+    "eyebrow": "Réalisations choisies",
+    "latin": "",
+    "title": "Des projets dont nous sommes fiers",
+    "lead": "Des projets conçus pour des petites et moyennes marques qui voulaient se présenter de façon professionnelle et toucher clairement leurs clients.",
+    "listLabel": "Projets",
+    "filterLabel": "Filtrer par service",
+    "all": "Tous",
+    "filters": {
+      "website": "Sites web",
+      "landing": "Landing pages",
+      "identity": "Identité visuelle",
+      "social": "Réseaux sociaux",
+      "automation": "Automatisation",
+      "motion": "Motion"
+    },
+    "count": {
+      "zero": "Aucun projet",
+      "one": "{n} projet",
+      "two": "{n} projets",
+      "few": "{n} projets",
+      "many": "{n} projets",
+      "other": "{n} projets"
+    },
+    "empty": "Aucun projet de ce type pour l’instant.",
+    "cta": {
+      "eyebrow": "Lancer un projet",
+      "latin": "",
+      "title": "Votre projet est le prochain ?",
+      "lead": "Parlez-nous de votre idée en quatre courtes étapes, nous revenons vers vous avec un plan clair."
+    }
   }
 }
