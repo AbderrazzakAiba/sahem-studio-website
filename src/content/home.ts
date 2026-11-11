@@ -16,13 +16,13 @@ export type WorkId = "nakhla" | "basma" | "rimal" | "souf" | "zayn" | "nour";
  * Selected work on the home page.
  * DEMO CONTENT for the manager's review: fictional brands with illustrative covers (public/work/*.svg) and
  * results written in words only (handoff D-025: no unverified numbers). Replace with the team's real projects
- * before launch. `slug` becomes the case-study route /work/[slug]; while it is null the card links to /work.
+ * before launch. `slug` is the case-study route /work/[slug] (see content/cases.ts); null links the card to /work.
  */
 export const featuredWork: { id: WorkId; slug: string | null; image: string; tags: WorkTag[] }[] = [
-  { id: "nakhla", slug: null, image: "/work/nakhla.svg", tags: ["identity", "website"] },
-  { id: "basma", slug: null, image: "/work/basma.svg", tags: ["landing"] },
-  { id: "rimal", slug: null, image: "/work/rimal.svg", tags: ["social", "motion"] },
-  { id: "souf", slug: null, image: "/work/souf.svg", tags: ["website"] },
-  { id: "zayn", slug: null, image: "/work/zayn.svg", tags: ["automation"] },
-  { id: "nour", slug: null, image: "/work/nour.svg", tags: ["motion"] },
+  { id: "nakhla", slug: "nakhla", image: "/work/nakhla.svg", tags: ["identity", "website"] },
+  { id: "basma", slug: "basma", image: "/work/basma.svg", tags: ["landing"] },
+  { id: "rimal", slug: "rimal", image: "/work/rimal.svg", tags: ["social", "motion"] },
+  { id: "souf", slug: "souf", image: "/work/souf.svg", tags: ["website"] },
+  { id: "zayn", slug: "zayn", image: "/work/zayn.svg", tags: ["automation"] },
+  { id: "nour", slug: "nour", image: "/work/nour.svg", tags: ["motion"] },
 ];
