@@ -27,6 +27,7 @@ export function Work({ t, locale }: Props) {
     <Section id="work" ink aria-labelledby="work-title">
       <WorkGallery
         label={t.galleryLabel}
+        sliderLabel={t.sliderLabel}
         rtl={localeInfo[locale].dir === "rtl"}
         heading={
           <SectionHeading

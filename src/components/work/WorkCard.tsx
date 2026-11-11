@@ -25,12 +25,14 @@ export function WorkCard({ work, index, t, locale }: Props) {
   return (
     <Link
       href={localizedPath(work.slug ? `/work/${work.slug}` : "/work", locale)}
+      draggable={false}
       className="group/work flex flex-col gap-3 lg:gap-4"
     >
       <div className="aspect-[4/3] overflow-hidden border border-border-subtle bg-bg-raised transition-colors duration-[var(--duration-instant)] group-hover/work:border-border-control">
         <Image
           src={work.image}
           alt={copy.alt}
+          draggable={false}
           width={1200}
           height={900}
           unoptimized
