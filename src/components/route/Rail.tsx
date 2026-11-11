@@ -12,12 +12,15 @@ import { useCompleteWhenReduced } from "@/lib/use-reduced-motion";
  * content, so each section draws its own segment and the line reads as one continuous rail.
  * Stroke and lane follow the tokens: --route-stroke (5/4/3px) and --rail-x. Decorative only.
  *
- * Motion M-07: the segment draws downward with the scroll (scaleY 0 → 1, origin top) from the section's top at
- * 85% of the viewport to its bottom at 70%. Reduced motion: drawn complete.
+ * Motion M-07: the segment draws downward with the scroll (scaleY 0 → 1, origin top). Every segment uses the
+ * same "pen" — a line at 70% of the viewport: whatever part of the rail is above it is drawn, the rest is not.
+ * One shared line keeps the route continuous across section boundaries (with different start / end lines, the
+ * segment above could still be unfinished while the next one had already started, which showed as a break).
+ * Reduced motion: drawn complete.
  */
 export function Rail({ className }: { className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 85%", "end 70%"] });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 70%", "end 70%"] });
   const scaleY = useCompleteWhenReduced(scrollYProgress);
 
   return (
