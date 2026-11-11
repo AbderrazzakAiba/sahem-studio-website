@@ -94,4 +94,10 @@
     outline: 2px solid var(--focus-ring);
     outline-offset: 3px;
   }
+  /* Tailwind v4 dropped the hand cursor on buttons; every clickable control shows it again. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary {
+    cursor: pointer;
+  }
 }
