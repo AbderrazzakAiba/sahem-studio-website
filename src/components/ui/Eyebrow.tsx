@@ -18,11 +18,7 @@ export function Eyebrow({ label, latin, className }: Props) {
         className={cn("flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] font-medium md:text-[16px]", className)}
       >
         <span>{label}</span>
-        <span
-          lang="en"
-          dir="ltr"
-          className="text-[11px] font-semibold tracking-[0.2em] text-text-secondary md:text-[12px]"
-        >
+        <span lang="en" dir="ltr" className="text-[12px] font-semibold tracking-[0.2em] text-text-secondary">
           {latin}
         </span>
       </p>
