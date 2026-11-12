@@ -77,14 +77,25 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
   useEffect(() => {
     if (moved.current) heading.current?.focus();
   }, [step]);
+  // Focus the error summary only right after a "Next" / "Send" attempt — never while the visitor is typing
+  // (focusing on every change of `errors` pulled the cursor out of the field after each letter).
+  const [attempt, setAttempt] = useState(0);
+  const sendError = useRef<HTMLParagraphElement>(null);
   useEffect(() => {
-    if (errors.length) summaryBox.current?.focus();
-  }, [errors]);
+    if (attempt) summaryBox.current?.focus();
+  }, [attempt]);
+  useEffect(() => {
+    if (status === "error") sendError.current?.focus();
+  }, [status]);
+  const showErrors = (invalid: Field[]) => {
+    setErrors(invalid);
+    setAttempt((n) => n + 1);
+  };
 
   const update = <K extends keyof Brief>(key: K, value: Brief[K]) => {
     setBrief((b) => ({ ...b, [key]: value }));
-    // clear the error of a field as soon as it is fixed
-    setErrors((e) => e.filter((f) => f !== key));
+    // clear the error of a field once it is edited (same array when it had none: no needless re-render)
+    setErrors((e) => (e.includes(key as Field) ? e.filter((f) => f !== key) : e));
   };
   const toggleService = (slug: ServiceSlug) =>
     update(
@@ -99,7 +110,7 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
   };
   const next = () => {
     const invalid = invalidFields(brief, step);
-    if (invalid.length) return setErrors(invalid);
+    if (invalid.length) return showErrors(invalid);
     go(step + 1);
   };
 
@@ -107,7 +118,7 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
     e.preventDefault();
     if (step < total - 1) return next();
     const invalid = invalidFields(brief, step);
-    if (invalid.length) return setErrors(invalid);
+    if (invalid.length) return showErrors(invalid);
     setStatus("sending");
     const res = await submitBrief(brief, {
       locale,
@@ -338,7 +349,12 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
         ) : null}
 
         {status === "error" ? (
-          <p role="alert" className="border-2 border-(--feedback-error) bg-bg-raised px-4 py-3.5 text-[15px]">
+          <p
+            ref={sendError}
+            tabIndex={-1}
+            role="alert"
+            className="border-2 border-(--feedback-error) bg-bg-raised px-4 py-3.5 text-[15px] outline-none"
+          >
             {t.sendError.replace("{email}", contact.email)}
           </p>
         ) : null}
