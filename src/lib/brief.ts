@@ -40,7 +40,11 @@ export const limits = { name: 80, reach: 120, date: 80, message: 1000 } as const
 export type Field = "services" | "budget" | "timing" | "name" | "reach" | "method";
 
 /** Fields checked on each step (0-based). */
-export const stepFields: Field[][] = [["services"], ["budget"], ["timing"], ["name", "reach", "method"]];
+export const stepFields: Field[][] = [["services"], ["budget"], ["timing"], ["name", "method", "reach"]];
+
+/** What the contact field asks for, depending on the chosen method (null until a method is chosen). */
+export const reachKind = (method: MethodKey | null): "email" | "phone" | null =>
+  method === "email" ? "email" : method ? "phone" : null;
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 /** Phone: digits with optional +, spaces, dots, dashes or brackets; 9–15 digits in total. */
@@ -62,8 +66,12 @@ export function invalidFields(brief: Brief, step: number): Field[] {
         return brief.timing === null;
       case "name":
         return brief.name.trim().length === 0;
-      case "reach":
-        return !(isEmail(brief.reach) || isPhone(brief.reach));
+      case "reach": {
+        // asked only once a method is chosen: an email for "email", a phone number for WhatsApp or a call
+        const kind = reachKind(brief.method);
+        if (!kind) return false;
+        return kind === "email" ? !isEmail(brief.reach) : !isPhone(brief.reach);
+      }
       case "method":
         return brief.method === null;
     }
