@@ -1,6 +1,8 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { BrandIcon, brands, type BrandName } from "@/components/ui/BrandIcon";
 import { Container } from "@/components/ui/Container";
+import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/ui/Logo";
 import { navItems, privacyHref, site, startHref, whatsappHref } from "@/content/site";
 import type { ChromeCopy } from "@/lib/dictionaries";
@@ -8,15 +10,28 @@ import { localeInfo, localizedPath, locales, type Locale } from "@/lib/i18n";
 
 type Props = { locale: Locale; t: ChromeCopy };
 
-const linkClass = "inline-flex min-h-11 items-center text-text-secondary hover:text-text-primary lg:min-h-0";
+const linkClass =
+  "group inline-flex min-h-11 items-center gap-2.5 text-text-secondary hover:text-text-primary lg:min-h-0";
+
+/** Platform logo beside a footer link: text colour, the platform's own colour on hover. */
+function Brand({ name }: { name: BrandName }) {
+  const hover = brands[name].hover;
+  return (
+    <BrandIcon
+      name={name}
+      style={hover ? ({ "--brand": hover } as CSSProperties) : undefined}
+      className={hover ? "transition-colors group-hover:text-(--brand)" : undefined}
+    />
+  );
+}
 
 /**
  * Site footer (handoff home screens): brand + tagline · site links · contact · follow, then copyright,
  * privacy and the other languages. Desktop: 4 columns; mobile: brand, two columns (site, follow), contact.
- * Emails, phones and handles are LTR islands inside Arabic text.
+ * Emails, phones and handles are LTR islands inside Arabic text. Each contact/follow link has its icon:
+ * mail, WhatsApp (the phone numbers are the studio's WhatsApp numbers) and the platform logos.
  */
 export function Footer({ locale, t }: Props) {
-  const wa = whatsappHref(site.whatsapp);
   const year = site.copyrightYear;
 
   return (
@@ -41,27 +56,32 @@ export function Footer({ locale, t }: Props) {
 
           <Column title={t.footer.contact} className="col-span-2 max-md:order-last md:col-span-1">
             <a href={`mailto:${site.email}`} className={linkClass}>
+              <Icon name="mail" size={18} />
               <bdi dir="ltr" className="font-latin">
                 {site.email}
               </bdi>
             </a>
             {site.phones.map((p) => (
-              <a key={p.tel} href={`tel:${p.tel}`} className={linkClass}>
+              <a
+                key={p.tel}
+                href={whatsappHref(p.tel.replace("+", "")) ?? `tel:${p.tel}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                <Brand name="whatsapp" />
+                <span className="sr-only">{t.contact.whatsapp} </span>
                 <bdi dir="ltr" className="font-latin">
                   {p.display}
                 </bdi>
               </a>
             ))}
-            {wa ? (
-              <a href={wa} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                {t.contact.whatsapp}
-              </a>
-            ) : null}
           </Column>
 
           <Column title={t.footer.follow}>
             {site.socials.map((s) => (
               <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                <Brand name={s.icon} />
                 <bdi dir="ltr" className="font-latin">
                   {s.name}
                   {s.handle ? <span className="max-md:hidden"> · {s.handle}</span> : null}
