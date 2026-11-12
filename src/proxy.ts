@@ -7,6 +7,8 @@ import { defaultLocale, isLocale } from "@/lib/i18n";
  *  /en/... and /fr/...   → served as-is
  *  /ar/...               → redirected to the unprefixed URL (Arabic lives at /), so each page has one address
  *  everything else       → rewritten internally to /ar/...
+ * Every request carries its locale in the `x-sahem-locale` header, so pages rendered outside the [lang] tree
+ * (the global 404) still speak the visitor's language.
  */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -18,11 +20,14 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  if (isLocale(first)) return NextResponse.next();
+  const headers = new Headers(request.headers);
+  headers.set("x-sahem-locale", isLocale(first) ? first : defaultLocale);
+
+  if (isLocale(first)) return NextResponse.next({ request: { headers } });
 
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
-  return NextResponse.rewrite(url);
+  return NextResponse.rewrite(url, { request: { headers } });
 }
 
 export const config = {
