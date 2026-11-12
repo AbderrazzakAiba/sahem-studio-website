@@ -1075,5 +1075,68 @@
         "body": ["Pour toute question sur vos données, écrivez-nous à {email}."]
       }
     ]
+  },
+  "processPage": {
+    "meta": {
+      "title": "Méthode",
+      "description": "Quatre étapes claires, de l’idée au lancement : découvrir, planifier, concevoir, lancer."
+    },
+    "eyebrow": "Notre méthode",
+    "latin": "",
+    "title": "Nous planifions avant de concevoir.",
+    "lead": "Quatre étapes claires. Vous savez toujours où vous en êtes, ce que vous recevez à chacune, et ce que nous attendons de vous.",
+    "labels": {
+      "duration": "Durée habituelle :",
+      "what": "Ce que nous faisons",
+      "role": "Votre rôle",
+      "get": "Vous recevez"
+    },
+    "steps": [
+      {
+        "latin": "",
+        "line": "Nous comprenons votre projet, votre public et le véritable objectif.",
+        "duration": "3–5 jours",
+        "what": "Une séance ou un court questionnaire sur votre activité, votre public et ce que vous voulez atteindre.",
+        "role": "Partagez ce que vous avez : logo, photos, exemples qui vous plaisent, et vos contraintes.",
+        "get": "Le brief du projet : objectif, public et périmètre."
+      },
+      {
+        "latin": "",
+        "line": "Nous traçons la route : structure, contenu et jalons.",
+        "duration": "Environ une semaine",
+        "what": "Nous transformons le brief en plan : ce que nous allons créer, dans quel ordre, et quand.",
+        "role": "Vous validez le plan avant tout design.",
+        "get": "Un plan et une carte : pages ou éléments, étapes et dates."
+      },
+      {
+        "latin": "",
+        "line": "Nous concevons et réalisons avec précision, en validant avec vous à chaque étape.",
+        "duration": "1–4 semaines selon le projet",
+        "what": "Nous concevons la direction, puis les détails, puis nous réalisons.",
+        "role": "Vous validez à des moments définis et donnez vos retours au même endroit.",
+        "get": "Des maquettes et une version fonctionnelle à valider."
+      },
+      {
+        "latin": "",
+        "line": "Nous publions, testons et vous remettons tous les fichiers.",
+        "duration": "2–3 jours",
+        "what": "Nous testons sur de vrais appareils, puis nous lançons.",
+        "role": "Vous validez la version finale.",
+        "get": "Le lancement, tous les fichiers et un court guide d’utilisation."
+      }
+    ],
+    "about": {
+      "eyebrow": "Qui sommes-nous",
+      "latin": "",
+      "title": "Une petite équipe, une route claire.",
+      "lead": "Un studio créatif et technologique qui aide les petites et moyennes marques à se présenter de façon professionnelle.",
+      "body": "Sahem Studio est une équipe multiservice basée en Algérie, qui réunit design, développement et création de contenu sous un même toit. Nous prenons un nombre limité de projets à la fois, pour que chacun reçoive l’attention qu’il mérite."
+    },
+    "cta": {
+      "eyebrow": "Lancer un projet",
+      "latin": "",
+      "title": "De l’idée à l’objectif.",
+      "lead": "La première étape commence par quatre courtes questions."
+    }
   }
 }

@@ -3,10 +3,10 @@ import type { ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { navItems, privacyHref, site, startHref, whatsappHref } from "@/content/site";
-import type { Dictionary } from "@/lib/dictionaries";
+import type { ChromeCopy } from "@/lib/dictionaries";
 import { localeInfo, localizedPath, locales, type Locale } from "@/lib/i18n";
 
-type Props = { locale: Locale; t: Dictionary };
+type Props = { locale: Locale; t: ChromeCopy };
 
 const linkClass = "inline-flex min-h-11 items-center text-text-secondary hover:text-text-primary md:min-h-0";
 
