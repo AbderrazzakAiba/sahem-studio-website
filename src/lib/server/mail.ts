@@ -7,8 +7,11 @@ import { isEmail } from "@/lib/brief";
  * Sends a brief to the studio's mailbox through Resend (https://resend.com), from the server only.
  *
  * Configuration (Vercel › Settings › Environment Variables — never in the repo):
- *  - RESEND_API_KEY  required to send. Without it nothing is sent (local / preview without a key) and the
- *                    function returns "skipped".
+ *  - RESEND_API_KEY  required to send. Without it nothing is sent:
+ *                      · on the live site (VERCEL_ENV=production) the result is "failed", so the visitor sees
+ *                        "couldn't send — email us" instead of a false confirmation;
+ *                      · locally and on preview links it is "skipped" and the form reaches the thanks page, so
+ *                        the flow can be reviewed end to end.
  *  - BRIEF_TO        optional, defaults to the studio email (site.email).
  *  - BRIEF_FROM      optional, defaults to Resend's test sender, which can only deliver to the Resend
  *                    account's own address — create the Resend account with the studio email. Once the
@@ -30,6 +33,10 @@ const escape = (s: string) =>
 export async function deliverBrief(brief: Brief, labels: Labels): Promise<DeliveryResult> {
   const key = process.env.RESEND_API_KEY;
   if (!key) {
+    if (process.env.VERCEL_ENV === "production") {
+      console.error("[brief] RESEND_API_KEY is not set on production — brief not sent, visitor told to email us.");
+      return "failed";
+    }
     console.warn("[brief] RESEND_API_KEY is not set — brief not sent (preview mode).");
     return "skipped";
   }
