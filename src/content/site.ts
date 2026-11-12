@@ -5,7 +5,8 @@
  * to hide those buttons.
  */
 export const site = {
-  email: "sahem.studio@gmail.com",
+  /** Public address (Cloudflare Email Routing forwards it to the team mailbox). */
+  email: "contact@sahemstudio.com",
   phones: [
     { display: "0669 91 37 38", tel: "+213669913738" },
     { display: "0659 60 80 46", tel: "+213659608046" },

@@ -28,7 +28,7 @@ function Brand({ name }: { name: BrandName }) {
 /**
  * Site footer (handoff home screens): brand + tagline · site links · contact · follow, then copyright,
  * privacy and the other languages. Desktop: 4 columns; mobile: brand, two columns (site, follow), contact.
- * Emails, phones and handles are LTR islands inside Arabic text. Each contact/follow link has its icon:
+ * Emails, phones and platform names are LTR islands inside Arabic text. Each contact/follow link has its icon:
  * mail, WhatsApp (the phone numbers are the studio's WhatsApp numbers) and the platform logos.
  */
 export function Footer({ locale, t }: Props) {
@@ -84,7 +84,6 @@ export function Footer({ locale, t }: Props) {
                 <Brand name={s.icon} />
                 <bdi dir="ltr" className="font-latin">
                   {s.name}
-                  {s.handle ? <span className="max-md:hidden"> · {s.handle}</span> : null}
                 </bdi>
               </a>
             ))}
