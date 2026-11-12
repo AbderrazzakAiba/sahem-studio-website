@@ -18,6 +18,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
+  // 404 for unmatched URLs (app/global-not-found.tsx): needed because the root layout sits under [lang].
+  experimental: { globalNotFound: true },
   partialPrefetching: true,
   poweredByHeader: false,
   reactStrictMode: true,
