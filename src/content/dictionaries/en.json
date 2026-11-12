@@ -979,9 +979,6 @@
       "title": "How can we reach you?",
       "name": "Name",
       "nameError": "Enter your name.",
-      "reach": "Email or phone number",
-      "reachHint": "Such as name@example.com or 0555 12 34 56",
-      "reachError": "Complete the email or phone number, such as name@example.com",
       "method": "How would you prefer we contact you?",
       "methods": {
         "whatsapp": "WhatsApp",
@@ -989,6 +986,18 @@
         "call": "Call"
       },
       "methodError": "Choose one way.",
+      "methodHint": "Choose first, then we’ll ask for your email or number.",
+      "email": {
+        "label": "Your email",
+        "hint": "e.g. name@example.com",
+        "error": "Enter a valid email, such as name@example.com"
+      },
+      "phone": {
+        "label": "Your phone number",
+        "whatsappLabel": "WhatsApp number",
+        "hint": "e.g. 0555 12 34 56 or +213 555 12 34 56",
+        "error": "Enter a valid number, such as 0555 12 34 56"
+      },
       "message": "Your idea in brief (optional)",
       "messageHint": "Two or three lines are enough."
     },

@@ -16,10 +16,12 @@ import {
   invalidFields,
   limits,
   methodKeys,
+  reachKind,
   stepFields,
   timingKeys,
   type Brief,
   type Field,
+  type MethodKey,
 } from "@/lib/brief";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
@@ -97,6 +99,19 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
     // clear the error of a field once it is edited (same array when it had none: no needless re-render)
     setErrors((e) => (e.includes(key as Field) ? e.filter((f) => f !== key) : e));
   };
+  const kind = reachKind(brief.method);
+  const reachError = kind === "email" ? t.contact.email.error : t.contact.phone.error;
+  /** Choosing the method decides the contact field; switching between email and phone clears it. */
+  const chooseMethod = (method: MethodKey) => {
+    const changesKind = reachKind(method) !== kind;
+    setBrief((b) => ({ ...b, method, reach: changesKind ? "" : b.reach }));
+    setErrors((e) =>
+      e.includes("method") || (changesKind && e.includes("reach"))
+        ? e.filter((f) => f !== "method" && (!changesKind || f !== "reach"))
+        : e,
+    );
+  };
+
   const toggleService = (slug: ServiceSlug) =>
     update(
       "services",
@@ -134,7 +149,7 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
     budget: t.budget.error,
     timing: t.timing.error,
     name: t.contact.nameError,
-    reach: t.contact.reachError,
+    reach: reachError,
     method: t.contact.methodError,
   };
   const has = (f: Field) => errors.includes(f);
@@ -303,21 +318,11 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
               error={has("name") ? t.contact.nameError : null}
               onChange={(e) => update("name", e.target.value)}
             />
-            <TextField
-              id="f-reach"
-              label={t.contact.reach}
-              hint={t.contact.reachHint}
-              dir="ltr"
-              inputMode="email"
-              autoComplete="email"
-              className="[&_input]:font-latin [&_input]:rtl:text-right"
-              value={brief.reach}
-              maxLength={limits.reach}
-              error={has("reach") ? t.contact.reachError : null}
-              onChange={(e) => update("reach", e.target.value)}
-            />
             <fieldset className="flex flex-col gap-2.5">
               <legend className="mb-2 text-[15px] font-medium">{t.contact.method}</legend>
+              {!brief.method ? (
+                <p className="-mt-1 mb-1 text-[13px] text-text-secondary">{t.contact.methodHint}</p>
+              ) : null}
               <div className="grid gap-2.5 sm:grid-cols-3">
                 {methodKeys.map((key) => (
                   <RadioRow
@@ -326,7 +331,7 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
                     name="method"
                     value={key}
                     checked={brief.method === key}
-                    onChange={(v) => update("method", v as Brief["method"])}
+                    onChange={(v) => chooseMethod(v as MethodKey)}
                     invalid={has("method")}
                     describedBy={has("method") ? "f-method-error" : undefined}
                   >
@@ -336,6 +341,29 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
               </div>
               {has("method") ? <FieldError id="f-method-error">{t.contact.methodError}</FieldError> : null}
             </fieldset>
+            {kind ? (
+              <TextField
+                key={kind}
+                id="f-reach"
+                label={
+                  kind === "email"
+                    ? t.contact.email.label
+                    : brief.method === "whatsapp"
+                      ? t.contact.phone.whatsappLabel
+                      : t.contact.phone.label
+                }
+                hint={kind === "email" ? t.contact.email.hint : t.contact.phone.hint}
+                type={kind === "email" ? "email" : "tel"}
+                inputMode={kind === "email" ? "email" : "tel"}
+                autoComplete={kind === "email" ? "email" : "tel"}
+                dir="ltr"
+                className="[&_input]:font-latin [&_input]:rtl:text-right"
+                value={brief.reach}
+                maxLength={limits.reach}
+                error={has("reach") ? reachError : null}
+                onChange={(e) => update("reach", e.target.value)}
+              />
+            ) : null}
             <TextField
               id="f-message"
               label={t.contact.message}

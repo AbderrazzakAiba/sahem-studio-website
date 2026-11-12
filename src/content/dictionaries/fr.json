@@ -979,9 +979,6 @@
       "title": "Comment vous joindre ?",
       "name": "Nom",
       "nameError": "Indiquez votre nom.",
-      "reach": "E-mail ou numéro de téléphone",
-      "reachHint": "Comme name@example.com ou 0555 12 34 56",
-      "reachError": "Complétez l’e-mail ou le numéro, comme name@example.com",
       "method": "Comment préférez-vous être contacté ?",
       "methods": {
         "whatsapp": "WhatsApp",
@@ -989,6 +986,18 @@
         "call": "Appel"
       },
       "methodError": "Choisissez un moyen.",
+      "methodHint": "Choisissez d’abord, puis nous vous demandons l’e-mail ou le numéro.",
+      "email": {
+        "label": "Votre e-mail",
+        "hint": "ex. name@example.com",
+        "error": "Saisissez un e-mail valide, comme name@example.com"
+      },
+      "phone": {
+        "label": "Votre numéro de téléphone",
+        "whatsappLabel": "Numéro WhatsApp",
+        "hint": "ex. 0555 12 34 56 ou +213 555 12 34 56",
+        "error": "Saisissez un numéro valide, comme 0555 12 34 56"
+      },
       "message": "Votre idée en bref (facultatif)",
       "messageHint": "Deux ou trois lignes suffisent."
     },
