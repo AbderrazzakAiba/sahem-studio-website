@@ -1075,5 +1075,68 @@
         "body": ["For any question about your data, email us at {email}."]
       }
     ]
+  },
+  "processPage": {
+    "meta": {
+      "title": "Process",
+      "description": "Four clear stops from idea to launch: discover, plan, design & build, launch."
+    },
+    "eyebrow": "Our process",
+    "latin": "",
+    "title": "We plan before we design.",
+    "lead": "Four clear stops. You always know where you are, what you get at each one, and what we need from you.",
+    "labels": {
+      "duration": "Usual duration:",
+      "what": "What we do",
+      "role": "Your part",
+      "get": "You get"
+    },
+    "steps": [
+      {
+        "latin": "",
+        "line": "We get to know your project, your audience, and the real goal.",
+        "duration": "3–5 days",
+        "what": "A session or a short questionnaire about your business, your audience and what you want to achieve.",
+        "role": "Share what you have: logo, photos, examples you like, and any constraints.",
+        "get": "The project brief: goal, audience and scope."
+      },
+      {
+        "latin": "",
+        "line": "We map the route: structure, content, and milestones.",
+        "duration": "About a week",
+        "what": "We turn the brief into a plan: what we’ll make, in which order, and when.",
+        "role": "You approve the plan before any design.",
+        "get": "A plan and a map: pages or items, milestones and dates."
+      },
+      {
+        "latin": "",
+        "line": "We design and build with precision, reviewing with you at every step.",
+        "duration": "1–4 weeks, depending on the project",
+        "what": "We design the direction, then the details, then build.",
+        "role": "You review at set points and give feedback in one place.",
+        "get": "Designs and a working version to review."
+      },
+      {
+        "latin": "",
+        "line": "We publish, test, and hand over every file.",
+        "duration": "2–3 days",
+        "what": "We test on real devices, then launch.",
+        "role": "You approve the final version.",
+        "get": "The launch, all files, and a short guide to using them."
+      }
+    ],
+    "about": {
+      "eyebrow": "About",
+      "latin": "",
+      "title": "A small team, a clear route.",
+      "lead": "A creative and tech studio helping small and medium brands show up professionally.",
+      "body": "Sahem Studio is a multi-service team from Algeria that brings design, development and content together under one roof. We take on a limited number of projects at a time, so each one gets the attention it deserves."
+    },
+    "cta": {
+      "eyebrow": "Start a project",
+      "latin": "",
+      "title": "From brief to bullseye.",
+      "lead": "The first stop starts with four short questions."
+    }
   }
 }

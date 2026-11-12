@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { navItems, site, startHref, whatsappHref } from "@/content/site";
-import type { Dictionary } from "@/lib/dictionaries";
+import type { ChromeCopy } from "@/lib/dictionaries";
 import { localizedPath, type Locale } from "@/lib/i18n";
 
-type Props = { locale: Locale; t: Dictionary };
+type Props = { locale: Locale; t: ChromeCopy };
 
 /**
  * Site header (handoff › Header): logo · nav (≥ 901px) · language · theme · start CTA (≥ 768px) · menu (≤ 900px).
