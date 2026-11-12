@@ -32,7 +32,7 @@ export default async function FocusLayout({ children, params }: LayoutProps<"/[l
             <LanguageSwitch locale={lang} label={t.language.label} />
             <Link
               href={localizedPath("/", lang)}
-              className="inline-flex min-h-11 items-center gap-2 px-3 text-[14px] font-semibold shadow-[inset_0_0_0_1.5px_var(--border-strong)] hover:bg-bg-sunken md:min-h-12 md:gap-2.5 md:px-4.5 md:text-[15px]"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-2 px-3 text-[14px] font-semibold shadow-[inset_0_0_0_1.5px_var(--border-strong)] hover:bg-bg-sunken md:min-h-12 md:gap-2.5 md:px-4.5 md:text-[15px]"
             >
               <Icon name="close" size={18} />
               <span className="max-sm:sr-only">{t.start.back}</span>

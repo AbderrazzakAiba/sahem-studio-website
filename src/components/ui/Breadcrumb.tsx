@@ -23,7 +23,10 @@ export function Breadcrumb({ items, label, className }: Props) {
             <Fragment key={`${item.label}-${i}`}>
               <li className="inline-flex min-h-11 items-center">
                 {item.href && !last ? (
-                  <Link href={item.href} className="hover:text-text-primary">
+                  <Link
+                    href={item.href}
+                    className="inline-flex min-h-11 min-w-11 items-center justify-center hover:text-text-primary"
+                  >
                     {item.label}
                   </Link>
                 ) : (

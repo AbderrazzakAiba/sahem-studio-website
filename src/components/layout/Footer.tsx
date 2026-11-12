@@ -8,7 +8,7 @@ import { localeInfo, localizedPath, locales, type Locale } from "@/lib/i18n";
 
 type Props = { locale: Locale; t: ChromeCopy };
 
-const linkClass = "inline-flex min-h-11 items-center text-text-secondary hover:text-text-primary md:min-h-0";
+const linkClass = "inline-flex min-h-11 items-center text-text-secondary hover:text-text-primary lg:min-h-0";
 
 /**
  * Site footer (handoff home screens): brand + tagline · site links · contact · follow, then copyright,
@@ -73,8 +73,11 @@ export function Footer({ locale, t }: Props) {
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border-subtle pt-5 text-[13px] text-text-secondary md:pt-6 md:text-[14px]">
           <span>{t.footer.copyright.replace("{year}", String(year))}</span>
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link href={localizedPath(privacyHref, locale)} className="hover:text-text-primary">
+          <div className="flex flex-wrap gap-x-6">
+            <Link
+              href={localizedPath(privacyHref, locale)}
+              className="inline-flex min-h-11 items-center hover:text-text-primary"
+            >
               {t.footer.privacy}
             </Link>
             {locales
@@ -85,7 +88,7 @@ export function Footer({ locale, t }: Props) {
                   href={localizedPath("/", l)}
                   lang={l}
                   hrefLang={localeInfo[l].hreflang}
-                  className="hover:text-text-primary [&:lang(en)]:font-latin [&:lang(fr)]:font-latin"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center hover:text-text-primary [&:lang(en)]:font-latin [&:lang(fr)]:font-latin"
                 >
                   {localeInfo[l].name}
                 </Link>
