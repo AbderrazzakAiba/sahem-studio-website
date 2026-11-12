@@ -932,5 +932,148 @@
         "result": "Une explication claire, facile à partager, et moins de questions sur l’inscription pour l’équipe."
       }
     }
+  },
+  "start": {
+    "meta": {
+      "title": "Lancer votre projet",
+      "description": "Parlez-nous de votre idée en quatre courtes étapes, nous revenons vers vous avec un plan clair."
+    },
+    "back": "Retour au site",
+    "eyebrow": "Lancer un projet",
+    "latin": "",
+    "steps": ["Service", "Budget", "Délai", "Contact"],
+    "stepOf": "Étape {n} sur {total}",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "submit": "Envoyer la demande",
+    "sending": "Envoi…",
+    "service": {
+      "title": "De quoi avez-vous besoin ?",
+      "lead": "Choisissez un ou plusieurs services. Vous pouvez changer à tout moment.",
+      "error": "Choisissez au moins un service."
+    },
+    "budget": {
+      "title": "Quel est votre budget approximatif ?",
+      "lead": "Une simple estimation, pour vous proposer la bonne solution.",
+      "options": {
+        "low": "Moins de 50 000 DZD",
+        "mid": "De 50 000 à 150 000 DZD",
+        "high": "Plus de 150 000 DZD",
+        "unknown": "Je ne sais pas encore — aidez-moi à estimer"
+      },
+      "error": "Choisissez une fourchette, ou « Je ne sais pas encore »."
+    },
+    "timing": {
+      "title": "Quand souhaitez-vous commencer ?",
+      "options": {
+        "asap": "Dès que possible",
+        "month": "D’ici un mois",
+        "quarter": "Dans un à trois mois",
+        "undecided": "Pas encore décidé"
+      },
+      "dateLabel": "Une date importante ? (facultatif)",
+      "dateHint": "Comme l’ouverture d’une boutique ou le lancement d’une campagne.",
+      "error": "Choisissez un délai approximatif."
+    },
+    "contact": {
+      "title": "Comment vous joindre ?",
+      "name": "Nom",
+      "nameError": "Indiquez votre nom.",
+      "reach": "E-mail ou numéro de téléphone",
+      "reachHint": "Comme name@example.com ou 0555 12 34 56",
+      "reachError": "Complétez l’e-mail ou le numéro, comme name@example.com",
+      "method": "Comment préférez-vous être contacté ?",
+      "methods": {
+        "whatsapp": "WhatsApp",
+        "email": "E-mail",
+        "call": "Appel"
+      },
+      "methodError": "Choisissez un moyen.",
+      "message": "Votre idée en bref (facultatif)",
+      "messageHint": "Deux ou trois lignes suffisent."
+    },
+    "errorSummary": "Vérifiez ces champs avant de continuer :",
+    "sendError": "Impossible d’envoyer votre demande pour le moment. Réessayez, ou écrivez-nous directement à {email}.",
+    "summary": {
+      "title": "Votre demande",
+      "empty": "—",
+      "direct": "Vous préférez parler directement ?",
+      "whatsapp": "Écrivez-nous sur WhatsApp",
+      "email": "Écrivez-nous par e-mail",
+      "privacy": "Nous utilisons vos données uniquement pour répondre à votre demande.",
+      "privacyLink": "Politique de confidentialité"
+    },
+    "honeypot": "Laissez ce champ vide"
+  },
+  "thanks": {
+    "meta": {
+      "title": "Demande envoyée"
+    },
+    "eyebrow": "Demande reçue",
+    "latin": "",
+    "title": "Votre idée est bien arrivée.",
+    "next": [
+      "Nous lisons votre demande avec attention.",
+      "Nous revenons vers vous sous deux jours ouvrés.",
+      "Nous vous envoyons un premier plan clair."
+    ],
+    "home": "Retour à l’accueil",
+    "whatsapp": "Écrivez-nous sur WhatsApp",
+    "email": "Écrivez-nous par e-mail",
+    "follow": "Suivez-nous en attendant"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Politique de confidentialité",
+      "description": "Comment le site de Sahem Studio collecte, utilise et protège vos données."
+    },
+    "title": "Politique de confidentialité",
+    "updated": "Dernière mise à jour :",
+    "date": "2026-11-11",
+    "draft": "Brouillon : le texte final est relu par un spécialiste avant le lancement.",
+    "toc": "Sur cette page",
+    "sections": [
+      {
+        "title": "Les données que nous collectons",
+        "body": [
+          "Lorsque vous envoyez le formulaire « Lancer votre projet », nous recevons : votre nom, votre e-mail ou numéro de téléphone, votre moyen de contact préféré, les services choisis, la fourchette de budget, le délai approximatif et ce que vous écrivez sur votre idée.",
+          "Nous ne demandons aucune donnée sensible et ne collectons rien d’autre via le site."
+        ]
+      },
+      {
+        "title": "Pourquoi nous les collectons",
+        "body": [
+          "Nous utilisons ces données uniquement pour répondre à votre demande et préparer un premier plan. Nous ne les utilisons pas pour la publicité et ne vous envoyons pas de messages marketing sans votre accord."
+        ]
+      },
+      {
+        "title": "Où elles sont conservées, et combien de temps",
+        "body": [
+          "Votre demande arrive dans la boîte mail du studio. Nous la conservons le temps nécessaire au suivi de votre demande, et la supprimons si elle ne devient pas un projet dans un délai raisonnable."
+        ]
+      },
+      {
+        "title": "Avec qui nous les partageons",
+        "body": [
+          "Nous ne vendons pas vos données et ne les partageons avec personne pour ses propres besoins. Techniquement, elles transitent par les services qui font fonctionner le site : l’hébergement (Vercel), l’envoi des e-mails (Resend) et la boîte mail du studio (Google)."
+        ]
+      },
+      {
+        "title": "Vos droits",
+        "body": [
+          "Vous pouvez demander à consulter, corriger ou supprimer vos données à tout moment en nous écrivant à l’adresse ci-dessous, conformément à la loi algérienne n° 18-07 relative à la protection des personnes physiques dans le traitement des données à caractère personnel."
+        ]
+      },
+      {
+        "title": "Cookies",
+        "body": [
+          "Le site n’utilise actuellement ni cookies de suivi ni outils d’analyse. Votre navigateur conserve seulement votre choix de mode clair ou sombre, sur votre appareil."
+        ]
+      },
+      {
+        "title": "Nous contacter",
+        "body": ["Pour toute question sur vos données, écrivez-nous à {email}."]
+      }
+    ]
   }
 }

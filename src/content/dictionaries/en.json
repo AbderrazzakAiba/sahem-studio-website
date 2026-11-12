@@ -932,5 +932,148 @@
         "result": "A clear explainer that is easy to share, and fewer enrolment questions for the team."
       }
     }
+  },
+  "start": {
+    "meta": {
+      "title": "Start your project",
+      "description": "Tell us about your idea in four short steps, and we’ll come back with a clear plan."
+    },
+    "back": "Back to the site",
+    "eyebrow": "Start a project",
+    "latin": "",
+    "steps": ["Service", "Budget", "Timing", "Contact"],
+    "stepOf": "Step {n} of {total}",
+    "next": "Next",
+    "previous": "Back",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "service": {
+      "title": "What do you need?",
+      "lead": "Choose one service or more. You can change your choice at any time.",
+      "error": "Choose at least one service."
+    },
+    "budget": {
+      "title": "What’s your approximate budget?",
+      "lead": "Just an estimate, it helps us suggest the right solution.",
+      "options": {
+        "low": "Under 50,000 DZD",
+        "mid": "50,000 to 150,000 DZD",
+        "high": "Over 150,000 DZD",
+        "unknown": "Not sure yet — help me estimate"
+      },
+      "error": "Choose an approximate range, or “Not sure yet”."
+    },
+    "timing": {
+      "title": "When would you like to start?",
+      "options": {
+        "asap": "As soon as possible",
+        "month": "Within a month",
+        "quarter": "In one to three months",
+        "undecided": "Not decided yet"
+      },
+      "dateLabel": "Is there an important date? (optional)",
+      "dateHint": "Such as a shop opening or a campaign launch.",
+      "error": "Choose an approximate timing."
+    },
+    "contact": {
+      "title": "How can we reach you?",
+      "name": "Name",
+      "nameError": "Enter your name.",
+      "reach": "Email or phone number",
+      "reachHint": "Such as name@example.com or 0555 12 34 56",
+      "reachError": "Complete the email or phone number, such as name@example.com",
+      "method": "How would you prefer we contact you?",
+      "methods": {
+        "whatsapp": "WhatsApp",
+        "email": "Email",
+        "call": "Call"
+      },
+      "methodError": "Choose one way.",
+      "message": "Your idea in brief (optional)",
+      "messageHint": "Two or three lines are enough."
+    },
+    "errorSummary": "Check these fields before continuing:",
+    "sendError": "We couldn’t send your request right now. Please try again, or email us directly at {email}.",
+    "summary": {
+      "title": "Your request",
+      "empty": "—",
+      "direct": "Prefer to talk directly?",
+      "whatsapp": "Message us on WhatsApp",
+      "email": "Email us",
+      "privacy": "We only use your details to reply to your request.",
+      "privacyLink": "Privacy policy"
+    },
+    "honeypot": "Leave this field empty"
+  },
+  "thanks": {
+    "meta": {
+      "title": "Request sent"
+    },
+    "eyebrow": "Brief received",
+    "latin": "",
+    "title": "Your idea has arrived.",
+    "next": [
+      "We read your request carefully.",
+      "We get back to you within two working days.",
+      "We send you a clear first plan."
+    ],
+    "home": "Back to the home page",
+    "whatsapp": "Message us on WhatsApp",
+    "email": "Email us",
+    "follow": "Follow us in the meantime"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy policy",
+      "description": "How the Sahem Studio website collects, uses and protects your data."
+    },
+    "title": "Privacy policy",
+    "updated": "Last updated:",
+    "date": "2026-11-11",
+    "draft": "Draft: the final text is reviewed by a specialist before launch.",
+    "toc": "On this page",
+    "sections": [
+      {
+        "title": "What data we collect",
+        "body": [
+          "When you send the “Start your project” form we receive: your name, your email or phone number, how you prefer to be contacted, the services you chose, your budget range, the approximate timing, and what you write about your idea.",
+          "We don’t ask for sensitive data, and we collect nothing else through the website."
+        ]
+      },
+      {
+        "title": "Why we collect it",
+        "body": [
+          "We use this data only to reply to your request and prepare a first plan for your project. We don’t use it for advertising, and we don’t send you marketing emails without your consent."
+        ]
+      },
+      {
+        "title": "Where it is kept, and for how long",
+        "body": [
+          "Your request arrives in the studio’s mailbox. We keep it for as long as needed to follow up on your request, and delete it if it doesn’t become a project within a reasonable time."
+        ]
+      },
+      {
+        "title": "Who we share it with",
+        "body": [
+          "We don’t sell your data or share it with anyone for their own purposes. Technically, it passes through services we rely on to run the website: hosting (Vercel), email delivery (Resend) and the studio’s mailbox (Google)."
+        ]
+      },
+      {
+        "title": "Your rights",
+        "body": [
+          "You can ask to see, correct or delete your data at any time by emailing us at the address below, in line with Algerian Law No. 18-07 on the protection of individuals in the processing of personal data."
+        ]
+      },
+      {
+        "title": "Cookies",
+        "body": [
+          "The website currently uses no tracking cookies and no analytics. Your browser only keeps your choice of light or dark mode, and it stays on your device."
+        ]
+      },
+      {
+        "title": "Contact us",
+        "body": ["For any question about your data, email us at {email}."]
+      }
+    ]
   }
 }

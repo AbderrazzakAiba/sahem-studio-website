@@ -1,11 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { fontVariables } from "@/app/fonts";
-import { ActionBar } from "@/components/layout/ActionBar";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
 import { MotionProvider } from "@/components/motion-provider";
-import { site, startHref, whatsappHref } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
 import { jsFlagScript } from "@/lib/motion";
@@ -58,8 +54,6 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const t = await getDictionary(lang);
-  const start = { href: localizedPath(startHref, lang), label: t.nav.start };
-  const wa = whatsappHref(site.whatsapp);
 
   return (
     <html lang={lang} dir={localeInfo[lang].dir} className={fontVariables} suppressHydrationWarning>
@@ -74,15 +68,8 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         >
           {t.a11y.skipToContent}
         </a>
-        <MotionProvider>
-          <Header locale={lang} t={t} />
-          {/* Bottom padding below 768px so the fixed action bar never covers content. */}
-          <div className="max-md:pb-[calc(72px+env(safe-area-inset-bottom))]">
-            {children}
-            <Footer locale={lang} t={t} />
-          </div>
-          <ActionBar start={start} whatsapp={wa ? { href: wa, label: t.contact.whatsappLabel } : null} />
-        </MotionProvider>
+        {/* Page chrome lives in the route groups: (site) = header, footer, action bar; (focus) = the form. */}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );
