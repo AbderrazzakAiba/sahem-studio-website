@@ -8,7 +8,8 @@ import { WorkFilter } from "@/components/work/WorkFilter";
 import { featuredWork, type WorkTag } from "@/content/home";
 import { site, startHref, whatsappHref } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
-import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
+import { isLocale, localizedPath } from "@/lib/i18n";
+import { languageAlternates } from "@/lib/seo";
 
 /** Filter chips in the order of the services. */
 const filters: WorkTag[] = ["website", "landing", "identity", "social", "automation", "motion"];
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/work">): P
     description: t.workPage.meta.description,
     alternates: {
       canonical: localizedPath("/work", lang),
-      languages: Object.fromEntries(locales.map((l) => [localeInfo[l].hreflang, localizedPath("/work", l)])),
+      languages: languageAlternates("/work"),
     },
   };
 }

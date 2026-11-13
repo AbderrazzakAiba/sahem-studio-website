@@ -5,7 +5,8 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
-import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
+import { isLocale, localizedPath } from "@/lib/i18n";
+import { languageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/privacy">): Promise<Metadata> {
   const { lang } = await params;
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/privacy">)
     description: t.privacy.meta.description,
     alternates: {
       canonical: localizedPath("/privacy", lang),
-      languages: Object.fromEntries(locales.map((l) => [localeInfo[l].hreflang, localizedPath("/privacy", l)])),
+      languages: languageAlternates("/privacy"),
     },
   };
 }

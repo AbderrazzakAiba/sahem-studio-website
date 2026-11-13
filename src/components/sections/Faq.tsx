@@ -1,3 +1,5 @@
+import { JsonLd } from "@/components/seo/JsonLd";
+import { faqSchema } from "@/lib/structured-data";
 import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
@@ -29,6 +31,7 @@ type Props = {
 export function Faq({ t, whatsapp, email }: Props) {
   return (
     <Section aria-labelledby="faq-title">
+      <JsonLd data={faqSchema(t.items)} />
       <Container className="grid items-start gap-5 md:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-x-16 lg:gap-y-4">
         <SectionHeading
           id="faq-title"

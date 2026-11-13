@@ -7,9 +7,11 @@ import { Proof } from "@/components/home/Proof";
 import { Services } from "@/components/home/Services";
 import { Why } from "@/components/home/Why";
 import { Work } from "@/components/home/Work";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { site, startHref, whatsappHref } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale, localizedPath } from "@/lib/i18n";
+import { organizationGraph } from "@/lib/structured-data";
 
 /**
  * Home (handoff: home-desktop / home-tablet / home-mobile). The route runs through the whole page:
@@ -24,6 +26,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
 
   return (
     <main id="main">
+      <JsonLd data={organizationGraph(lang, { name: t.site.name, description: t.site.description })} />
       <Hero
         t={t.home.hero}
         stations={t.home.process.steps.map((s) => s.title)}
