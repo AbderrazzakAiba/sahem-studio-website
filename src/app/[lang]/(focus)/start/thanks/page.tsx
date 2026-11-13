@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BrandMark } from "@/components/ui/BrandIcon";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -81,11 +82,11 @@ export default async function ThanksPage({ params }: PageProps<"/[lang]/start/th
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center font-semibold underline-offset-4 hover:underline"
+                  className="group inline-flex min-h-11 items-center gap-2.5 font-semibold underline-offset-4 hover:underline"
                 >
+                  <BrandMark name={s.icon} size={20} />
                   <bdi dir="ltr" className="font-latin">
                     {s.name}
-                    {s.handle ? ` · ${s.handle}` : ""}
                   </bdi>
                 </a>
               </li>
