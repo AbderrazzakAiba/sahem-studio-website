@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import { cn } from "@/lib/utils";
 
 export type Crumb = { label: string; href?: string };
@@ -12,10 +14,14 @@ type Props = {
   className?: string;
 };
 
-/** Breadcrumb trail (handoff inner pages): links separated by "/", the current page marked aria-current. */
+/**
+ * Breadcrumb trail (handoff inner pages): links separated by "/", the current page marked aria-current.
+ * The same trail is given to search engines as BreadcrumbList structured data.
+ */
 export function Breadcrumb({ items, label, className }: Props) {
   return (
     <nav aria-label={label} className={cn("text-[14px] text-text-secondary", className)}>
+      <JsonLd data={breadcrumbSchema(items)} />
       <ol className="flex flex-wrap items-center gap-x-2.5">
         {items.map((item, i) => {
           const last = i === items.length - 1;

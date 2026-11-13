@@ -1,3 +1,4 @@
+import { JsonLd } from "@/components/seo/JsonLd";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Faq } from "@/components/sections/Faq";
@@ -9,7 +10,9 @@ import { serviceSlugs } from "@/content/home";
 import { coverOf, isServiceSlug, relatedWork } from "@/content/services";
 import { site, startHref, whatsappHref } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
-import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
+import { isLocale, localizedPath } from "@/lib/i18n";
+import { languageAlternates } from "@/lib/seo";
+import { serviceSchema } from "@/lib/structured-data";
 
 /** The six service pages, for every locale (the [lang] segment's params come from the root layout). */
 export function generateStaticParams() {
@@ -26,7 +29,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/services/[
     description: t.service.items[slug].lead,
     alternates: {
       canonical: localizedPath(path, lang),
-      languages: Object.fromEntries(locales.map((l) => [localeInfo[l].hreflang, localizedPath(path, l)])),
+      languages: languageAlternates(path),
     },
   };
 }
@@ -51,6 +54,7 @@ export default async function ServicePage({ params }: PageProps<"/[lang]/service
 
   return (
     <main id="main">
+      <JsonLd data={serviceSchema(lang, `/services/${slug}`, { name, description: s.lead })} />
       <ServiceHero
         slug={slug}
         breadcrumb={{

@@ -4,22 +4,10 @@ import { fontVariables } from "@/app/fonts";
 import { MotionProvider } from "@/components/motion-provider";
 import { getDictionary } from "@/lib/dictionaries";
 import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
+import { languageAlternates, siteUrl } from "@/lib/seo";
 import { jsFlagScript } from "@/lib/motion";
 import { modeScript, themeColors } from "@/lib/theme";
 import "../globals.css";
-
-/**
- * Public address of the site (canonical, hreflang and social-card links). Order:
- *  1. NEXT_PUBLIC_SITE_URL — set it once the real domain exists;
- *  2. VERCEL_PROJECT_PRODUCTION_URL — provided by Vercel at build time (also on preview builds, so previews
- *     point search engines to the production address, never to themselves);
- *  3. localhost for local development.
- */
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -30,12 +18,12 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   if (!isLocale(lang)) return {};
   const t = await getDictionary(lang);
   return {
-    metadataBase: new URL(SITE_URL),
+    metadataBase: new URL(siteUrl),
     title: { default: t.site.name, template: `%s — ${t.site.name}` },
     description: t.site.description,
     alternates: {
       canonical: localizedPath("/", lang),
-      languages: Object.fromEntries(locales.map((l) => [localeInfo[l].hreflang, localizedPath("/", l)])),
+      languages: languageAlternates("/"),
     },
     openGraph: {
       siteName: t.site.name,

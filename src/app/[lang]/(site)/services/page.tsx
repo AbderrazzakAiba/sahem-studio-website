@@ -6,7 +6,8 @@ import { ServiceList } from "@/components/services/ServiceList";
 import { ServicesHelp } from "@/components/services/ServicesHelp";
 import { site, startHref, whatsappHref } from "@/content/site";
 import { getDictionary } from "@/lib/dictionaries";
-import { isLocale, localeInfo, localizedPath, locales } from "@/lib/i18n";
+import { isLocale, localizedPath } from "@/lib/i18n";
+import { languageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/services">): Promise<Metadata> {
   const { lang } = await params;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/services">
     description: t.services.meta.description,
     alternates: {
       canonical: localizedPath("/services", lang),
-      languages: Object.fromEntries(locales.map((l) => [localeInfo[l].hreflang, localizedPath("/services", l)])),
+      languages: languageAlternates("/services"),
     },
   };
 }
