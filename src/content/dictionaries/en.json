@@ -979,6 +979,8 @@
       "title": "How can we reach you?",
       "name": "Name",
       "nameError": "Enter your name.",
+      "nameShort": "The name is too short: at least 2 letters.",
+      "nameChars": "Use letters only in the name, without digits or symbols.",
       "method": "How would you prefer we contact you?",
       "methods": {
         "whatsapp": "WhatsApp",
@@ -990,13 +992,19 @@
       "email": {
         "label": "Your email",
         "hint": "e.g. name@example.com",
-        "error": "Enter a valid email, such as name@example.com"
+        "error": "Enter a valid email, such as name@example.com",
+        "required": "Write your email."
       },
       "phone": {
         "label": "Your phone number",
         "whatsappLabel": "WhatsApp number",
         "hint": "e.g. 0555 12 34 56 or +213 555 12 34 56",
-        "error": "Enter a valid number, such as 0555 12 34 56"
+        "required": "Write your phone number.",
+        "chars": "Use digits and spaces only, with + at the start.",
+        "prefix": "Start the number with 0, or with a country code such as +213.",
+        "mobile": "An Algerian mobile number has 10 digits and starts with 05, 06 or 07.",
+        "local": "Write a valid Algerian number: mobile (10 digits, starting 05, 06 or 07) or landline (9 digits).",
+        "length": "This international number has the wrong number of digits."
       },
       "message": "Your idea in brief (optional)",
       "messageHint": "Two or three lines are enough."

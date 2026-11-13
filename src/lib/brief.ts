@@ -35,7 +35,7 @@ export const emptyBrief: Brief = {
   message: "",
 };
 
-export const limits = { name: 80, reach: 120, date: 80, message: 1000 } as const;
+export const limits = { name: 60, reach: 120, date: 80, message: 1000 } as const;
 
 export type Field = "services" | "budget" | "timing" | "name" | "reach" | "method";
 
@@ -46,37 +46,87 @@ export const stepFields: Field[][] = [["services"], ["budget"], ["timing"], ["na
 export const reachKind = (method: MethodKey | null): "email" | "phone" | null =>
   method === "email" ? "email" : method ? "phone" : null;
 
-const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-/** Phone: digits with optional +, spaces, dots, dashes or brackets; 9–15 digits in total. */
-const phoneRe = /^\+?[\d\s().-]+$/;
+/** Why a field is not accepted — each one has its own message in the dictionaries. */
+export type Problem =
+  | "required"
+  | "nameShort"
+  | "nameChars"
+  | "emailFormat"
+  | "phoneChars"
+  | "phonePrefix"
+  | "phoneMobile"
+  | "phoneLocal"
+  | "phoneLength";
 
-export const isEmail = (v: string) => emailRe.test(v.trim());
-export const isPhone = (v: string) =>
-  phoneRe.test(v.trim()) && (v.match(/\d/g)?.length ?? 0) >= 9 && (v.match(/\d/g)?.length ?? 0) <= 15;
+/** Collapses runs of spaces and trims — how a name is kept (browser and server). */
+export const cleanName = (v: string) => v.normalize("NFC").replace(/\s+/g, " ").trim();
+
+/**
+ * Name: letters of any script (Arabic, Latin…), words separated by a space, hyphen, apostrophe or dot
+ * ("عبد الرزاق", "Abd-Er-Razzak", "O'Neil", "M. Amine"); no digits or symbols; at least 2 letters.
+ */
+const nameRe = /^[\p{L}\p{M}]+(?:[ '’.-]{1,2}[\p{L}\p{M}]+)*\.?$/u;
+export function nameProblem(v: string): Problem | null {
+  const name = cleanName(v);
+  if (!name) return "required";
+  if (!nameRe.test(name)) return "nameChars";
+  return (name.match(/\p{L}/gu)?.length ?? 0) < 2 ? "nameShort" : null;
+}
+
+/** Email: one @, a usual local part, a real-looking domain with a 2–24 letter ending; 254 characters at most. */
+const emailRe = /^(?!\.)(?!.*\.\.)[a-z0-9._%+-]{1,64}(?<!\.)@(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,24}$/i;
+export const isEmail = (v: string) => v.trim().length <= 254 && emailRe.test(v.trim());
+export const emailProblem = (v: string): Problem | null => (!v.trim() ? "required" : isEmail(v) ? null : "emailFormat");
+
+/**
+ * Phone: digits, with spaces, dots, dashes or brackets between them and an optional + at the start.
+ *  - Algerian, written locally (0…) or with +213 / 00213: a mobile is 10 digits starting 05, 06 or 07; a call
+ *    may also be to a landline, 9 digits starting 02, 03 or 04. WhatsApp needs a mobile.
+ *  - Another country (+ or 00 then its code): 8 to 15 digits in total.
+ */
+export function phoneProblem(v: string, method: MethodKey | null): Problem | null {
+  const raw = v.trim();
+  if (!raw) return "required";
+  if (!/^\+?[\d\s().-]+$/.test(raw)) return "phoneChars";
+  const digits = raw.replace(/\D/g, "");
+  const intl = raw.startsWith("+") ? digits : digits.startsWith("00") ? digits.slice(2) : null;
+  if (intl === null) return digits.startsWith("0") ? algerian(digits.slice(1), method) : "phonePrefix";
+  if (intl.startsWith("213")) return algerian(intl.slice(3).replace(/^0/, ""), method);
+  if (intl.startsWith("0")) return "phonePrefix";
+  return intl.length >= 8 && intl.length <= 15 ? null : "phoneLength";
+}
+/** `n` is the national number without its leading 0. */
+function algerian(n: string, method: MethodKey | null): Problem | null {
+  if (/^[567]\d{8}$/.test(n)) return null;
+  if (method === "call") return /^[234]\d{7}$/.test(n) ? null : "phoneLocal";
+  return "phoneMobile";
+}
+
+/** Why a field of the brief is not accepted, or null when it is fine. */
+export function problemOf(brief: Brief, field: Field): Problem | null {
+  switch (field) {
+    case "services":
+      return brief.services.length === 0 ? "required" : null;
+    case "budget":
+      return brief.budget === null ? "required" : null;
+    case "timing":
+      return brief.timing === null ? "required" : null;
+    case "method":
+      return brief.method === null ? "required" : null;
+    case "name":
+      return nameProblem(brief.name);
+    case "reach": {
+      // asked only once a method is chosen: an email for "email", a phone number for WhatsApp or a call
+      const kind = reachKind(brief.method);
+      if (!kind) return null;
+      return kind === "email" ? emailProblem(brief.reach) : phoneProblem(brief.reach, brief.method);
+    }
+  }
+}
 
 /** Fields of the given step that are not filled in correctly. */
-export function invalidFields(brief: Brief, step: number): Field[] {
-  return stepFields[step].filter((field) => {
-    switch (field) {
-      case "services":
-        return brief.services.length === 0;
-      case "budget":
-        return brief.budget === null;
-      case "timing":
-        return brief.timing === null;
-      case "name":
-        return brief.name.trim().length === 0;
-      case "reach": {
-        // asked only once a method is chosen: an email for "email", a phone number for WhatsApp or a call
-        const kind = reachKind(brief.method);
-        if (!kind) return false;
-        return kind === "email" ? !isEmail(brief.reach) : !isPhone(brief.reach);
-      }
-      case "method":
-        return brief.method === null;
-    }
-  });
-}
+export const invalidFields = (brief: Brief, step: number): Field[] =>
+  stepFields[step].filter((field) => problemOf(brief, field) !== null);
 
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 const oneOf = <T extends string>(v: unknown, keys: readonly T[]) => (keys.includes(v as T) ? (v as T) : null);
@@ -93,11 +143,12 @@ export function parseBrief(input: unknown): Brief | null {
     budget: oneOf(o.budget, budgetKeys),
     timing: oneOf(o.timing, timingKeys),
     date: str(o.date, limits.date),
-    name: str(o.name, limits.name),
+    name: cleanName(str(o.name, limits.name)),
     reach: str(o.reach, limits.reach),
     method: oneOf(o.method, methodKeys),
     message: str(o.message, limits.message),
   };
+  if (reachKind(brief.method) === "email") brief.reach = brief.reach.toLowerCase();
   const ok = stepFields.every((_, step) => invalidFields(brief, step).length === 0);
   return ok ? brief : null;
 }

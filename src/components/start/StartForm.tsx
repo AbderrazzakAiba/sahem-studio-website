@@ -14,6 +14,7 @@ import {
   budgetKeys,
   emptyBrief,
   invalidFields,
+  problemOf,
   limits,
   methodKeys,
   reachKind,
@@ -22,6 +23,7 @@ import {
   type Brief,
   type Field,
   type MethodKey,
+  type Problem,
 } from "@/lib/brief";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
@@ -100,16 +102,20 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
     setErrors((e) => (e.includes(key as Field) ? e.filter((f) => f !== key) : e));
   };
   const kind = reachKind(brief.method);
-  const reachError = kind === "email" ? t.contact.email.error : t.contact.phone.error;
-  /** Choosing the method decides the contact field; switching between email and phone clears it. */
+  /**
+   * Choosing the method decides the contact field; switching between email and phone clears it. Between
+   * WhatsApp and call the number stays, and its error is kept only if it is still wrong for the new method
+   * (a landline is fine for a call, not for WhatsApp).
+   */
   const chooseMethod = (method: MethodKey) => {
     const changesKind = reachKind(method) !== kind;
-    setBrief((b) => ({ ...b, method, reach: changesKind ? "" : b.reach }));
-    setErrors((e) =>
-      e.includes("method") || (changesKind && e.includes("reach"))
-        ? e.filter((f) => f !== "method" && (!changesKind || f !== "reach"))
-        : e,
-    );
+    const reach = changesKind ? "" : brief.reach;
+    const reachStillWrong = !changesKind && problemOf({ ...brief, method, reach }, "reach") !== null;
+    setBrief((b) => ({ ...b, method, reach }));
+    setErrors((e) => {
+      const next = e.filter((f) => f !== "method" && (f !== "reach" || reachStillWrong));
+      return next.length === e.length ? e : next;
+    });
   };
 
   const toggleService = (slug: ServiceSlug) =>
@@ -144,13 +150,34 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
     else setStatus("error");
   };
 
-  const errorText: Record<Field, string> = {
+  /** The message for a field, worded after what is wrong with it (empty, wrong characters, wrong length…). */
+  const messages: Record<Problem, string> = {
+    required: "",
+    nameShort: t.contact.nameShort,
+    nameChars: t.contact.nameChars,
+    emailFormat: t.contact.email.error,
+    phoneChars: t.contact.phone.chars,
+    phonePrefix: t.contact.phone.prefix,
+    phoneMobile: t.contact.phone.mobile,
+    phoneLocal: t.contact.phone.local,
+    phoneLength: t.contact.phone.length,
+  };
+  const required: Record<Field, string> = {
     services: t.service.error,
     budget: t.budget.error,
     timing: t.timing.error,
     name: t.contact.nameError,
-    reach: reachError,
+    reach: kind === "email" ? t.contact.email.required : t.contact.phone.required,
     method: t.contact.methodError,
+  };
+  const errorText = (f: Field) => {
+    const problem = problemOf(brief, f);
+    return !problem || problem === "required" ? required[f] : messages[problem];
+  };
+  /** Leaving a filled-in field checks it at once; an empty one waits for "Next" (no nagging while tabbing). */
+  const checkOnBlur = (f: Field) => {
+    const bad = brief[f as "name" | "reach"].trim() !== "" && problemOf(brief, f) !== null;
+    setErrors((e) => (bad === e.includes(f) ? e : bad ? [...e, f] : e.filter((x) => x !== f)));
   };
   const has = (f: Field) => errors.includes(f);
   const titleClass = "text-heading outline-none";
@@ -179,7 +206,7 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
               {errors.map((f) => (
                 <li key={f}>
                   <a href={`#${fieldId[f]}`} className="text-[14px] underline underline-offset-4">
-                    {errorText[f]}
+                    {errorText(f)}
                   </a>
                 </li>
               ))}
@@ -315,8 +342,9 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
               autoComplete="name"
               value={brief.name}
               maxLength={limits.name}
-              error={has("name") ? t.contact.nameError : null}
+              error={has("name") ? errorText("name") : null}
               onChange={(e) => update("name", e.target.value)}
+              onBlur={() => checkOnBlur("name")}
             />
             <fieldset className="flex flex-col gap-2.5">
               <legend className="mb-2 text-[15px] font-medium">{t.contact.method}</legend>
@@ -360,8 +388,9 @@ export function StartForm({ locale, t, serviceNames, thanksHref, privacyHref, co
                 className="[&_input]:font-latin [&_input]:rtl:text-right"
                 value={brief.reach}
                 maxLength={limits.reach}
-                error={has("reach") ? reachError : null}
+                error={has("reach") ? errorText("reach") : null}
                 onChange={(e) => update("reach", e.target.value)}
+                onBlur={() => checkOnBlur("reach")}
               />
             ) : null}
             <TextField
