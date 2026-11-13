@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { CSSProperties, SVGProps } from "react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -43,5 +43,21 @@ export function BrandIcon({ name, size = 18, className, ...props }: Props) {
     >
       <path d={brands[name].path} />
     </svg>
+  );
+}
+
+/**
+ * A platform logo beside a link: text colour, the platform's own colour when the link (a `group`) is hovered.
+ * Used by the footer and the thanks page.
+ */
+export function BrandMark({ name, size }: { name: BrandName; size?: number }) {
+  const hover = brands[name].hover;
+  return (
+    <BrandIcon
+      name={name}
+      size={size}
+      style={hover ? ({ "--brand": hover } as CSSProperties) : undefined}
+      className={hover ? "transition-colors group-hover:text-(--brand)" : undefined}
+    />
   );
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import type { CSSProperties, ReactNode } from "react";
-import { BrandIcon, brands, type BrandName } from "@/components/ui/BrandIcon";
+import type { ReactNode } from "react";
+import { BrandMark } from "@/components/ui/BrandIcon";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/ui/Logo";
@@ -12,18 +12,6 @@ type Props = { locale: Locale; t: ChromeCopy };
 
 const linkClass =
   "group inline-flex min-h-11 items-center gap-2.5 text-text-secondary hover:text-text-primary lg:min-h-0";
-
-/** Platform logo beside a footer link: text colour, the platform's own colour on hover. */
-function Brand({ name }: { name: BrandName }) {
-  const hover = brands[name].hover;
-  return (
-    <BrandIcon
-      name={name}
-      style={hover ? ({ "--brand": hover } as CSSProperties) : undefined}
-      className={hover ? "transition-colors group-hover:text-(--brand)" : undefined}
-    />
-  );
-}
 
 /**
  * Site footer (handoff home screens): brand + tagline · site links · contact · follow, then copyright,
@@ -69,7 +57,7 @@ export function Footer({ locale, t }: Props) {
                 rel="noopener noreferrer"
                 className={linkClass}
               >
-                <Brand name="whatsapp" />
+                <BrandMark name="whatsapp" />
                 <span className="sr-only">{t.contact.whatsapp} </span>
                 <bdi dir="ltr" className="font-latin">
                   {p.display}
@@ -81,7 +69,7 @@ export function Footer({ locale, t }: Props) {
           <Column title={t.footer.follow}>
             {site.socials.map((s) => (
               <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                <Brand name={s.icon} />
+                <BrandMark name={s.icon} />
                 <bdi dir="ltr" className="font-latin">
                   {s.name}
                 </bdi>
