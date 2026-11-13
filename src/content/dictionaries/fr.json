@@ -979,6 +979,8 @@
       "title": "Comment vous joindre ?",
       "name": "Nom",
       "nameError": "Indiquez votre nom.",
+      "nameShort": "Le nom est trop court : au moins 2 lettres.",
+      "nameChars": "Utilisez uniquement des lettres dans le nom, sans chiffres ni symboles.",
       "method": "Comment préférez-vous être contacté ?",
       "methods": {
         "whatsapp": "WhatsApp",
@@ -990,13 +992,19 @@
       "email": {
         "label": "Votre e-mail",
         "hint": "ex. name@example.com",
-        "error": "Saisissez un e-mail valide, comme name@example.com"
+        "error": "Saisissez un e-mail valide, comme name@example.com",
+        "required": "Indiquez votre e-mail."
       },
       "phone": {
         "label": "Votre numéro de téléphone",
         "whatsappLabel": "Numéro WhatsApp",
         "hint": "ex. 0555 12 34 56 ou +213 555 12 34 56",
-        "error": "Saisissez un numéro valide, comme 0555 12 34 56"
+        "required": "Indiquez votre numéro de téléphone.",
+        "chars": "Uniquement des chiffres et des espaces, avec + au début.",
+        "prefix": "Commencez le numéro par 0, ou par un indicatif pays comme +213.",
+        "mobile": "Un numéro mobile algérien compte 10 chiffres et commence par 05, 06 ou 07.",
+        "local": "Indiquez un numéro algérien valide : mobile (10 chiffres, commençant par 05, 06 ou 07) ou fixe (9 chiffres).",
+        "length": "Ce numéro international n’a pas le bon nombre de chiffres."
       },
       "message": "Votre idée en bref (facultatif)",
       "messageHint": "Deux ou trois lignes suffisent."
