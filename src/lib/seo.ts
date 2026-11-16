@@ -48,3 +48,37 @@ export const indexablePaths: string[] = [
 
 /** Search engines may index only the live site; preview deployments and local builds are kept out. */
 export const isProductionSite = process.env.VERCEL_ENV === "production";
+
+/**
+ * AI assistants and AI search crawlers we welcome by name (the studio wants to be found and recommended by
+ * them). `User-agent: *` already allows them; naming them makes the choice explicit and keeps it if a
+ * stricter default is ever added. Grouped by purpose, from the vendors' crawler docs:
+ *  - search / answer engines that cite sources: OAI-SearchBot, Claude-SearchBot, PerplexityBot, DuckAssistBot…
+ *  - fetched when a person asks the assistant to open a page: ChatGPT-User, Claude-User, Perplexity-User…
+ *  - learning about the studio for future answers: GPTBot, ClaudeBot, Google-Extended, Applebot-Extended…
+ */
+export const aiAgents = [
+  // OpenAI (ChatGPT)
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "GPTBot",
+  // Anthropic (Claude)
+  "Claude-SearchBot",
+  "Claude-User",
+  "ClaudeBot",
+  // Perplexity
+  "PerplexityBot",
+  "Perplexity-User",
+  // Google (Gemini) and Apple (Apple Intelligence)
+  "Google-Extended",
+  "Applebot-Extended",
+  // Microsoft Copilot uses Bing's crawler
+  "Bingbot",
+  // Meta AI, Mistral, DuckDuckGo, Amazon, Common Crawl (feeds many open models)
+  "meta-externalagent",
+  "meta-externalfetcher",
+  "MistralAI-User",
+  "DuckAssistBot",
+  "Amazonbot",
+  "CCBot",
+];
